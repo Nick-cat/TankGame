@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: UnityEditor.CoreModule:UnityEditor.Experimental.TerrainAPI:StampTool
-  m_StampHeightTerrainSpace: 98
-  m_MaxBlendAdd: 0.667
+  m_StampHeightTerrainSpace: -159
+  m_MaxBlendAdd: 0
