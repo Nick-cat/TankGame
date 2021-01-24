@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 686237029}
   - component: {fileID: 686237028}
+  - component: {fileID: 686237030}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -161,10 +162,10 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Strength: 0.66
+    m_Bias: 1.58
+    m_NormalBias: 0.64
+    m_NearPlane: 0.6
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -209,13 +210,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686237027}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.41899788, y: -0.118375376, z: 0.05519934, w: 0.89854395}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: -15.01, z: 0}
+--- !u!114 &686237030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686237027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UsePipelineSettings: 1
 --- !u!1 &1094156955
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +283,7 @@ Terrain:
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 7b31c6f1cee1aea45aa8205b09763112, type: 2}
+  m_MaterialTemplate: {fileID: 2100000, guid: 477d7ff51a4b66644bcbbd6780d1b07b, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
