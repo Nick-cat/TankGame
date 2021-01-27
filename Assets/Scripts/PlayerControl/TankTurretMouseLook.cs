@@ -36,7 +36,7 @@ namespace SBC {
 
             // Rotate the turret with the mouse X delta.
             turretTransform.RotateAround( turretTransform.position , Vector3.up , mXd );
-
+           
             // Rotate the cannon and camera with the mouse Y delta.
             cannon_angle = Mathf.Clamp( cannon_angle + mYd , -MAX_CANNON_ANGLE , MAX_CANNON_ANGLE );
             UpdateCannonAngle();
