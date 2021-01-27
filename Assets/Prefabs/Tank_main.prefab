@@ -1554,7 +1554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107650126704451574}
   m_Layer: 0
-  m_Name: Tank_Main
+  m_Name: Tank_main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1667,7 +1667,7 @@ Transform:
   m_LocalPosition: {x: -0.074220076, y: 6.661601, z: -12.0589695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 21600886444464387}
+  m_Father: {fileID: 4598599971193649045}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 20.16, y: 0, z: 0}
 --- !u!20 &433608549044093899
@@ -2631,7 +2631,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1951357623257069467}
+  - {fileID: 4598599971193649045}
   - {fileID: 6193855894930664120}
   - {fileID: 7506786726496939558}
   - {fileID: 3308612191239602931}
@@ -2639,6 +2639,37 @@ Transform:
   - {fileID: 7328907095784175200}
   m_Father: {fileID: 7635755978193457559}
   m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7512949565912160167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4598599971193649045}
+  m_Layer: 0
+  m_Name: CamParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4598599971193649045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7512949565912160167}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1951357623257069467}
+  m_Father: {fileID: 21600886444464387}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7606750453679716837
 GameObject:

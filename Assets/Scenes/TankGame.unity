@@ -205,9 +205,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232185a8b68d0a64593de0aaeee8eaff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 200
+  mouseXSensitivity: 200
+  mouseYSensitivity: -100
   turretTransform: {fileID: 402931566}
   cannonTransform: {fileID: 1403295932}
+  cam: {fileID: 167398678}
+--- !u!4 &167398678 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4598599971193649045, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
+  m_PrefabInstance: {fileID: 167398675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &402931566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 21600886444464387, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
