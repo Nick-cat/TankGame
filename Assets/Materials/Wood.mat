@@ -84,6 +84,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - normalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -97,10 +101,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_cd329a602c004655a0282b355981e908: 0
+    - HighlightMix: 1
     - Vector1_322a5977c997464ba8029bfcd10386b4: 0.25
+    - Vector1_5ae86f1ddb1a478088e1e24275e6a095: 0
     - Vector1_630ecd83e7ca43649d2ff48f08f9a494: 1
     - Vector1_6831147e4df54f77998262305e69d158: 0.08
     - Vector1_881cd917b9464d84bed7d9eca6b873b8: 0.75
+    - Vector1_90c61bc17a1d494cbb8eef58353e9e0f: 0
     - Vector1_cb88799f2bb14b949251db438d9346a7: 1
     - Vector1_d6eba9a780f14e1aaaa72f4d798798d4: 0
     - _AlphaClip: 0
@@ -129,12 +137,24 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 0
     - _ZWrite: 1
+    - emissionMultipler: 0
+    - noise0Celldensity: 0.25
+    - noise1Celldensity: 1
+    - normalRotate: 0
+    - normalStrength: 0
     m_Colors:
     - Color_11ce3ab1bb464bc5b8b520675d7bbc9a: {r: 0.5471698, g: 0.43888783, b: 0.24003202, a: 1}
     - Color_7672058aa1d54ded9fb4b72d83ae9d63: {r: 0.6509434, g: 0.58923477, b: 0.31626025, a: 0}
     - Color_90e7a4db6e164ace8b4287ac0de2d215: {r: 0.8867924, g: 0.7592908, b: 0.6483624, a: 1}
     - Color_998a863085434630b3b8dbcc190263dc: {r: 0.8773585, g: 0.44731486, b: 0.1448469, a: 1}
     - Color_b5840d6591814bb5812e29843e1aa744: {r: 0.26415092, g: 0.16448565, b: 0.058561757, a: 1}
+    - Gradient0_Colour0: {r: 0.54, g: 0.43, b: 0.24, a: 1}
+    - Gradient0_Colour1: {r: 0.65, g: 0.59, b: 0.32, a: 1}
+    - Gradient1_Colour0: {r: 0.89, g: 0.75, b: 0.65, a: 1}
+    - Gradient1_Colour1: {r: 0.26, g: 0.16, b: 0.06, a: 1}
+    - HighlightColor: {r: 0.52180487, g: 0.592791, b: 0.7735849, a: 0}
+    - HighlightDetail: {r: 16, g: 2, b: 0, a: 0}
+    - HighlightScale: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_6fe9d67c7bc24914851eaa1d6e8ecf54: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_a193f463bafc41fa8481cdcdbd335c36: {r: 1, g: 36, b: 0, a: 0}
     - Vector4_3e434afcf94f42929604484ce04bd621: {r: 1, g: 1, b: 0, a: 0}
@@ -145,4 +165,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - noise0: {r: 5, g: 1, b: 0, a: 0}
+    - noise1: {r: 4, g: 0.25, b: 0, a: 0}
+    - normalScale: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
