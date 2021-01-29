@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Glow
+  m_Name: YellowGlow
   m_Shader: {fileID: -6465566751694194690, guid: 76b6ec53a280e3340a5ed5756b4495f9, type: 3}
   m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _NORMALMAP
   m_LightmapFlags: 2
