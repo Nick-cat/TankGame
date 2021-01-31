@@ -1,17 +1,8 @@
 fileFormatVersion: 2
-guid: 69f872d5e065ecf46b2d4d3727f4a9f7
+guid: 0953dde22fe77b14aafd5f86bb190138
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable:
-  - first:
-      74: -7911792590747225773
-    second: TurretBody|Cannon.001Action
-  - first:
-      74: 1400781331784425609
-    second: Cannon|Cannon.001Action
-  - first:
-      74: 6050914933186944742
-    second: LeftTreads|Cannon.001Action
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2
