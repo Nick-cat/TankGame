@@ -7,9 +7,13 @@ namespace SBC {
 
         const float MAX_CANNON_ANGLE = 8.5f;
 
+        // Options
         [SerializeField] float mouseXSensitivity = 200f;
         [SerializeField] float mouseYSensitivity = 100f;
-
+        [Space]
+        [SerializeField] bool InvertMouseX = false;
+        [SerializeField] bool InvertMouseY = false;
+        [Space]
         [SerializeField] Transform turretTransform;
         [SerializeField] Transform cannonTransform;
         [SerializeField] Transform cam;
@@ -35,7 +39,8 @@ namespace SBC {
             GetMouseDelta();
 
             // Rotate the turret with the mouse X delta.
-            turretTransform.RotateAround( turretTransform.position , Vector3.up , mXd );
+            //turretTransform.RotateAround( turretTransform.position , Vector3.up , mXd );
+            turretTransform.Rotate( new Vector3( 0 , mXd , 0 ) , Space.Self );
            
             // Rotate the cannon and camera with the mouse Y delta.
             cannon_angle = Mathf.Clamp( cannon_angle + mYd , -MAX_CANNON_ANGLE , MAX_CANNON_ANGLE );
@@ -45,7 +50,9 @@ namespace SBC {
         // Get mouse delta values for this frame.
         void GetMouseDelta() {
             mXd = Time.deltaTime * mouseXSensitivity * Input.GetAxis( "Mouse X" );
+            if ( InvertMouseX ) mXd *= -1;
             mYd = Time.deltaTime * mouseYSensitivity * Input.GetAxis( "Mouse Y" );
+            if ( !InvertMouseY ) mYd *= -1;
 		}
 
         // Take arbitrary float angle value and apply it to quaternion rotation, apply it to cannon and camera.
