@@ -2,31 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankController : MonoBehaviour
+namespace SBC
 {
-    public float tankSpeed = 5f;
-    public float rotateSpeed = 5f;
-    private Rigidbody rb;
-    
-    // Start is called before the first frame update
-    void Start()
+
+    public class TankController : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody>();
-    }
-
+        public float tankSpeed;
+        public float rotateSpeed;
+        public float brakeForce;
     
-    void FixedUpdate()
-    {
-        float forwards = Input.GetAxis("Vertical");
-        float rotate = Input.GetAxis("Horizontal");
+        public List<WheelCollider> movementWheels;
+        public List<WheelCollider> rotateWheels;
 
-        // Move tank forward/backwards
-        Vector3 moveTank = transform.position + (transform.forward * forwards * tankSpeed * Time.deltaTime);
-        rb.MovePosition(moveTank);
+        void FixedUpdate()
+        {
+            float forwards = Input.GetAxis("Vertical");
+            float rotate = Input.GetAxis("Horizontal");
+            bool brake = Input.GetKey(KeyCode.Space);
+            foreach (WheelCollider wheel in movementWheels)
+            {
+                wheel.motorTorque = tankSpeed * forwards * Time.deltaTime;
+            }
 
-        // Rotate tank
-        Quaternion rotateTank = transform.rotation * Quaternion.Euler(Vector3.up * (rotateSpeed * rotate * Time.deltaTime));
-        rb.MoveRotation(rotateTank);
+            foreach (WheelCollider wheel in rotateWheels)
+            {
+                wheel.steerAngle = rotateSpeed * rotate * Time.deltaTime;
+            }
 
+            if (brake) 
+            {
+                foreach (WheelCollider wheel in movementWheels)
+                {
+                    wheel.brakeTorque = brakeForce;
+                }
+            } else 
+            {
+                foreach (WheelCollider wheel in movementWheels)
+                {
+                    wheel.brakeTorque = 0f;
+                }
+            }
+
+        }
     }
 }
