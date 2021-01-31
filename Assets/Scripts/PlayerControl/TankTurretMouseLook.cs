@@ -18,6 +18,9 @@ namespace SBC {
         [SerializeField] Transform cannonTransform;
         [SerializeField] Transform cam;
 
+        // Toggle mouse control
+        private bool mouseOn = true;
+
         private float mXd;
         private float mYd;
 
@@ -35,6 +38,9 @@ namespace SBC {
 
         // Update is called once per frame
         void Update () {
+            if ( Input.GetKeyDown( KeyCode.Backspace ) ) mouseOn = !mouseOn;
+            if ( !mouseOn ) return;
+
             // Get input.
             GetMouseDelta();
 
