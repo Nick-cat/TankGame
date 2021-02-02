@@ -152,10 +152,14 @@ Material:
     - emissionHue: 0
     - emissionMultipler: 0
     - emissionToggle: 0
+    - highlightRotation: 0
     - noise0Celldensity: 1
     - noise1Celldensity: 0.1
     - normalRotate: 45
     - normalStrength: 0
+    - windDensity: 5
+    - windSpeed: 0.1
+    - windStrength: 1
     m_Colors:
     - Color_11ce3ab1bb464bc5b8b520675d7bbc9a: {r: 0.24951048, g: 0.8396226, b: 0.47942424, a: 1}
     - Color_7672058aa1d54ded9fb4b72d83ae9d63: {r: 0.8490566, g: 0.74404347, b: 0.15619439, a: 0}
