@@ -157,6 +157,7 @@ Material:
     - noise1Celldensity: 0.1
     - normalRotate: 45
     - normalStrength: 0
+    - waveSpeed: 0.1
     - windDensity: 5
     - windSpeed: 0.1
     - windStrength: 1
@@ -175,6 +176,9 @@ Material:
     - HighlightScale: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_6fe9d67c7bc24914851eaa1d6e8ecf54: {r: 1, g: 1, b: 1, a: 0}
     - Vector2_a193f463bafc41fa8481cdcdbd335c36: {r: 8, g: 1, b: 0, a: 0}
+    - Vector3_0623b63218574ebb99a43fe0a59c1435: {r: 0.4, g: 0.5, b: 0.4, a: 0}
+    - Vector3_25a6d00effc9440b838b7cf5f9ac1c2b: {r: 5, g: 5, b: 5, a: 0}
+    - Vector3_43bb8211de9e433f986a5a404c847335: {r: 0, g: 0, b: 0, a: 0}
     - Vector4_3691a8078ce1490c8dc07249329b6cfe: {r: 0, g: 0, b: 0, a: 0}
     - Vector4_3e434afcf94f42929604484ce04bd621: {r: 1, g: 1, b: 0, a: 0}
     - Vector4_43f9f422405148b090907881fafaa97d: {r: 0, g: 0, b: 0, a: 0}

@@ -136,10 +136,15 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - emissionMultipler: 0
+    - emissionToggle: 0
+    - highlightRotation: 0
     - noise0Celldensity: 1
     - noise1Celldensity: 1
     - normalRotate: 10
     - normalStrength: 0.5
+    - windDensity: 5
+    - windSpeed: 0.1
+    - windStrength: 0
     m_Colors:
     - Color_11ce3ab1bb464bc5b8b520675d7bbc9a: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
     - Color_7672058aa1d54ded9fb4b72d83ae9d63: {r: 0.249199, g: 0.26895693, b: 0.3018868, a: 0}
