@@ -64,7 +64,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - normalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 107aefcd058202846894304ee12ddb9f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -80,7 +80,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - HighlightMix: 0.2
+    - HighlightMix: 0.05
     - Vector1_90c61bc17a1d494cbb8eef58353e9e0f: 0
     - _AlphaClip: 0
     - _Blend: 0
@@ -109,18 +109,23 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - emissionMultipler: 0
+    - emissionToggle: 0
+    - highlightRotation: -3.42
     - noise0Celldensity: 0.9
     - noise1Celldensity: 0.5
     - normalRotate: 0
     - normalStrength: 0.5
+    - waveSpeed: 0.1
     m_Colors:
-    - Gradient0_Colour0: {r: 0.69803923, g: 0.7254902, b: 0.44705886, a: 1}
-    - Gradient0_Colour1: {r: 0.5176471, g: 0.41176474, b: 0.2392157, a: 1}
-    - Gradient1_Colour0: {r: 0.40000004, g: 0.69803923, b: 0.6627451, a: 1}
+    - Gradient0_Colour0: {r: 0.46614066, g: 0.4811321, b: 0.3290762, a: 1}
+    - Gradient0_Colour1: {r: 0.49056602, g: 0.38584977, b: 0.21520111, a: 1}
+    - Gradient1_Colour0: {r: 0.32643625, g: 0.4509804, b: 0.32156864, a: 1}
     - Gradient1_Colour1: {r: 0.24705884, g: 0.121568635, b: 0.07450981, a: 1}
-    - HighlightColor: {r: 0.3921569, g: 0.54901963, b: 0.21960786, a: 0}
-    - HighlightDetail: {r: 4, g: 3, b: 0, a: 0}
-    - HighlightScale: {r: 1, g: 2, b: 0, a: 0}
+    - HighlightColor: {r: 0.14509803, g: 0.7529412, b: 0.3683864, a: 0}
+    - HighlightDetail: {r: 1, g: 4, b: 0, a: 0}
+    - HighlightScale: {r: 0.3, g: 0.3, b: 0, a: 0}
+    - Vector3_0623b63218574ebb99a43fe0a59c1435: {r: 0, g: 0, b: 0, a: 0}
+    - Vector3_25a6d00effc9440b838b7cf5f9ac1c2b: {r: 5, g: 5, b: 5, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
