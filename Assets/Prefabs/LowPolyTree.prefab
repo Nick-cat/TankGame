@@ -113,11 +113,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 10d8bd24cf71ba644b6118d24fa67086, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a42cfb196924b214fb74e7ef35711b26, type: 2}
+      objectReference: {fileID: 2100000, guid: fee51c39ee21606449ff4b340bc356a8, type: 2}
     - target: {fileID: -7511558181221131132, guid: 10d8bd24cf71ba644b6118d24fa67086, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 4cfe49c953cfb3d40bdb5a8c663f7878, type: 2}
+      objectReference: {fileID: 2100000, guid: 7b03cedc57797b347845d598d7c65443, type: 2}
     - target: {fileID: 919132149155446097, guid: 10d8bd24cf71ba644b6118d24fa67086, type: 3}
       propertyPath: m_Name
       value: FatLowPolyPine
