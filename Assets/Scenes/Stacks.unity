@@ -970,19 +970,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 107650126704451574, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 894.1
+      value: 682.3
       objectReference: {fileID: 0}
     - target: {fileID: 107650126704451574, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.02
+      value: 110.9
       objectReference: {fileID: 0}
     - target: {fileID: 107650126704451574, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 522.7
+      value: 234.2
       objectReference: {fileID: 0}
     - target: {fileID: 107650126704451574, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.49956357
+      value: 0.8176768
       objectReference: {fileID: 0}
     - target: {fileID: 107650126704451574, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -990,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 107650126704451574, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.8662772
+      value: -0.57567763
       objectReference: {fileID: 0}
     - target: {fileID: 107650126704451574, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1002,7 +1002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 107650126704451574, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -120.058
+      value: -70.294
       objectReference: {fileID: 0}
     - target: {fileID: 107650126704451574, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688216172}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
