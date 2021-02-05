@@ -31,6 +31,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4198837943893292778
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8512841812269094544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1, z: 1.4}
+  m_Center: {x: 0, y: 3.87, z: 0}
+--- !u!65 &5370400164130316834
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8512841812269094544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1, z: 1.4}
+  m_Center: {x: 0, y: 8.26, z: 0}
 --- !u!136 &6169135086229708894
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -45,32 +71,6 @@ CapsuleCollider:
   m_Height: 5.380329
   m_Direction: 1
   m_Center: {x: 0, y: 6.0598354, z: 0.007956147}
---- !u!65 &5370400164130316834
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512841812269094544}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4, y: 1, z: 1.4}
-  m_Center: {x: 0, y: 8.26, z: 0}
---- !u!65 &4198837943893292778
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512841812269094544}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4, y: 1, z: 1.4}
-  m_Center: {x: 0, y: 3.87, z: 0}
 --- !u!1001 &8854878787690130369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125,7 +125,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 3c71314a87c7d3e4bb1d7d377a3bd8b9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d49181e6306a838428f5d822a77db465, type: 2}
+      objectReference: {fileID: 2100000, guid: 4c53ba506acbddc4381bae0fc829e8f1, type: 2}
     - target: {fileID: 919132149155446097, guid: 3c71314a87c7d3e4bb1d7d377a3bd8b9, type: 3}
       propertyPath: m_Name
       value: Pillar_3

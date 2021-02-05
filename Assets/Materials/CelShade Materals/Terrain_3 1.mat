@@ -108,6 +108,8 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - contrast: 1.1
+    - emissionHue: 1
     - emissionMultipler: 0
     - emissionToggle: 0
     - highlightRotation: 0
@@ -117,6 +119,7 @@ Material:
     - normalStrength: 0.5
     - rimBlend: 0.35
     - rimSize: 0.22
+    - saturation: 1
     - shadowBlend: 0.1
     - shadowSize: 0
     - waveSpeed: 0.1
