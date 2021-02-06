@@ -146,7 +146,7 @@ Material:
     - emissionMultipler: 1
     - emissionToggle: 0
     - highlightRotation: 0
-    - noise0Celldensity: 12
+    - noise0Celldensity: 1
     - noise1Celldensity: 1
     - normalRotate: 0
     - normalStrength: 0.5
