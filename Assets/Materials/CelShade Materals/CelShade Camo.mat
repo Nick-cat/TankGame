@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CellShade Camo
+  m_Name: CelShade Camo
   m_Shader: {fileID: -6465566751694194690, guid: 7c76c800c61f9c44486136353a36aade, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -93,10 +93,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - RimBlend: 0.52
-    - RimSize: 0.35
+    - Contrast: 1.2
+    - RimBlend: 0.234
+    - RimSize: 0.529
+    - Saturation: 1
     - ShadowBlend: 0.1
-    - ShadowSize: 0.12
+    - ShadowSize: 0.138
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -125,7 +127,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - RimColour: {r: 1, g: 1, b: 1, a: 0}
-    - ShadowColour: {r: 0.28366208, g: 0.4245283, b: 0.2783464, a: 0}
+    - ShadowColour: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -106,7 +106,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Boolean_cd329a602c004655a0282b355981e908: 0
-    - HighlightMix: 0.23
+    - HighlightMix: 0.181
     - Vector1_322a5977c997464ba8029bfcd10386b4: 0.2
     - Vector1_5ae86f1ddb1a478088e1e24275e6a095: 0
     - Vector1_630ecd83e7ca43649d2ff48f08f9a494: 0.5
@@ -141,7 +141,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - contrast: 1.1
+    - contrast: 1.197
     - emissionHue: 0
     - emissionMultipler: 1
     - emissionToggle: 0
@@ -150,11 +150,11 @@ Material:
     - noise1Celldensity: 1
     - normalRotate: 0
     - normalStrength: 0.5
-    - rimBlend: 0.3
-    - rimSize: 0.66
-    - saturation: 1.1
-    - shadowBlend: 0.1
-    - shadowSize: 0
+    - rimBlend: 0.21
+    - rimSize: 0.431
+    - saturation: 1.217
+    - shadowBlend: 0.039
+    - shadowSize: 0.156
     - waveSpeed: 0.1
     - windDensity: 5
     - windSpeed: 0.1
@@ -188,5 +188,5 @@ Material:
     - noise1: {r: 0.21, g: 0.2, b: 0, a: 0}
     - normalScale: {r: 16, g: 16, b: 0, a: 0}
     - rimColour: {r: 0.68462974, g: 0.8018868, b: 0.69168353, a: 0}
-    - shadowColour: {r: 0.18209325, g: 0.41509432, b: 0.23938859, a: 0}
+    - shadowColour: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
