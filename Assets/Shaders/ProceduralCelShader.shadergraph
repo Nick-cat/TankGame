@@ -3302,8 +3302,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -386.0,
-            "y": 510.0,
+            "x": -469.9999694824219,
+            "y": 433.0000305175781,
             "width": 144.0,
             "height": 34.0
         }
@@ -4516,7 +4516,7 @@
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
-        "y": 1.0
+        "y": 10.0
     }
 }
 
@@ -6442,10 +6442,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 131.99998474121095,
-            "y": 428.0000305175781,
+            "x": 48.00002670288086,
+            "y": 408.0000305175781,
             "width": 145.0,
-            "height": 154.0
+            "height": 154.00001525878907
         }
     },
     "m_Slots": [
@@ -8599,8 +8599,8 @@
     "m_ObjectId": "925f2d25bc8a42ed8636c4399d00f70d",
     "m_Title": "Normal",
     "m_Position": {
-        "x": 10.0,
-        "y": 10.0
+        "x": -495.0,
+        "y": 283.9999694824219
     }
 }
 
@@ -8929,13 +8929,13 @@
     },
     "m_Name": "Sample Texture 2D",
     "m_DrawState": {
-        "m_Expanded": true,
+        "m_Expanded": false,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -73.0,
-            "y": 363.0,
-            "width": 184.0,
-            "height": 253.0
+            "x": -156.99998474121095,
+            "y": 343.0000305175781,
+            "width": 180.0,
+            "height": 181.0
         }
     },
     "m_Slots": [
@@ -10444,9 +10444,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -210.0,
-            "y": 403.0,
-            "width": 123.0,
+            "x": -294.0,
+            "y": 383.0,
+            "width": 123.00000762939453,
             "height": 34.0
         }
     },
@@ -10964,10 +10964,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -87.0,
-            "y": 616.0000610351563,
-            "width": 206.0,
-            "height": 132.0
+            "x": -170.9999542236328,
+            "y": 531.0,
+            "width": 206.00001525878907,
+            "height": 132.00001525878907
         }
     },
     "m_Slots": [
@@ -11322,13 +11322,13 @@
     },
     "m_Name": "Tiling And Offset",
     "m_DrawState": {
-        "m_Expanded": true,
+        "m_Expanded": false,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -242.0,
-            "y": 445.0,
-            "width": 155.0,
-            "height": 142.0
+            "x": -326.0000305175781,
+            "y": 425.0000305175781,
+            "width": 152.0,
+            "height": 94.00000762939453
         }
     },
     "m_Slots": [
@@ -11527,7 +11527,7 @@
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
-        "y": 1.0
+        "y": 5.0
     }
 }
 
@@ -11965,8 +11965,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 1991.0,
-            "y": 466.0000305175781,
+            "x": 2036.0,
+            "y": 466.0,
             "width": 159.0,
             "height": 34.0
         }
