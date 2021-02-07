@@ -14,8 +14,11 @@ namespace SBC {
         [SerializeField] bool InvertMouseX = false;
         [SerializeField] bool InvertMouseY = false;
         [Space]
+        [SerializeField] TankRound ammo;
+        [Space]
         [SerializeField] Transform turretTransform;
         [SerializeField] Transform cannonTransform;
+        [SerializeField] Transform cannonTipTransform;
         [SerializeField] Transform cam;
 
         // Toggle mouse control
@@ -23,6 +26,7 @@ namespace SBC {
 
         private float mXd;
         private float mYd;
+        private bool fire;
 
         private float cannon_angle = 0f;
 
@@ -51,14 +55,24 @@ namespace SBC {
             // Rotate the cannon and camera with the mouse Y delta.
             cannon_angle = Mathf.Clamp( cannon_angle + mYd , -MAX_CANNON_ANGLE , MAX_CANNON_ANGLE );
             UpdateCannonAngle();
+
+            // Player has fired this frame. Instantiate ammo and call shoot.
+            if (fire) {
+                TankRound round = Instantiate(ammo);
+                round.Shoot( cannonTipTransform.position , cannonTipTransform.forward , 250f ) ;
+			}
         }
 
         // Get mouse delta values for this frame.
         void GetMouseDelta() {
+            // Mouse movement.
             mXd = Time.deltaTime * mouseXSensitivity * Input.GetAxis( "Mouse X" );
             if ( InvertMouseX ) mXd *= -1;
             mYd = Time.deltaTime * mouseYSensitivity * Input.GetAxis( "Mouse Y" );
             if ( !InvertMouseY ) mYd *= -1;
+
+            // Mouse click.
+            fire = Input.GetButtonDown( "Fire1" );
 		}
 
         // Take arbitrary float angle value and apply it to quaternion rotation, apply it to cannon and camera.
