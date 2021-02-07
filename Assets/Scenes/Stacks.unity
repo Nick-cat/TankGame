@@ -927,11 +927,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4841308514a010c4688cbe26c478aff5, type: 2}
     - target: {fileID: 2814932708221376481, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: tankSpeed
-      value: 1500
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 2814932708221376481, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: rotateSpeed
-      value: 50
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3877776766204771783, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_Name
