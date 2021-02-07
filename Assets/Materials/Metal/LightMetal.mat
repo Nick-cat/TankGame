@@ -108,8 +108,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Contrast: 1
     - RimBlend: 0.37
     - RimSize: 0.35
+    - Saturation: 1
     - ShadowBlend: 0
     - ShadowSize: 0.1
     - _AlphaClip: 0
@@ -141,6 +143,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - normalStrength: 0
     m_Colors:
     - RimColour: {r: 1, g: 1, b: 1, a: 0}
     - ShadowColour: {r: 0.6, g: 0.6746702, b: 0.7176471, a: 0}
@@ -152,7 +155,7 @@ Material:
     - _SPECULAR_COLOR: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - textureTiling: {r: 1, g: 1, b: 0, a: 0}
-    - tint: {r: 0.5, g: 0.4693396, b: 0.4693396, a: 1}
+    - tint: {r: 0.3207547, g: 0.3137517, b: 0.30713776, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2215722341846935901
 MonoBehaviour:
