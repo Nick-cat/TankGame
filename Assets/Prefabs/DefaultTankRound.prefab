@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1381607381715729657}
   - component: {fileID: 3954380177523587751}
   - component: {fileID: 728797156114499020}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DefaultTankRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}

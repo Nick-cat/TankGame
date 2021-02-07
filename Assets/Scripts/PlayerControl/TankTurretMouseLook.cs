@@ -19,7 +19,9 @@ namespace SBC {
         [SerializeField] Transform turretTransform;
         [SerializeField] Transform cannonTransform;
         [SerializeField] Transform cannonTipTransform;
-        [SerializeField] Transform cam;
+        [SerializeField] Transform camParent;
+        [SerializeField] Camera cam;
+        [SerializeField] RectTransform crosshair;
 
         // Toggle mouse control
         private bool mouseOn = true;
@@ -37,7 +39,7 @@ namespace SBC {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            orig_CameraQuaternion = cam.localRotation;
+            orig_CameraQuaternion = camParent.localRotation;
         }
 
         // Update is called once per frame
@@ -61,6 +63,12 @@ namespace SBC {
                 TankRound round = Instantiate(ammo);
                 round.Shoot( cannonTipTransform.position , cannonTipTransform.forward , 250f ) ;
 			}
+
+            RaycastHit hit;
+            if (Physics.Raycast(cannonTipTransform.position, cannonTipTransform.forward, out hit, 500f, ~(1 << 11))) {
+                crosshair.position = cam.WorldToScreenPoint( hit.point );
+                crosshair.localScale = Vector3.one * Mathf.Lerp( 0.3f , 1f , 200f / hit.distance );
+			}
         }
 
         // Get mouse delta values for this frame.
@@ -81,8 +89,8 @@ namespace SBC {
             cannonTransform.localRotation = Quaternion.identity;
             cannonTransform.Rotate( new Vector3( cannon_angle , 0 , 0 ) , Space.Self );
             // Camera angles.
-            cam.localRotation = orig_CameraQuaternion;
-            cam.RotateAround( turretTransform.position , turretTransform.right , cannon_angle );
+            camParent.localRotation = orig_CameraQuaternion;
+            camParent.RotateAround( turretTransform.position , turretTransform.right , cannon_angle );
 		}
     }
 }
