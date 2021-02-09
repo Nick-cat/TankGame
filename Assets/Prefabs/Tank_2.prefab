@@ -754,8 +754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f079f0e6a88a6408bef850fa57b48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankSpeed: 4000
-  rotateSpeed: 300
+  tankSpeed: 4500
+  rotateSpeed: 200
   brakeForce: 2000
   rb: {fileID: 2245938511210598322}
 --- !u!54 &2245938511210598322

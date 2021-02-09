@@ -372,6 +372,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0265e09a8b2d9ca40ae8317eb0ab216a, type: 2}
+    - target: {fileID: 2814932708221376481, guid: 98cb1dd9b2edf9f46bc210fd6b6196a9, type: 3}
+      propertyPath: rotateSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3877776766204771783, guid: 98cb1dd9b2edf9f46bc210fd6b6196a9, type: 3}
       propertyPath: m_Name
       value: Tank_2

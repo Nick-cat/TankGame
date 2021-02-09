@@ -194,6 +194,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[4]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2245938511210598322, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
+      propertyPath: m_Mass
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3877776766204771783, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_Name
       value: Tank_main
@@ -205,7 +209,7 @@ PrefabInstance:
     - target: {fileID: 7423379824078803826, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 813b32ce4bb8b0f4987eb885ae22e2bb, type: 2}
+      objectReference: {fileID: 2100000, guid: c8244fae8eba89d4181a8a76cc0bbf5b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
 --- !u!1001 &509272234
