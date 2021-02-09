@@ -122,6 +122,7 @@ Material:
     - Vector1_90c61bc17a1d494cbb8eef58353e9e0f: 0
     - Vector1_b30725e17c1d42118927c32deca687e1: 0
     - Vector1_cb88799f2bb14b949251db438d9346a7: 11.33
+    - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 10
     - Vector1_d6eba9a780f14e1aaaa72f4d798798d4: 45
     - _AlphaClip: 0
     - _Blend: 0
@@ -149,6 +150,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - contrast: 1
     - emissionHue: 0
     - emissionMultipler: 0
     - emissionToggle: 0
@@ -159,8 +161,10 @@ Material:
     - normalStrength: 0
     - rimBlend: 0.35
     - rimSize: 0.48
+    - saturation: 1
     - shadowBlend: 0.4
     - shadowSize: 0.01
+    - tileUV: 0
     - waveSpeed: 0.1
     - windDensity: 5
     - windSpeed: 0.1
