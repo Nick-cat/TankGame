@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4665572445380454522}
   - component: {fileID: 7097661337764215007}
+  - component: {fileID: 6108188468242769035}
   m_Layer: 0
   m_Name: LowPolyTree
   m_TagString: Untagged
@@ -59,6 +60,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 3407012541264351177}
   m_Enabled: 1
+--- !u!136 &6108188468242769035
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565137499671454920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.0344486
+  m_Height: 18.916332
+  m_Direction: 1
+  m_Center: {x: -0.03041315, y: 6.418501, z: -0.03918791}
 --- !u!1001 &4073987978303525709
 PrefabInstance:
   m_ObjectHideFlags: 0
