@@ -136,7 +136,7 @@ Material:
     - noise1Celldensity: 0.25
     - normalRotate: 0
     - normalStrength: 1
-    - rimBlend: 0.35
+    - rimBlend: 0.291
     - rimSize: 0.4
     - saturation: 1
     - shadowBlend: 0.1
