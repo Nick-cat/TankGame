@@ -97,6 +97,7 @@ Material:
     - HighlightMix: 0.25
     - Vector1_0aa4b202278a44e0b76393f53a5cc7dc: 0.35
     - Vector1_323bb96e315645b6b0015edac5dd46a5: 0
+    - Vector1_370faab0ed204cae8573a5cf9c254a15: 1
     - Vector1_90c61bc17a1d494cbb8eef58353e9e0f: 0
     - Vector1_b4f91df6446344f89d1e25195969b9fd: 0.1
     - Vector1_c06160f1d9b947cfaca64592760b4860: 0.4
@@ -139,7 +140,8 @@ Material:
     - rimBlend: 0.291
     - rimSize: 0.4
     - saturation: 1
-    - shadowBlend: 0.1
+    - shadowBlend: 0.05
+    - shadowNormal: 0.5
     - shadowSize: 0
     - tileUV: 1
     - waveSpeed: 0.1

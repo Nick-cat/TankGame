@@ -122,6 +122,7 @@ Material:
     - noise1Celldensity: 0
     - normalRotate: 0
     - normalStrength: 1
+    - shadowNormals: 1
     - waveSpeed: 0.1
     m_Colors:
     - Gradient0_Colour0: {r: 0.20558918, g: 0.22022957, b: 0.26415086, a: 1}
