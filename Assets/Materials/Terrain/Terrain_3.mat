@@ -122,6 +122,7 @@ Material:
     - rimSize: 0.22
     - saturation: 1
     - shadowBlend: 0.1
+    - shadowNormal: 0.5
     - shadowSize: 0
     - tileUV: 0
     - waveSpeed: 0.1
