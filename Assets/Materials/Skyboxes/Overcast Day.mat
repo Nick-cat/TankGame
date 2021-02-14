@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Overcast Day
+  m_Shader: {fileID: -6465566751694194690, guid: 5e9b6c2926fb9c444990061c2ec933da, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _SampleTexture2D_e3862e9b685241e8b431bfd0d13c6a90_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 90dd0807d7063d5489d0206c9d9f707a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Boolean_5cc80289a9ad44a5afbb8518232fd89c: 0
+    - Vector1_43c215c11fcc4abaafbe8d3a984dd794: 0.239
+    - Vector1_4abb8ef035fa40a6bd1dd8611169c194: 0
+    - Vector1_5054eaf748bc4cc1bffea995e6489c71: 0.0339
+    - Vector1_80fe0962a5a84d3689163824b812545a: 0.1
+    - Vector1_82e7743aa35144a687d96c642d960452: 5
+    - Vector1_9d177bcf0bff4059ac16a10971c18934: 0.0536
+    - Vector1_9ef2e4f6d0204b1b9cd9a4cbdf13434c: 1
+    - Vector1_d140666937e64d73b3d777c1847451fc: 1
+    - Vector1_d978ed2cd6644835889a634f681b77bc: 0.12
+    - Vector1_f4dace2c4c0a45599adca936679d23c8: 0
+    - cloudCutoff: 0.0122
+    - cloudOpacity: 0
+    - cloudScale: 0.1
+    - cloudSpeedX: 0
+    - cloudSpeedZ: -0.05
+    - fuzzyness: 0.153
+    - skyIntensity: 1.25
+    - sunExponent: 0.14
+    - sunIntensity: 0.3
+    - sunRadiusA: 0.0197
+    - sunRadiusB: 0.0291
+    m_Colors:
+    - Color_043f11472f284d18ae5af3e84309f239: {r: 1, g: 0.95686275, b: 0.8392158, a: 1}
+    - Color_13bb49231ffd444cb72a0c1e16d0704a: {r: 0.8117647, g: 0.6313726, b: 0.6313726, a: 0}
+    - Color_4156357c19e540939f84fec35264e667: {r: 0.9528302, g: 0.9303578, b: 0.9303578, a: 0}
+    - Color_745ac2097f474fbdba85df956c22c86d: {r: 0.7735849, g: 0.7042542, b: 0.7042542, a: 0}
+    - Color_91374ea7ffcd4617bf2e2e6024a8a0eb: {r: 0.2509804, g: 0.43529412, b: 0.54901963, a: 0}
+    - Color_95dc42693fd94b32b449efa212a01cc3: {r: 0.03239589, g: 0.7303073, b: 0.9811321, a: 0}
+    - Color_aba0e3bb140346b38f856d036a525302: {r: 0.6574849, g: 0.6950316, b: 0.7075472, a: 0}
+    - Color_cd6e1e115419418a8aa6664c7721202c: {r: 0.49411765, g: 0.64705884, b: 0.67058825, a: 0}
+    - Vector2_3ad1bfb41e094d1f9f682078bca95f6f: {r: 10, g: 2, b: 0, a: 0}
+    - Vector2_947eb7afa44142a4aff20836db9fb151: {r: 0.03, g: 0.05, b: 0, a: 0}
+    - Vector3_ce83638a9a944265a232313d31fea6ab: {r: -0.77, g: 0, b: 0.75, a: 0}
+    - bottomColour: {r: 0.2874409, g: 0.26225072, b: 0.2015563, a: 1}
+    - cloudEdge: {r: 0.3679245, g: 0.30024028, b: 0.30024028, a: 1}
+    - cloudMain: {r: 0.2607922, g: 0.21035598, b: 0.21035598, a: 1}
+    - midColour: {r: 0.21568628, g: 0.21568628, b: 0.20784314, a: 1}
+    - topColour: {r: 0.105882354, g: 0.13333334, b: 0.24313726, a: 1}
+  m_BuildTextureStacks: []

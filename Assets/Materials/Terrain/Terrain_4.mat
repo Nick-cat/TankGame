@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SimpleWater
-  m_Shader: {fileID: -6465566751694194690, guid: aba0342d59b9ae147bff5da52f08571f, type: 3}
+  m_Name: Terrain_4
+  m_Shader: {fileID: -6465566751694194690, guid: ab891102d2d55c541b81aa35b9027fa1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,14 +19,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_88C027AC:
-        m_Texture: {fileID: 2800000, guid: 18db65caee47b8140b8dabf8fdc2cf46, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_96544d7774b4437ba5d46793d8cd66f5:
-        m_Texture: {fileID: 2800000, guid: 18db65caee47b8140b8dabf8fdc2cf46, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -71,6 +63,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - normalMap:
+        m_Texture: {fileID: 2800000, guid: 107aefcd058202846894304ee12ddb9f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -84,15 +80,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2175BD43: 1
-    - Vector1_305bc3fbbd3441778ceebb7249d592f6: 1
-    - Vector1_46741698fe8b4a288809b8e7303eb2e6: -0.25
-    - Vector1_5d2460d538d74ec091f811e338e9a7d3: 0.25
-    - Vector1_61d86371d5ef47a09842be6fd6e59301: 0.1
-    - Vector1_782ccf3cdcd84c1e901990dd8af182ec: -0.25
-    - Vector1_85c7d6772fd84c48a7eaa6f750c8f639: 10
-    - Vector1_a91798d7014c4b8e925f7d7dc06aee71: 5
-    - Vector1_ffd671a0ea2a46f690e3d43416fff7fb: 0
+    - HighlightMix: 0.1
+    - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 10
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -119,28 +108,43 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - waveDensity: 5
-    - waveDensityX: 5
-    - waveDensityY: 1
-    - waveDensityZ: 1
-    - waveSpeed: 0.05
-    - waveStrengthX: 5
-    - waveStrengthY: 0.25
-    - waveStrengthZ: -5
+    - contrast: 1.1
+    - emissionHue: 1
+    - emissionMultipler: 1
+    - emissionToggle: 0
+    - highlightRotation: 0
+    - noise0Celldensity: 1
+    - noise1Celldensity: 0.25
+    - normalStrength: 1
+    - rimBlend: 0.346
+    - rimSize: 0.2
+    - saturation: 1.1
+    - shadowBlend: 0
+    - shadowNormal: 0.5
+    - shadowSize: 0
+    - tileUV: 0
+    - waveSpeed: 0
     m_Colors:
-    - Color_E848650D: {r: 0, g: 0, b: 0, a: 0}
-    - Color_f0efd853a3ab4b8b959f7538b19d4fee: {r: 0.35555342, g: 0.42195824, b: 0.8867924, a: 0.36862746}
-    - Vector2_6FDEC14D: {r: 0, g: 1, b: 0, a: 0}
-    - Vector2_834A1E9F: {r: 0, g: 0, b: 0, a: 0}
-    - Vector3_7385231b5ff54da4bbefa1d7da4e6c26: {r: 0, g: 0.5, b: 0, a: 0}
-    - Vector3_ad8fa35f5c55442181d04212a0b85bbb: {r: 5, g: 5, b: 5, a: 0}
+    - Gradient0_Colour0: {r: 0.31479177, g: 0.3666963, b: 0.509434, a: 1}
+    - Gradient0_Colour1: {r: 0.3190192, g: 0.5104369, b: 0.6320754, a: 1}
+    - Gradient1_Colour0: {r: 0.15699537, g: 0.19869064, b: 0.2264151, a: 1}
+    - Gradient1_Colour1: {r: 0.43529412, g: 0.38272202, b: 0.31764707, a: 1}
+    - HighlightColor: {r: 0.52180487, g: 0.592791, b: 0.7735849, a: 0}
+    - HighlightDetail: {r: 2, g: 1, b: 0, a: 0}
+    - HighlightScale: {r: 0.5, g: 1, b: 0, a: 0}
+    - Vector3_0623b63218574ebb99a43fe0a59c1435: {r: 0, g: 0, b: 0, a: 0}
+    - Vector3_25a6d00effc9440b838b7cf5f9ac1c2b: {r: 5, g: 5, b: 5, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - colour: {r: 0.35686263, g: 0.52090293, b: 0.759, a: 0.33333334}
+    - noise0: {r: 1, g: 1, b: 0, a: 0}
+    - noise1: {r: 0.25, g: 0.5, b: 0, a: 0}
+    - normalScale: {r: 16, g: 16, b: 0, a: 0}
+    - rimColour: {r: 0.23137257, g: 0.37647063, b: 0.49411768, a: 0}
+    - shadowColour: {r: 0.26666668, g: 0.28627452, b: 0.25882354, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &2975780352688401928
+--- !u!114 &4431451315676723208
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
