@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Overcast Day
+  m_Name: Overcast Night
   m_Shader: {fileID: -6465566751694194690, guid: 5e9b6c2926fb9c444990061c2ec933da, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -48,7 +48,7 @@ Material:
     - Vector1_d978ed2cd6644835889a634f681b77bc: 0.12
     - Vector1_f4dace2c4c0a45599adca936679d23c8: 0
     - cloudCutoff: 0.0122
-    - cloudOpacity: 0
+    - cloudOpacity: 1
     - cloudScale: 0.1
     - cloudSpeedX: 0
     - cloudSpeedZ: -0.05
@@ -70,9 +70,9 @@ Material:
     - Vector2_3ad1bfb41e094d1f9f682078bca95f6f: {r: 10, g: 2, b: 0, a: 0}
     - Vector2_947eb7afa44142a4aff20836db9fb151: {r: 0.03, g: 0.05, b: 0, a: 0}
     - Vector3_ce83638a9a944265a232313d31fea6ab: {r: -0.77, g: 0, b: 0.75, a: 0}
-    - bottomColour: {r: 0.2874409, g: 0.26225072, b: 0.2015563, a: 1}
-    - cloudEdge: {r: 0.3679245, g: 0.30024028, b: 0.30024028, a: 1}
-    - cloudMain: {r: 0.2607922, g: 0.21035598, b: 0.21035598, a: 1}
-    - midColour: {r: 0.21568628, g: 0.21568628, b: 0.20784314, a: 1}
-    - topColour: {r: 0.105882354, g: 0.13333334, b: 0.24313726, a: 1}
+    - bottomColour: {r: 0, g: 0, b: 0, a: 1}
+    - cloudEdge: {r: 0.12028304, g: 0.13073045, b: 0.16037738, a: 1}
+    - cloudMain: {r: 0.05882353, g: 0.060784314, b: 0.06666667, a: 1}
+    - midColour: {r: 0.031683873, g: 0.040565643, b: 0.0754717, a: 1}
+    - topColour: {r: 0.003782485, g: 0.0092059, b: 0.047169805, a: 1}
   m_BuildTextureStacks: []

@@ -80,7 +80,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - HighlightMix: 0.1
+    - HighlightMix: 0.2
     - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 10
     - _AlphaClip: 0
     - _Blend: 0
@@ -115,7 +115,7 @@ Material:
     - highlightRotation: 0
     - noise0Celldensity: 1
     - noise1Celldensity: 0.25
-    - normalStrength: 1
+    - normalStrength: 1.14
     - rimBlend: 0.346
     - rimSize: 0.2
     - saturation: 1.1
@@ -125,13 +125,13 @@ Material:
     - tileUV: 0
     - waveSpeed: 0
     m_Colors:
-    - Gradient0_Colour0: {r: 0.31479177, g: 0.3666963, b: 0.509434, a: 1}
-    - Gradient0_Colour1: {r: 0.3190192, g: 0.5104369, b: 0.6320754, a: 1}
-    - Gradient1_Colour0: {r: 0.15699537, g: 0.19869064, b: 0.2264151, a: 1}
-    - Gradient1_Colour1: {r: 0.43529412, g: 0.38272202, b: 0.31764707, a: 1}
-    - HighlightColor: {r: 0.52180487, g: 0.592791, b: 0.7735849, a: 0}
-    - HighlightDetail: {r: 2, g: 1, b: 0, a: 0}
-    - HighlightScale: {r: 0.5, g: 1, b: 0, a: 0}
+    - Gradient0_Colour0: {r: 0.4811321, g: 0.4788626, b: 0.4788626, a: 1}
+    - Gradient0_Colour1: {r: 0.41176474, g: 0.454902, b: 0.47058827, a: 1}
+    - Gradient1_Colour0: {r: 0.39607847, g: 0.39607847, b: 0.39607847, a: 1}
+    - Gradient1_Colour1: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
+    - HighlightColor: {r: 0.28627452, g: 0.4431373, b: 0.28627452, a: 1}
+    - HighlightDetail: {r: 2, g: 4, b: 0, a: 0}
+    - HighlightScale: {r: 1, g: 1, b: 0, a: 0}
     - Vector3_0623b63218574ebb99a43fe0a59c1435: {r: 0, g: 0, b: 0, a: 0}
     - Vector3_25a6d00effc9440b838b7cf5f9ac1c2b: {r: 5, g: 5, b: 5, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

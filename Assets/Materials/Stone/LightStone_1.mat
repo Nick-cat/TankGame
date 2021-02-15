@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Stone Bricks 3
+  m_Name: LightStone_1
   m_Shader: {fileID: -6465566751694194690, guid: ab891102d2d55c541b81aa35b9027fa1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -103,7 +103,7 @@ Material:
     m_Floats:
     - Boolean_31684d462b3a47a4bb49564ba769ab0f: 1
     - Boolean_706ac75a2b3d479aa2f0f779829c24af: 1
-    - HighlightMix: 2.22
+    - HighlightMix: 0.54
     - Vector1_0aa4b202278a44e0b76393f53a5cc7dc: 0.35
     - Vector1_322a5977c997464ba8029bfcd10386b4: 5
     - Vector1_323bb96e315645b6b0015edac5dd46a5: 0
@@ -151,11 +151,11 @@ Material:
     - noise0Celldensity: 0.5
     - noise1Celldensity: 0.5
     - normalRotate: 10
-    - normalStrength: 4
+    - normalStrength: 0.5
     - rimBlend: 0.35
     - rimSize: 0.43
     - saturation: 1
-    - shadowBlend: 0.05
+    - shadowBlend: 0.1
     - shadowNormal: 0
     - shadowSize: 0
     - tileUV: 0
@@ -176,7 +176,7 @@ Material:
     - Gradient0_Colour1: {r: 0.41162336, g: 0.4560474, b: 0.4716981, a: 1}
     - Gradient1_Colour0: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
     - Gradient1_Colour1: {r: 0.3301887, g: 0.3286312, b: 0.3286312, a: 1}
-    - HighlightColor: {r: 0.35686275, g: 0.3882353, b: 0.3750224, a: 1}
+    - HighlightColor: {r: 0.28653434, g: 0.4433962, b: 0.28653434, a: 1}
     - HighlightDetail: {r: 2, g: 4, b: 0, a: 0}
     - HighlightScale: {r: 1, g: 1, b: 0, a: 0}
     - NormalScale: {r: 10, g: 10, b: 0, a: 0}
@@ -195,7 +195,7 @@ Material:
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - noise0: {r: 5, g: 5, b: 0, a: 0}
     - noise1: {r: 0.25, g: 0.25, b: 0, a: 0}
-    - normalScale: {r: 32, g: 32, b: 0, a: 0}
+    - normalScale: {r: 10, g: 10, b: 0, a: 0}
     - rimColour: {r: 0.7725491, g: 0.6901961, b: 0.6901961, a: 0}
     - shadowColour: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []

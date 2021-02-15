@@ -179,9 +179,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 2f20607a91fcd7649aa711fbe9e4fc90, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2f20607a91fcd7649aa711fbe9e4fc90, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 41dbcfa5dcfef254b833762c89b1c261, type: 2}
+      objectReference: {fileID: 2100000, guid: 8f297e8a43d8d894c9a30295f95f95d0, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 2f20607a91fcd7649aa711fbe9e4fc90, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 963de8fe478927140be98b31061a3f38, type: 2}
     - target: {fileID: 919132149155446097, guid: 2f20607a91fcd7649aa711fbe9e4fc90, type: 3}
       propertyPath: m_Name
       value: WaterWall_1 (1)
@@ -246,7 +254,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 2f20607a91fcd7649aa711fbe9e4fc90, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 41dbcfa5dcfef254b833762c89b1c261, type: 2}
+      objectReference: {fileID: 2100000, guid: 8f297e8a43d8d894c9a30295f95f95d0, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 2f20607a91fcd7649aa711fbe9e4fc90, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 963de8fe478927140be98b31061a3f38, type: 2}
     - target: {fileID: 919132149155446097, guid: 2f20607a91fcd7649aa711fbe9e4fc90, type: 3}
       propertyPath: m_Name
       value: WaterWall_1
@@ -5152,7 +5164,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: abe3b6b4b20a7194a82ed89174228c09, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 41dbcfa5dcfef254b833762c89b1c261, type: 2}
+      objectReference: {fileID: 2100000, guid: 8f297e8a43d8d894c9a30295f95f95d0, type: 2}
+    - target: {fileID: -7511558181221131132, guid: abe3b6b4b20a7194a82ed89174228c09, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 963de8fe478927140be98b31061a3f38, type: 2}
     - target: {fileID: 919132149155446097, guid: abe3b6b4b20a7194a82ed89174228c09, type: 3}
       propertyPath: m_Name
       value: WaterWall_2
@@ -14804,7 +14820,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: bb3861ba32d4fc942ac25e9e888f5b22, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e30456c6c0597ea4681b7a9256837ba3, type: 2}
+      objectReference: {fileID: 2100000, guid: 8f297e8a43d8d894c9a30295f95f95d0, type: 2}
     - target: {fileID: -7511558181221131132, guid: bb3861ba32d4fc942ac25e9e888f5b22, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -20248,7 +20264,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: abe3b6b4b20a7194a82ed89174228c09, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 41dbcfa5dcfef254b833762c89b1c261, type: 2}
+      objectReference: {fileID: 2100000, guid: 8f297e8a43d8d894c9a30295f95f95d0, type: 2}
+    - target: {fileID: -7511558181221131132, guid: abe3b6b4b20a7194a82ed89174228c09, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 963de8fe478927140be98b31061a3f38, type: 2}
     - target: {fileID: 919132149155446097, guid: abe3b6b4b20a7194a82ed89174228c09, type: 3}
       propertyPath: m_Name
       value: WaterWall_2 (1)

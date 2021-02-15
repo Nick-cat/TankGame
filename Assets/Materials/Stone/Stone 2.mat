@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Stone Bricks 2
+  m_Name: Stone 2
   m_Shader: {fileID: -6465566751694194690, guid: ab891102d2d55c541b81aa35b9027fa1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -85,7 +85,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - normalMap:
-        m_Texture: {fileID: 2800000, guid: 2ee37201ce941184eaeb5fb2b877911f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 47f9d5fb956c2e24b9c5f364819c6e96, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -101,9 +101,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Boolean_31684d462b3a47a4bb49564ba769ab0f: 1
-    - Boolean_706ac75a2b3d479aa2f0f779829c24af: 1
-    - HighlightMix: 0.4
+    - HighlightMix: 4.35
     - Vector1_0aa4b202278a44e0b76393f53a5cc7dc: 0.35
     - Vector1_322a5977c997464ba8029bfcd10386b4: 5
     - Vector1_323bb96e315645b6b0015edac5dd46a5: 0
@@ -115,7 +113,7 @@ Material:
     - Vector1_b4f91df6446344f89d1e25195969b9fd: 0.1
     - Vector1_c06160f1d9b947cfaca64592760b4860: 0.43
     - Vector1_cb88799f2bb14b949251db438d9346a7: 1
-    - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 30
+    - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 10
     - Vector1_d6eba9a780f14e1aaaa72f4d798798d4: 10
     - _AlphaClip: 0
     - _Blend: 0
@@ -148,22 +146,21 @@ Material:
     - emissionMultipler: 0
     - emissionToggle: 0
     - highlightRotation: 0
-    - noise0Celldensity: 0.5
-    - noise1Celldensity: 0.5
+    - noise0Celldensity: 1
+    - noise1Celldensity: 1
     - normalRotate: 10
-    - normalStrength: 2
-    - rimBlend: 1
+    - normalStrength: 0.2
+    - rimBlend: 0.35
     - rimSize: 0.43
     - saturation: 1
     - shadowBlend: 0.1
-    - shadowNormal: 1
+    - shadowNormal: 0.25
     - shadowSize: 0
     - tileUV: 0
     - waveSpeed: 0.1
     - windDensity: 5
     - windSpeed: 0.1
     - windStrength: 0
-    - worldUV: 0
     m_Colors:
     - Color_11ce3ab1bb464bc5b8b520675d7bbc9a: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
     - Color_15f4a73e071f4aa28e3f0b1a5ff061ef: {r: 0.7735849, g: 0.6896582, b: 0.6896582, a: 0}
@@ -172,13 +169,13 @@ Material:
     - Color_90e7a4db6e164ace8b4287ac0de2d215: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
     - Color_998a863085434630b3b8dbcc190263dc: {r: 0.20714667, g: 0.23889945, b: 0.3301887, a: 1}
     - Color_b5840d6591814bb5812e29843e1aa744: {r: 0.33962262, g: 0.3287856, b: 0.30277675, a: 1}
-    - Gradient0_Colour0: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
-    - Gradient0_Colour1: {r: 0.41162336, g: 0.4560474, b: 0.4716981, a: 1}
-    - Gradient1_Colour0: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
-    - Gradient1_Colour1: {r: 0.3301887, g: 0.3286312, b: 0.3286312, a: 1}
-    - HighlightColor: {r: 0.28653434, g: 0.4433962, b: 0.28653434, a: 1}
-    - HighlightDetail: {r: 2, g: 4, b: 0, a: 0}
-    - HighlightScale: {r: 1, g: 1, b: 0, a: 0}
+    - Gradient0_Colour0: {r: 0.20784315, g: 0.2392157, b: 0.32941177, a: 1}
+    - Gradient0_Colour1: {r: 0.5754717, g: 0.54018337, b: 0.54018337, a: 1}
+    - Gradient1_Colour0: {r: 0.3018868, g: 0.29377002, b: 0.2748309, a: 1}
+    - Gradient1_Colour1: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
+    - HighlightColor: {r: 0.21471167, g: 0.22351892, b: 0.23584908, a: 0}
+    - HighlightDetail: {r: 1, g: 4, b: 0, a: 0}
+    - HighlightScale: {r: 3, g: 3, b: 0, a: 0}
     - NormalScale: {r: 10, g: 10, b: 0, a: 0}
     - Vector2_6fe9d67c7bc24914851eaa1d6e8ecf54: {r: 3, g: 3, b: 0, a: 0}
     - Vector2_a193f463bafc41fa8481cdcdbd335c36: {r: 1, g: 4, b: 0, a: 0}
@@ -193,9 +190,9 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - noise0: {r: 5, g: 5, b: 0, a: 0}
-    - noise1: {r: 0.25, g: 0.25, b: 0, a: 0}
-    - normalScale: {r: 16, g: 16, b: 0, a: 0}
-    - rimColour: {r: 0, g: 0, b: 0, a: 0}
-    - shadowColour: {r: 0.4528302, g: 0.3780705, b: 0.3780705, a: 0}
+    - noise0: {r: 10, g: 10, b: 0, a: 0}
+    - noise1: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - normalScale: {r: 10, g: 10, b: 0, a: 0}
+    - rimColour: {r: 0.7725491, g: 0.6901961, b: 0.6901961, a: 0}
+    - shadowColour: {r: 0.5921569, g: 0.6509804, b: 0.6392157, a: 0}
   m_BuildTextureStacks: []
