@@ -11,10 +11,15 @@ namespace SBC
         public float rotateSpeed;
         public float brakeForce;
         public float maxVelocity;
-        public Rigidbody rb;
+        private Rigidbody rb;
         public float distanceToGround = .5f;
         public LayerMask ground;
         public Transform rayPoint;
+
+        private void Start()
+        {
+            rb = GetComponent <Rigidbody>();
+        }
         void FixedUpdate()
         {
             float forwards = Input.GetAxis("Vertical");
@@ -41,12 +46,11 @@ namespace SBC
                 rb.drag = 0;
             }
         }
-
         bool isGrounded(){
             //cast a ray from center of body to down direction, check if anything intersects the bottom of the body.
             RaycastHit hit;
             bool val = Physics.Raycast(rayPoint.position, -transform.up, out hit, distanceToGround, ground);
-            return val;
+           return val;
         }
     }
 }
