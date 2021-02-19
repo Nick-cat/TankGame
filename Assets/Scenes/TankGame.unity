@@ -267,6 +267,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1108030504 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4317496733733423152, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
+  m_PrefabInstance: {fileID: 1454867696}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1454867696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,6 +321,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 107650126704451574, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814932708221376481, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
+      propertyPath: rayPoint
+      value: 
+      objectReference: {fileID: 1108030504}
+    - target: {fileID: 2814932708221376481, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
+      propertyPath: tankSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814932708221376481, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
+      propertyPath: brakeForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814932708221376481, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
+      propertyPath: maxVelocity
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814932708221376481, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
+      propertyPath: rotateSpeed
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814932708221376481, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
+      propertyPath: centerOfMass.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814932708221376481, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
+      propertyPath: centerOfMass.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877776766204771783, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}

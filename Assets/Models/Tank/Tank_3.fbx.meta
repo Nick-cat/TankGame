@@ -2,7 +2,31 @@ fileFormatVersion: 2
 guid: 61ca216f91fc8184c9b7178aafbdcc91
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 456688892062127283
+    second: TurretBody_3|ArmatureAction
+  - first:
+      74: 8763614912956755240
+    second: TurretBody_3|ArmatureAction.001
+  - first:
+      74: -1866594670368853430
+    second: Cannon_3|ArmatureAction
+  - first:
+      74: 5421309597974761637
+    second: Cannon_3|ArmatureAction.001
+  - first:
+      74: -4002422151209088307
+    second: TankTreads_L|ArmatureAction
+  - first:
+      74: 1493070106402809769
+    second: TankTreads_L|ArmatureAction.001
+  - first:
+      74: -3502695780535463814
+    second: TankTreads_R|ArmatureAction
+  - first:
+      74: -1125532806208035242
+    second: TankTreads_R|ArmatureAction.001
   externalObjects: {}
   materials:
     materialImportMode: 2
