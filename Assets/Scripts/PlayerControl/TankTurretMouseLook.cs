@@ -22,6 +22,7 @@ namespace SBC {
         [SerializeField] Transform camParent;
         [SerializeField] Camera cam;
         [SerializeField] RectTransform crosshair;
+        [SerializeField] FireSoundHandler fireSoundHandler;
 
         // Toggle mouse control
         private bool mouseOn = true;
@@ -34,12 +35,15 @@ namespace SBC {
 
         private Quaternion orig_CameraQuaternion;
 
+        private Rigidbody rb;
+
         // Start is called before the first frame update
         void Start () {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
             orig_CameraQuaternion = camParent.localRotation;
+            rb = GetComponent<Rigidbody>();
         }
 
         // Update is called once per frame
@@ -62,6 +66,9 @@ namespace SBC {
             if (fire) {
                 TankRound round = Instantiate(ammo);
                 round.Shoot( cannonTipTransform.position , cannonTipTransform.forward , 250f ) ;
+                //rb.AddExplosionForce( 100f , cannonTipTransform.localPosition, 50f );
+                rb.AddForceAtPosition( -cannonTipTransform.forward * 3000 , cannonTipTransform.position );
+                if ( fireSoundHandler != null ) fireSoundHandler.Fire();
 			}
 
             RaycastHit hit;
