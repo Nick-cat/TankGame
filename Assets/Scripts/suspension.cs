@@ -6,12 +6,6 @@ namespace SBC
 {
     public class suspension : MonoBehaviour
     {
-        private Rigidbody rb;
-
-        public float restLength;
-        public float springTravel;
-        public float springStiffness;
-        public float damperStiffness;
         private float minlength;
         private float maxLength;
         private float lastLength;
@@ -19,35 +13,42 @@ namespace SBC
         private float springForce;
         private float damperForce;
         private float springVelocity;
-        public float wheelRadius;
         private Vector3 suspensionForce;
+        private Rigidbody rb;
 
+
+        //get suspension values from tank controller
+        public TankController tank;
         
-
 
         void Start()
         {
-            rb = transform.root.GetComponent<Rigidbody>();
-
-            minlength = restLength - springTravel;
-            maxLength = restLength + springTravel;
+            //get tank rigidbody
+            rb = transform.root.GetComponent <Rigidbody>();
+            minlength = tank.suspensionHeight - tank.springTravel;
+            maxLength = tank.suspensionHeight + tank.springTravel;
+            
         }
         void FixedUpdate()
         {
-            if(Physics.Raycast(transform.position, -transform.up, out RaycastHit Hit, maxLength + wheelRadius))
+            
+            //this provides suspension but does not actually move the wheels
+            LayerMask ground = LayerMask.GetMask("Ground");
+            if (Physics.Raycast(transform.position, -transform.up, out RaycastHit Hit, maxLength + tank.wheelRadius, ground))
             {
                 lastLength = springLength;
-                springLength = Hit.distance - wheelRadius;
+                springLength = Hit.distance - tank.wheelRadius;
                 springLength = Mathf.Clamp(springLength, minlength, maxLength);
                 springVelocity = (lastLength - springLength) / Time.fixedDeltaTime;
-                springForce = springStiffness * (restLength - springLength);
-                damperForce = damperStiffness * springVelocity;
+                springForce = tank.springStiffness * (tank.suspensionHeight - springLength);
+                damperForce = tank.damperStiffness * springVelocity;
 
                 suspensionForce = (springForce + damperForce) * transform.up;
 
                 rb.AddForceAtPosition(suspensionForce, Hit.point);
-
-            }            
+                
+            }
+            Debug.DrawRay(transform.position, -transform.up * Hit.distance, Color.green);
         }
     }
 }

@@ -341,7 +341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2814932708221376481, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: rotateSpeed
-      value: 500
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2814932708221376481, guid: 40555a4b891c1664fb356eb8527d22c1, type: 3}
       propertyPath: centerOfMass.y
