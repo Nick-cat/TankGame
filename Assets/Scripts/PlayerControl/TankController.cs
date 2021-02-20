@@ -9,7 +9,7 @@ namespace SBC
     {
         public float tankSpeed;
         public float rotateSpeed;
-        public float brakeForce;
+        public float brakeForce = 2f;
         public float maxVelocity;
         public Vector3 centerOfMass;
         private Rigidbody rb;
@@ -39,11 +39,11 @@ namespace SBC
             float rotate = Input.GetAxis("Horizontal");
             bool brake = Input.GetButton("Brake");
 
-            
 
+            rb.AddForce(Vector3.up * -customGravity * 100f);
             if (isGrounded())
             {
-                if (rb.velocity.sqrMagnitude < maxVelocity)
+                if (rb.velocity.magnitude < maxVelocity)
                 {
                     rb.drag = groundDrag;
 
@@ -55,22 +55,23 @@ namespace SBC
                 if (brake)
                 {
                     rb.angularDrag = 1.5f;
-                    rb.drag = 2f;
+                    rb.drag = brakeForce;
                     // Experimental, comment this out if tank is too buggy
                     if (rb.velocity.sqrMagnitude > 2f)
                     {
-                        rb.angularVelocity = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime, 0f);
+                        //rb.angularVelocity = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime, 0f);
                     }
                 }
                 else
                 {
-                    rb.angularDrag = 0;
-                    rb.drag = 0;
+                    //rb.angularDrag = 0;
+                    //rb.drag = 0;
                 }
             }
             else {
-                rb.drag = airDrag;
-                rb.AddForce(Vector3.up * -customGravity * 100f);
+                rb.drag = 0;
+                rb.angularDrag = airDrag;
+                
             }
             
             //I think lowering the centre of mass of the tank accomplishes this but I left it in just incase

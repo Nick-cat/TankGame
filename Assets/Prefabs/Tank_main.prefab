@@ -410,7 +410,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d883ce25126005d49860862ddbabfab2, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1160,12 +1160,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f079f0e6a88a6408bef850fa57b48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankSpeed: 4
-  rotateSpeed: 85
-  brakeForce: 2000
-  maxVelocity: 400
+  tankSpeed: 800
+  rotateSpeed: 50
+  brakeForce: 100
+  maxVelocity: 1000
   centerOfMass: {x: 0, y: 0, z: 0}
-  distanceToGround: 0.5
+  distanceToGround: 0.75
   rayPoint: {fileID: 4317496733733423152}
   customGravity: 2
   groundDrag: 3
