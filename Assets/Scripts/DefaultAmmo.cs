@@ -8,18 +8,9 @@ namespace SBC {
         protected AmmoType ammotype = AmmoType.Default;
 
         [SerializeField] private GameObject explosionEffectObject;
-        [SerializeField] float explosionRadius = 2;
-        [SerializeField] float explosionForce = 100;
 
         public override void OnHit () {
-            // Explosion force.
-            Vector3 pos = transform.position;
-            Collider[] cols = Physics.OverlapSphere(pos, explosionRadius);
-            foreach ( Collider c in cols ) {
-                Rigidbody rb = c.attachedRigidbody;
-                if ( rb != null ) rb.AddExplosionForce( explosionForce , pos , explosionRadius , 1.0f );
-            }
-
+            // TODO: Add some explosion effect or something here.
             if ( explosionEffectObject != null ) Instantiate( explosionEffectObject , transform.position , Quaternion.identity );
             Destroy( gameObject );
         }

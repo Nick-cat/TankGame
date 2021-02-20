@@ -376,8 +376,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6310655700743668602}
-  - component: {fileID: 3482541348288706351}
-  - component: {fileID: 1852096006221109457}
   m_Layer: 0
   m_Name: CannonTip
   m_TagString: Untagged
@@ -399,123 +397,6 @@ Transform:
   m_Father: {fileID: 587958507801842346}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &3482541348288706351
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467493453736888378}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d883ce25126005d49860862ddbabfab2, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &1852096006221109457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467493453736888378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6245cd80a16cee499d2e994eb8e821f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunSounds:
-  - {fileID: 8300000, guid: d883ce25126005d49860862ddbabfab2, type: 3}
-  - {fileID: 8300000, guid: b2d3127dc1e1ba943a6dccb2ce0bb7f6, type: 3}
-  - {fileID: 8300000, guid: f0c3cdb9f5379574999e778580bb4880, type: 3}
-  - {fileID: 8300000, guid: 1bac966f0e224964a9f1d9bcf29e4b37, type: 3}
-  - {fileID: 8300000, guid: ac9229078340fc644ab2dbcd23de00a2, type: 3}
-  - {fileID: 8300000, guid: 1e05972b8614c8646a5dc85cd8d140db, type: 3}
-  - {fileID: 8300000, guid: 9749f71195187c64a92831cfa2b7d0d1, type: 3}
-  - {fileID: 8300000, guid: b0dcca3a72c69644f82a3e608807ab10, type: 3}
 --- !u!1 &1478827766681652360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,7 +1028,6 @@ MonoBehaviour:
   camParent: {fileID: 4598599971193649045}
   cam: {fileID: 433608549044093899}
   crosshair: {fileID: 9099936520003028955}
-  fireSoundHandler: {fileID: 1852096006221109457}
 --- !u!114 &2814932708221376481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1164,17 +1044,12 @@ MonoBehaviour:
   rotateSpeed: 85
   brakeForce: 2000
   maxVelocity: 400
-  centerOfMass: {x: 0, y: 0, z: 0}
+  rb: {fileID: 2245938511210598322}
   distanceToGround: 0.5
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
   rayPoint: {fileID: 4317496733733423152}
-  customGravity: 2
-  groundDrag: 3
-  airDrag: 6
-  suspensionHeight: 0
-  springTravel: 0
-  springStiffness: 0
-  damperStiffness: 0
-  wheelRadius: 0
 --- !u!54 &2245938511210598322
 Rigidbody:
   m_ObjectHideFlags: 0
