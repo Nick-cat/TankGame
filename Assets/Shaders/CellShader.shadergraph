@@ -10,6 +10,9 @@
             "m_Id": "64ebab7602fd4606afbd3d041bede14d"
         },
         {
+            "m_Id": "fac4a2e9b2ec4c3d9e6703ce2c741e55"
+        },
+        {
             "m_Id": "e12f407a9fad4411ba33935f0bf94d32"
         },
         {
@@ -218,6 +221,9 @@
         },
         {
             "m_Id": "4c43099331c84de0932d3a50e098bb35"
+        },
+        {
+            "m_Id": "1292d83d638946e9ad25cab9ea909292"
         }
     ],
     "m_GroupDatas": [
@@ -267,6 +273,20 @@
                     "m_Id": "0e773134f64f4d79847dda9fa9cf4d39"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "1292d83d638946e9ad25cab9ea909292"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "9714893a642d48c8bbe147264acf1f18"
+                },
+                "m_SlotId": 2
             }
         },
         {
@@ -1589,6 +1609,40 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "1292d83d638946e9ad25cab9ea909292",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -2223.0,
+            "y": -617.0,
+            "width": 145.0,
+            "height": 34.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "216e7aaf018e493b989e9df19f75bdb8"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "fac4a2e9b2ec4c3d9e6703ce2c741e55"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "17a74b47e77a4403b4b5d38c385a9ec3",
     "m_Id": 7,
@@ -1769,6 +1823,27 @@
     },
     "m_Labels": [],
     "m_Space": 2
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
+    "m_ObjectId": "216e7aaf018e493b989e9df19f75bdb8",
+    "m_Id": 0,
+    "m_DisplayName": "TexureOffset",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_Labels": []
 }
 
 {
@@ -4385,13 +4460,13 @@
     },
     "m_Name": "Tiling And Offset",
     "m_DrawState": {
-        "m_Expanded": false,
+        "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -2035.0,
-            "y": -694.0,
-            "width": 152.0,
-            "height": 93.0
+            "x": -2069.0,
+            "y": -705.0,
+            "width": 207.99998474121095,
+            "height": 278.0
         }
     },
     "m_Slots": [
@@ -5772,9 +5847,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -2181.0,
-            "y": -692.0,
-            "width": 146.00001525878907,
+            "x": -2223.0,
+            "y": -709.0,
+            "width": 146.0,
             "height": 34.0
         }
     },
@@ -5889,7 +5964,7 @@
     },
     "m_Name": "TextureRotate",
     "m_DefaultReferenceName": "Vector1_e12f407a9fad4411ba33935f0bf94d32",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "textureRotate",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -6400,6 +6475,29 @@
         "w": 0.0
     },
     "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector2ShaderProperty",
+    "m_ObjectId": "fac4a2e9b2ec4c3d9e6703ce2c741e55",
+    "m_Guid": {
+        "m_GuidSerialized": "008afa1b-9087-40b9-baef-9a18735b66e0"
+    },
+    "m_Name": "TexureOffset",
+    "m_DefaultReferenceName": "Vector2_fac4a2e9b2ec4c3d9e6703ce2c741e55",
+    "m_OverrideReferenceName": "textureOffset",
+    "m_GeneratePropertyBlock": true,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
         "x": 0.0,
         "y": 0.0,
         "z": 0.0,

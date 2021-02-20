@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SBC
 {
-    public class suspension : MonoBehaviour
+    public class Suspension : MonoBehaviour
     {
         private float minlength;
         private float maxLength;

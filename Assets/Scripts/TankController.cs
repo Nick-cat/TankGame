@@ -27,6 +27,7 @@ namespace SBC
         {
             rb = GetComponent <Rigidbody>();
             rb.centerOfMass = centerOfMass;
+
         }
         void FixedUpdate()
         {
@@ -46,18 +47,21 @@ namespace SBC
                     Vector3 rotateAmount = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime, 0f);
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
                 }
+                if (brake)
+                {
+                    rb.angularDrag = 1.5f;
+                    rb.drag = 3f;
+                }
+                else
+                {
+                    rb.angularDrag = 0;
+                    rb.drag = 0;
+                }
             }
-            
+
             //I think lowering the centre of mass of the tank accomplishes this but I left it in just incase
             //rb.AddForce(-transform.up * 100f);
-            if (brake) 
-            {
-                rb.angularDrag = 1.5f;
-                rb.drag = 3f;
-            } else {
-                rb.angularDrag = 0;
-                rb.drag = 0;
-            }
+
         }
         bool isGrounded(){
             //cast a ray from center of body to down direction, check if anything intersects the bottom of the body.
