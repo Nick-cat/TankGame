@@ -8,9 +8,8 @@ namespace SBC
 
     {
         
-        [SerializeField] float treadSpeed;
+        [SerializeField] float treadSpeed = 1f;
         private Renderer treads;
-        private float treadposition;
 
 
         // Start is called before the first frame update
@@ -24,9 +23,8 @@ namespace SBC
         void FixedUpdate()
         {
             
-            
-            //treads.material.SetVector("textureOffset", );
-            
+            float forwards = Mathf.Round(-Input.GetAxis("Vertical"));
+            treads.material.SetVector("textureOffset", new Vector4(Time.time * treadSpeed * forwards, 0f, 0f, 0f));
         }
     }
 }
