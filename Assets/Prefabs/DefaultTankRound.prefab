@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1381607381715729657}
   - component: {fileID: 3954380177523587751}
   - component: {fileID: 728797156114499020}
+  - component: {fileID: 2337121503354937430}
   m_Layer: 11
   m_Name: DefaultTankRound
   m_TagString: Untagged
@@ -126,3 +127,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionEffectObject: {fileID: 7523955134364803383, guid: 02ba475a84dbec54a82c30b691b5b3d5, type: 3}
+  explosionRadius: 2
+  explosionForce: 100
+--- !u!114 &2337121503354937430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7995876206304267347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04267c8b7d9ab244bca913065c17b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
