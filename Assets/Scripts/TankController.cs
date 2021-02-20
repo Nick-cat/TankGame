@@ -16,6 +16,9 @@ namespace SBC
         public float distanceToGround = .5f;
         public Transform rayPoint;
 
+        public float customGravity;
+        public float groundDrag = 3f;
+        public float airDrag = 6f;
         [Header("Suspension")]
         public float suspensionHeight;
         public float springTravel;
@@ -35,25 +38,34 @@ namespace SBC
             float rotate = Input.GetAxis("Horizontal");
             bool brake = Input.GetButton("Brake");
 
-            //old unused tank movement
-            //Vector3 moveTank = new Vector3(0f, 0f, forwards * tankSpeed * Time.deltaTime);
+            
 
-            if (isGrounded()) {
+            if (isGrounded())
+            {
                 if (rb.velocity.sqrMagnitude < maxVelocity)
                 {
-                    rb.AddForce(transform.forward * forwards * tankSpeed * 100f);
+                    rb.drag = groundDrag;
+
+                    rb.AddForce(transform.forward * forwards * tankSpeed * 100f * Time.deltaTime);
 
                     Vector3 rotateAmount = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime, 0f);
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
                 }
+            }
+            else {
+                rb.drag = airDrag;
+                rb.AddForce(Vector3.up * -customGravity * 100f);
             }
             
             //I think lowering the centre of mass of the tank accomplishes this but I left it in just incase
             //rb.AddForce(-transform.up * 100f);
             if (brake) 
             {
-                rb.angularDrag = 1.5f;
-                rb.drag = 3f;
+                rb.angularDrag = brakeForce * 1.5f;
+                rb.drag = brakeForce * 3f;
+
+                // Experimental, comment this out if tank is too buggy
+                rb.angularVelocity = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime, 0f);
             } else {
                 rb.angularDrag = 0;
                 rb.drag = 0;
@@ -62,8 +74,6 @@ namespace SBC
         bool isGrounded(){
             //cast a ray from center of body to down direction, check if anything intersects the bottom of the body.
 
-            //Doesn't need to be declared, this happens automatically when you cast the ray
-            //RaycastHit hit;
             LayerMask ground = LayerMask.GetMask("Ground");
 
             bool val = Physics.Raycast(rayPoint.position, -transform.up, distanceToGround, ground);
