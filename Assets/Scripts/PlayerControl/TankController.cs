@@ -26,6 +26,7 @@ namespace SBC
         public float damperStiffness;
         public float wheelRadius;
 
+
         private void Start()
         {
             rb = GetComponent <Rigidbody>();
@@ -41,7 +42,7 @@ namespace SBC
 
 
             rb.AddForce(Vector3.up * -customGravity * 100f);
-            if (isGrounded())
+            if (IsGrounded())
             {
                 if (rb.velocity.magnitude < maxVelocity)
                 {
@@ -77,7 +78,7 @@ namespace SBC
             //I think lowering the centre of mass of the tank accomplishes this but I left it in just incase
             //rb.AddForce(-transform.up * 100f);
         }
-        bool isGrounded(){
+        bool IsGrounded(){
             //cast a ray from center of body to down direction, check if anything intersects the bottom of the body.
 
             LayerMask ground = LayerMask.GetMask("Ground");
@@ -87,3 +88,4 @@ namespace SBC
        }
     }
 }
+
