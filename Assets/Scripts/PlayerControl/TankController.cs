@@ -12,19 +12,24 @@ namespace SBC
         public float brakeForce = 2f;
         public float maxVelocity;
         public Vector3 centerOfMass;
-        private Rigidbody rb;
+        
         public float distanceToGround = .5f;
         public Transform rayPoint;
 
         public float customGravity = 2f;
         public float groundDrag = 3f;
         public float airDrag = 6f;
+
+        public float treadSpeed;
+        
         [Header("Suspension")]
         public float suspensionHeight;
         public float springTravel;
         public float springStiffness;
         public float damperStiffness;
         public float wheelRadius;
+
+        private Rigidbody rb;
 
 
         private void Start()
@@ -44,18 +49,19 @@ namespace SBC
             rb.AddForce(Vector3.up * -customGravity * 100f);
             if (IsGrounded())
             {
+                Debug.Log("IsGrounded");
+              
                 if (rb.velocity.magnitude < maxVelocity)
                 {
-                    rb.drag = groundDrag;
 
-                    rb.AddForce(transform.forward * forwards * tankSpeed * 100f * Time.deltaTime);
+                    //rb.AddForce(transform.forward * forwards * tankSpeed * 100f * Time.deltaTime);
 
                     Vector3 rotateAmount = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime, 0f);
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
                 }
                 if (brake)
                 {
-                    rb.angularDrag = 1.5f;
+                    rb.angularDrag = brakeForce;
                     rb.drag = brakeForce;
                     // Experimental, comment this out if tank is too buggy
                     if (rb.velocity.sqrMagnitude > 2f)
@@ -65,18 +71,17 @@ namespace SBC
                 }
                 else
                 {
-                    //rb.angularDrag = 0;
-                    //rb.drag = 0;
+                    rb.angularDrag = groundDrag / 2;
+                    rb.drag = groundDrag;
                 }
+
             }
-            else {
+            else 
+            {
                 rb.drag = 0;
                 rb.angularDrag = airDrag;
                 
             }
-            
-            //I think lowering the centre of mass of the tank accomplishes this but I left it in just incase
-            //rb.AddForce(-transform.up * 100f);
         }
         bool IsGrounded(){
             //cast a ray from center of body to down direction, check if anything intersects the bottom of the body.
@@ -85,6 +90,7 @@ namespace SBC
 
             bool val = Physics.Raycast(rayPoint.position, -transform.up, distanceToGround, ground);
             return val;
+            
        }
     }
 }

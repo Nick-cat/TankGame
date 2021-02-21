@@ -7,10 +7,10 @@ namespace SBC
     public class TreadMovement : MonoBehaviour
 
     {
-        
-        [SerializeField] float treadSpeed = 1f;
         private Renderer treads;
 
+        //get treadspeed from tank controller
+        public TankController tank;
 
         // Start is called before the first frame update
         void Start()
@@ -24,7 +24,7 @@ namespace SBC
         {
             
             float forwards = Mathf.Round(-Input.GetAxis("Vertical"));
-            treads.material.SetVector("textureOffset", new Vector4(Time.time * treadSpeed * forwards, 0f, 0f, 0f));
+            treads.material.SetVector("textureOffset", new Vector4(Time.time * tank.treadSpeed * forwards, 0f, 0f, 0f));
         }
     }
 }
