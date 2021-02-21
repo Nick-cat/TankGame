@@ -408,7 +408,7 @@ AudioSource:
   m_GameObject: {fileID: 1467493453736888378}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5315361344160032781, guid: 8376c2fc7c9ace646a09ed79c05d3b95, type: 2}
   m_audioClip: {fileID: 8300000, guid: d883ce25126005d49860862ddbabfab2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1170,6 +1170,7 @@ MonoBehaviour:
   customGravity: 2
   groundDrag: 3
   airDrag: 6
+  treadSpeed: 0
   suspensionHeight: 0
   springTravel: 0
   springStiffness: 0
