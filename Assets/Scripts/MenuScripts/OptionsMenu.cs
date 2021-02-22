@@ -36,6 +36,14 @@ public class OptionsMenu : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
     }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+
+    }
+
     public void SetMainVolume(float mainVolume)
     {
         audioMixer.SetFloat("mainVolume", Mathf.Log10(mainVolume) * 20);
