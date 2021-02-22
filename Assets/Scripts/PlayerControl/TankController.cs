@@ -49,7 +49,7 @@ namespace SBC
             rb.AddForce(Vector3.up * -customGravity * 100f);
             if (IsGrounded())
             {
-                Debug.Log("IsGrounded");
+                //Debug.Log("IsGrounded");
               
                 if (rb.velocity.magnitude < maxVelocity)
                 {

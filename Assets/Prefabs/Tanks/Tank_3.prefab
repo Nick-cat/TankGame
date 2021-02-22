@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 7131326755930474395}
   m_Layer: 0
   m_Name: Tank_3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -609,21 +609,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f079f0e6a88a6408bef850fa57b48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankSpeed: 300
+  tankSpeed: 100
   rotateSpeed: 100
   brakeForce: 5
   maxVelocity: 140
-  centerOfMass: {x: 0, y: -1, z: 0}
+  centerOfMass: {x: 0, y: -0.5, z: 0}
   distanceToGround: 0.75
   rayPoint: {fileID: 1617219008645726019}
   customGravity: 2
   groundDrag: 3
   airDrag: 0
-  treadSpeed: 0
+  treadSpeed: 20
   suspensionHeight: 0.8
   springTravel: 0.4
   springStiffness: 200
-  damperStiffness: 10
+  damperStiffness: 20
   wheelRadius: 0.4
 --- !u!54 &7131326755930474395
 Rigidbody:
