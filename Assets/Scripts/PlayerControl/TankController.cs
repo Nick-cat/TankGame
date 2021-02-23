@@ -31,7 +31,7 @@ namespace SBC
         public float wheelRadius;
 
         private Rigidbody rb;
-        private bool canJump;
+        private bool canJump = true;
 
 
         private void Start()
@@ -54,28 +54,32 @@ namespace SBC
             {
                 rb.AddForce(transform.up * jumpForce * 100f);
                 canJump = false;
+                
             }
             if (IsGrounded())
             {
                 canJump = true;
-                //Debug.Log("IsGrounded");
-              
+
                 if (rb.velocity.magnitude < maxVelocity)
                 {
-
-                    rb.AddForce(transform.forward * forwards * tankSpeed * 100f * Time.deltaTime);
-
+                    //Old Tank Movement
+                    //rb.AddForce(transform.forward * forwards * tankSpeed * 100f * Time.deltaTime);
+                    
+                    //TankRotation
                     Vector3 rotateAmount = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime, 0f);
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
                 }
+                //TankBrake
                 if (brake)
                 {
                     rb.angularDrag = brakeForce;
                     rb.drag = brakeForce;
+                    
                     // Experimental, comment this out if tank is too buggy
-                    if (rb.velocity.sqrMagnitude > 2f)
+                    if (rb.velocity.sqrMagnitude > Mathf.Sqrt(maxVelocity))
                     {
-                        //rb.angularVelocity = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime, 0f);
+                        Debug.Log("drift");
+                        rb.angularVelocity = new Vector3(0f, rotate * (rotateSpeed/2f) * Time.deltaTime, 0f);
                     }
                 }
                 else
@@ -88,7 +92,7 @@ namespace SBC
             {
                 rb.drag = 0;
                 rb.angularDrag = airDrag;
-                
+
             }
         }
         bool IsGrounded(){
