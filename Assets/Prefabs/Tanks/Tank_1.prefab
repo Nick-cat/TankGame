@@ -1098,7 +1098,7 @@ GameObject:
   - component: {fileID: 2814932708221376481}
   - component: {fileID: 2245938511210598322}
   m_Layer: 0
-  m_Name: Tank_main
+  m_Name: Tank_1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1160,22 +1160,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f079f0e6a88a6408bef850fa57b48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankSpeed: 800
-  rotateSpeed: 50
-  brakeForce: 100
-  maxVelocity: 1000
-  centerOfMass: {x: 0, y: 0, z: 0}
+  tankSpeed: 100
+  rotateSpeed: 100
+  brakeForce: 5
+  maxVelocity: 140
+  centerOfMass: {x: 0, y: -0.5, z: 0}
   distanceToGround: 0.75
-  rayPoint: {fileID: 4317496733733423152}
+  rayPoint: {fileID: 1617219008645726019, guid: 2c02c922d159c4842837466e7c4a768d, type: 3}
   customGravity: 2
   groundDrag: 3
-  airDrag: 6
-  treadSpeed: 0
-  suspensionHeight: 0
-  springTravel: 0
-  springStiffness: 0
-  damperStiffness: 0
-  wheelRadius: 0
+  airDrag: 0
+  treadSpeed: 20
+  suspensionHeight: 0.8
+  springTravel: 0.4
+  springStiffness: 200
+  damperStiffness: 20
+  wheelRadius: 0.4
 --- !u!54 &2245938511210598322
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2242,10 +2242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
