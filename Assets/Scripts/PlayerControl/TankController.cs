@@ -11,6 +11,7 @@ namespace SBC
         public float rotateSpeed;
         public float brakeForce = 2f;
         public float maxVelocity;
+        public float jumpForce;
         public Vector3 centerOfMass;
         
         public float distanceToGround = .5f;
@@ -30,6 +31,7 @@ namespace SBC
         public float wheelRadius;
 
         private Rigidbody rb;
+        private bool canJump;
 
 
         private void Start()
@@ -44,17 +46,24 @@ namespace SBC
             float forwards = Input.GetAxis("Vertical");
             float rotate = Input.GetAxis("Horizontal");
             bool brake = Input.GetButton("Brake");
+            bool jump = Input.GetButtonDown("Jump");
 
 
             rb.AddForce(Vector3.up * -customGravity * 100f);
+            if (jump && canJump)
+            {
+                rb.AddForce(transform.up * jumpForce * 100f);
+                canJump = false;
+            }
             if (IsGrounded())
             {
+                canJump = true;
                 //Debug.Log("IsGrounded");
               
                 if (rb.velocity.magnitude < maxVelocity)
                 {
 
-                    //rb.AddForce(transform.forward * forwards * tankSpeed * 100f * Time.deltaTime);
+                    rb.AddForce(transform.forward * forwards * tankSpeed * 100f * Time.deltaTime);
 
                     Vector3 rotateAmount = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime, 0f);
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
@@ -74,7 +83,6 @@ namespace SBC
                     rb.angularDrag = groundDrag / 2;
                     rb.drag = groundDrag;
                 }
-
             }
             else 
             {

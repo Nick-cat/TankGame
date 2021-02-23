@@ -13,8 +13,9 @@ public class OptionsMenu : MonoBehaviour
 
     private void Start()
     {
-        resolutions = Screen.resolutions;
 
+        //Resolution dropdown setup
+        resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
@@ -42,17 +43,17 @@ public class OptionsMenu : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    public void SetMainVolume(float mainVolume)
+    public void SetMainVolume(float volume)
     {
-        audioMixer.SetFloat("mainVolume", Mathf.Log10(mainVolume) * 20);
+        audioMixer.SetFloat("mainVolume", Mathf.Log10(volume) * 20);
     }
-    public void SetMusicVolume(float musicVolume)
+    public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("musicVolume", Mathf.Log10(musicVolume) * 20);
+        audioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
     }
-    public void SetEffectsVolume(float effectsVolume)
+    public void SetEffectsVolume(float volume)
     {
-        audioMixer.SetFloat("effectsVolume", Mathf.Log10(effectsVolume) * 20);
+        audioMixer.SetFloat("effectsVolume", Mathf.Log10(volume) * 20);
     }
     public void SetQualityLevel(int qualityIndex)
     {
@@ -62,10 +63,6 @@ public class OptionsMenu : MonoBehaviour
     public void ToggleFullscreen(bool fullscreen)
     {
         Screen.fullScreen = fullscreen;
-
         Debug.Log(Screen.fullScreenMode);
-
     }
-
-
 }
