@@ -19,7 +19,7 @@ namespace SBC
 
         public float customGravity = 2f;
         public float groundDrag = 3f;
-        public float airDrag = 6f;
+        public float airDrag = 0f;
 
         public float treadSpeed;
         
@@ -48,8 +48,9 @@ namespace SBC
             bool brake = Input.GetButton("Brake");
             bool jump = Input.GetButtonDown("Jump");
 
-
+            //custom gravity
             rb.AddForce(Vector3.up * -customGravity * 100f);
+            
             if (jump && canJump)
             {
                 rb.AddForce(transform.up * jumpForce * 100f);
@@ -59,6 +60,7 @@ namespace SBC
             if (IsGrounded())
             {
                 canJump = true;
+                //Debug.Log("isGrounded");
 
                 if (rb.velocity.magnitude < maxVelocity)
                 {
@@ -78,7 +80,7 @@ namespace SBC
                     // Experimental, comment this out if tank is too buggy
                     if (rb.velocity.sqrMagnitude > Mathf.Sqrt(maxVelocity))
                     {
-                        Debug.Log("drift");
+                        //Debug.Log("drift");
                         rb.angularVelocity = new Vector3(0f, rotate * (rotateSpeed/2f) * Time.deltaTime, 0f);
                     }
                 }
