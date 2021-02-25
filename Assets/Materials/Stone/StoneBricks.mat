@@ -134,6 +134,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - baseTextureMix: 0.493
+    - baseTextureTint: 0
     - contrast: 1
     - emissionHue: 1
     - emissionMultipler: 1
