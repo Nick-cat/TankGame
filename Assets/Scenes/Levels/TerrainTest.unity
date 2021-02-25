@@ -1197,23 +1197,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d93defc2cc306094184610258c131003, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.385363
+      value: -0.38574275
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d93defc2cc306094184610258c131003, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.017162241
+      value: 0.0013128159
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d93defc2cc306094184610258c131003, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9216919
+      value: 0.92260015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d93defc2cc306094184610258c131003, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.041047785
+      value: 0.0031399275
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d93defc2cc306094184610258c131003, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 5.1
+      value: -0.39
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d93defc2cc306094184610258c131003, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1222,6 +1222,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d93defc2cc306094184610258c131003, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d93defc2cc306094184610258c131003, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d93defc2cc306094184610258c131003, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1234,6 +1238,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d93defc2cc306094184610258c131003, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: d93defc2cc306094184610258c131003, type: 3}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d93defc2cc306094184610258c131003, type: 3}
@@ -1738,7 +1746,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 5570526826067869709, guid: d93defc2cc306094184610258c131003, type: 3}
+  m_Mesh: {fileID: -4751204668666439389, guid: d93defc2cc306094184610258c131003, type: 3}
 --- !u!1001 &2138253605
 PrefabInstance:
   m_ObjectHideFlags: 0

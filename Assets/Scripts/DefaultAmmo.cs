@@ -8,8 +8,8 @@ namespace SBC {
         protected AmmoType ammotype = AmmoType.Default;
 
         [SerializeField] private GameObject explosionEffectObject;
-        [SerializeField] float explosionRadius = 2;
-        [SerializeField] float explosionForce = 100;
+        public float explosionRadius = 2;
+        public float explosionForce = 100;
 
         public override void OnHit () {
             // Explosion force.

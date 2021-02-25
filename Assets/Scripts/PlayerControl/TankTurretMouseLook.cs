@@ -65,9 +65,9 @@ namespace SBC {
             // Player has fired this frame. Instantiate ammo and call shoot.
             if (fire) {
                 TankRound round = Instantiate(ammo);
-                round.Shoot( cannonTipTransform.position , cannonTipTransform.forward , 250f ) ;
+                round.Shoot( cannonTipTransform.position , cannonTipTransform.forward , ammo.projectileSpeed ) ;
                 //rb.AddExplosionForce( 100f , cannonTipTransform.localPosition, 50f );
-                rb.AddForceAtPosition( -cannonTipTransform.forward * 3000 , cannonTipTransform.position );
+                rb.AddForceAtPosition( -cannonTipTransform.forward * ammo.projectileForce, cannonTipTransform.position );
                 if ( fireSoundHandler != null ) fireSoundHandler.Fire();
 			}
 

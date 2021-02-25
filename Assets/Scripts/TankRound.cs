@@ -9,6 +9,8 @@ namespace SBC {
             Knockback,
             BouncyBall,
         }
+        public float projectileSpeed = 250f;
+        public float projectileForce = 3000f;
 
         protected AmmoType ammoType;
 

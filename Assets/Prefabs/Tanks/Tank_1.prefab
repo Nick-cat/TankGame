@@ -924,6 +924,7 @@ MonoBehaviour:
   InvertMouseX: 0
   InvertMouseY: 0
   ammo: {fileID: 728797156114499020, guid: 00b00e3210ae5ee4d915c61c617509ab, type: 3}
+  projectileForce: 3000
   turretTransform: {fileID: 816556996425024466}
   cannonTransform: {fileID: 587958507801842346}
   cannonTipTransform: {fileID: 6310655700743668602}

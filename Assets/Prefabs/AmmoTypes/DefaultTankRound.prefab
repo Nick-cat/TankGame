@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4708fc8f78e1017498a03cba5bd44975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileSpeed: 250
+  projectileForce: 3000
   explosionEffectObject: {fileID: 7523955134364803383, guid: 02ba475a84dbec54a82c30b691b5b3d5, type: 3}
   explosionRadius: 2
   explosionForce: 100
