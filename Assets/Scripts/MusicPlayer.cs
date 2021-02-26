@@ -18,6 +18,11 @@ public class MusicPlayer : MonoBehaviour
         StartMusic();
     }
 
+    public void Mute()
+    {
+        musicSource.mute = !musicSource.mute;
+    }
+
     public void PlayMusicClip(AudioClip music)
     {
         musicSource.Stop();

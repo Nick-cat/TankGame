@@ -64,7 +64,7 @@ namespace SBC
 
                 if (rb.velocity.magnitude < maxVelocity)
                 {
-                    //Old Tank Movement
+                    //Forwards Tank movement is now handled by the Suspension controller
                     //rb.AddForce(transform.forward * forwards * tankSpeed * 100f * Time.deltaTime);
                     
                     //TankRotation
