@@ -47,10 +47,16 @@ namespace SBC
                 wheelVelocityLocal = transform.InverseTransformDirection(rb.GetPointVelocity(Hit.point));
 
                 if (rb.velocity.magnitude < tank.maxVelocity)
+                {
                     forwardForce = Input.GetAxis("Vertical") * tank.tankSpeed * 100f;
+                    rb.AddForceAtPosition((forwardForce * transform.forward * Time.deltaTime), Hit.point, ForceMode.Acceleration);
+                }
 
-                rb.AddForceAtPosition(suspensionForce + (forwardForce * transform.forward * Time.deltaTime), Hit.point);
+                rb.AddForceAtPosition(suspensionForce, Hit.point);
+
+
                 //rb.AddForceAtPosition(suspensionForce, Hit.point);
+
             }
             Debug.DrawRay(transform.position, -transform.up * Hit.distance, Color.green);
         }
