@@ -47,6 +47,7 @@ namespace SBC
             float rotate = Input.GetAxis("Horizontal");
             bool brake = Input.GetButton("Brake");
             bool jump = Input.GetButtonDown("Jump");
+            bool drift = Input.GetButtonDown("Drift");
 
             //custom gravity
             rb.AddForce(Vector3.up * -customGravity * 100f);
@@ -66,7 +67,7 @@ namespace SBC
                 {
                     //Forwards Tank movement is now handled by the Suspension controller
                     //rb.AddForce(transform.forward * forwards * tankSpeed * 100f * Time.deltaTime);
-                    
+
                     //TankRotation
                     Vector3 rotateAmount = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime, 0f);
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
@@ -76,19 +77,21 @@ namespace SBC
                 {
                     rb.angularDrag = brakeForce;
                     rb.drag = brakeForce;
-                    
-                    // Experimental, comment this out if tank is too buggy
+
+                    //Drift
+                    //Experimental, comment this out if tank is too buggy
                     if (rb.velocity.sqrMagnitude > Mathf.Sqrt(maxVelocity))
                     {
                         //Debug.Log("drift");
-                        rb.angularVelocity = new Vector3(0f, rotate * (rotateSpeed/2f) * Time.deltaTime, 0f);
+                        rb.angularVelocity = new Vector3(0f, rotate * (rotateSpeed / 2f) * Time.deltaTime, 0f);
                     }
+
                 }
                 else
                 {
                     rb.angularDrag = groundDrag / 2;
                     rb.drag = groundDrag;
-                }
+                }            
             }
             else 
             {
