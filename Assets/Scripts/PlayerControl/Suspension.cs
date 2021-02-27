@@ -15,9 +15,7 @@ namespace SBC
         private float springVelocity;
         private Vector3 suspensionForce;
         private Rigidbody rb;
-        private Vector3 wheelVelocityLocal;
         private float forwardForce;
-        private float turnForce;
 
         //get suspension values from tank controller
         public TankController tank;
@@ -26,6 +24,7 @@ namespace SBC
         {
             //get tank rigidbody
             rb = transform.root.GetComponent <Rigidbody>();
+
             minlength = tank.suspensionHeight - tank.springTravel;
             maxLength = tank.suspensionHeight + tank.springTravel;
         }
@@ -43,22 +42,21 @@ namespace SBC
                 damperForce = tank.damperStiffness * springVelocity;
 
                 suspensionForce = (springForce + damperForce) * transform.up;
+                rb.AddForceAtPosition(suspensionForce, Hit.point);
 
-                wheelVelocityLocal = transform.InverseTransformDirection(rb.GetPointVelocity(Hit.point));
-
+                
+                //adds forward force to the tank at the wheels
                 if (rb.velocity.magnitude < tank.maxVelocity)
                 {
                     forwardForce = Input.GetAxis("Vertical") * tank.tankSpeed * 100f;
-                    rb.AddForceAtPosition((forwardForce * transform.forward * Time.deltaTime), Hit.point, ForceMode.Acceleration);
+                    rb.AddForceAtPosition(forwardForce * transform.forward * Time.deltaTime, Hit.point, ForceMode.Acceleration);
                 }
 
-                rb.AddForceAtPosition(suspensionForce, Hit.point);
-
-
-                //rb.AddForceAtPosition(suspensionForce, Hit.point);
-
             }
+
+            //displays the suspension
             Debug.DrawRay(transform.position, -transform.up * Hit.distance, Color.green);
+
         }
     }
 }

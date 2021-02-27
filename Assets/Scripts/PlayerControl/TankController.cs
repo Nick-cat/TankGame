@@ -31,18 +31,15 @@ namespace SBC
         public float wheelRadius;
 
         private Rigidbody rb;
-        private bool canJump = true;
-
+        public bool canJump = true;
 
         private void Start()
         {
             rb = GetComponent <Rigidbody>();
             rb.centerOfMass = centerOfMass;
-
         }
         void FixedUpdate()
         {
-            
             float forwards = Input.GetAxis("Vertical");
             float rotate = Input.GetAxis("Horizontal");
             bool brake = Input.GetButton("Brake");
@@ -52,11 +49,11 @@ namespace SBC
             //custom gravity
             rb.AddForce(Vector3.up * -customGravity * 100f);
             
+            //the jump is buggy and doesn't always work, not sure why this is
             if (jump && canJump)
             {
                 rb.AddForce(transform.up * jumpForce * 100f);
                 canJump = false;
-                
             }
             if (IsGrounded())
             {
@@ -78,14 +75,12 @@ namespace SBC
                     rb.angularDrag = brakeForce;
                     rb.drag = brakeForce;
 
-                    //Drift
+                    //Drift?
                     //Experimental, comment this out if tank is too buggy
                     if (rb.velocity.sqrMagnitude > Mathf.Sqrt(maxVelocity))
                     {
-                        //Debug.Log("drift");
                         rb.angularVelocity = new Vector3(0f, rotate * (rotateSpeed / 2f) * Time.deltaTime, 0f);
                     }
-
                 }
                 else
                 {
@@ -97,12 +92,10 @@ namespace SBC
             {
                 rb.drag = 0;
                 rb.angularDrag = airDrag;
-
             }
         }
         bool IsGrounded(){
             //cast a ray from center of body to down direction, check if anything intersects the bottom of the body.
-
             LayerMask ground = LayerMask.GetMask("Ground");
 
             bool val = Physics.Raycast(rayPoint.position, -transform.up, distanceToGround, ground);

@@ -12,7 +12,6 @@ namespace SBC
         private Rigidbody rb;
         private TankController tank;
 
-        // Start is called before the first frame update
         void Start()
         {
             engine = GetComponent<AudioSource>();
@@ -20,9 +19,9 @@ namespace SBC
             tank = transform.GetComponent<TankController>();
         }
 
-        // Update is called once per frame
         void Update()
         {
+            //currently adjusts the pitch and volume of the sound based on the tank velocity
             engineSpeed = Mathf.InverseLerp(0, tank.maxVelocity, rb.velocity.magnitude);
             engine.pitch = Mathf.SmoothStep(0.75f, 1.5f, engineSpeed);
             engine.volume = Mathf.SmoothStep(0.4f, 1f, engineSpeed);

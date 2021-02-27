@@ -54,7 +54,6 @@ public class MusicQueue
         {
             yield return player.StartCoroutine(Run(RandomizeList(clips), delay, playFunction));
         }
-
     }
 
     public IEnumerator Run(List<AudioClip> tracks, float delay,System.Action<AudioClip> playFunction)
