@@ -946,11 +946,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f079f0e6a88a6408bef850fa57b48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankSpeed: 10
+  tankSpeed: 40
   rotateSpeed: 50
   brakeForce: 5
   maxVelocity: 140
-  jumpForce: 100
+  driftAngle: 20
+  jumpForce: 40
   centerOfMass: {x: 0, y: -0.25, z: 0}
   distanceToGround: 1
   rayPoint: {fileID: 4317496733733423152}
@@ -963,6 +964,7 @@ MonoBehaviour:
   springStiffness: 200
   damperStiffness: 20
   wheelRadius: 0.4
+  canJump: 1
 --- !u!54 &2245938511210598322
 Rigidbody:
   m_ObjectHideFlags: 0

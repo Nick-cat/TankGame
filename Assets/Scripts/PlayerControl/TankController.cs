@@ -11,6 +11,7 @@ namespace SBC
         public float rotateSpeed;
         public float brakeForce = 2f;
         public float maxVelocity;
+        public float driftAngle;
         public float jumpForce;
         public Vector3 centerOfMass;
         
@@ -43,13 +44,11 @@ namespace SBC
             float forwards = Input.GetAxis("Vertical");
             float rotate = Input.GetAxis("Horizontal");
             bool brake = Input.GetButton("Brake");
-            bool jump = Input.GetButtonDown("Jump");
-            bool drift = Input.GetButtonDown("Drift");
+            bool jump = Input.GetButton("Jump");
 
             //custom gravity
             rb.AddForce(Vector3.up * -customGravity * 100f);
             
-            //the jump is buggy and doesn't always work, not sure why this is
             if (jump && canJump)
             {
                 rb.AddForce(transform.up * jumpForce * 100f);

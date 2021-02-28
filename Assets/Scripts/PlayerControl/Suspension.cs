@@ -16,6 +16,7 @@ namespace SBC
         private Vector3 suspensionForce;
         private Rigidbody rb;
         private float forwardForce;
+        private float driftDirection;
 
         //get suspension values from tank controller
         public TankController tank;
@@ -44,18 +45,26 @@ namespace SBC
                 suspensionForce = (springForce + damperForce) * transform.up;
                 rb.AddForceAtPosition(suspensionForce, Hit.point);
 
-                
-                //adds forward force to the tank at the wheels
+
                 if (rb.velocity.magnitude < tank.maxVelocity)
                 {
+                    //adds drift
+                    bool drift = Input.GetButton("Drift");
+                    float rotate = Input.GetAxis("Horizontal");
+                    
+                    if (drift) driftDirection = tank.driftAngle * rotate;
+                    else driftDirection = 0;
+                    
+                    Vector3 moveDirection = Quaternion.AngleAxis(driftDirection, Vector3.up) * transform.forward;
+
+                    //adds forward force to the tank at the wheels
                     forwardForce = Input.GetAxis("Vertical") * tank.tankSpeed * 100f;
-                    rb.AddForceAtPosition(forwardForce * transform.forward * Time.deltaTime, Hit.point, ForceMode.Acceleration);
+                    rb.AddForceAtPosition(forwardForce * moveDirection * Time.deltaTime, Hit.point, ForceMode.Acceleration);
                 }
-
             }
-
             //displays the suspension
             Debug.DrawRay(transform.position, -transform.up * Hit.distance, Color.green);
+            
 
         }
     }
