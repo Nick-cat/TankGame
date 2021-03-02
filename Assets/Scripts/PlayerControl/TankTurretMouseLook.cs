@@ -5,7 +5,7 @@ using UnityEngine;
 namespace SBC {
     public class TankTurretMouseLook : MonoBehaviour {
 
-        const float MAX_CANNON_ANGLE = 8.5f;
+        //const float MAX_CANNON_ANGLE = 8.5f;
 
         // Options
         [SerializeField] float mouseXSensitivity = 200f;
@@ -13,6 +13,8 @@ namespace SBC {
         [Space]
         [SerializeField] bool InvertMouseX = false;
         [SerializeField] bool InvertMouseY = false;
+        [Space]
+        [SerializeField] float MAX_CANNON_ANGLE = 8.5f;
         [Space]
         [SerializeField] TankRound ammo;
         [Space]

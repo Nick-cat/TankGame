@@ -91,6 +91,7 @@ namespace SBC
             {
                 rb.drag = 0;
                 rb.angularDrag = airDrag;
+                canJump = false;
             }
         }
         bool IsGrounded(){
