@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Arena.unity
     guid: f7a4a3304bd10a848a1ab251fc1d51f6
   - enabled: 1
-    path: Assets/Scenes/Levels/RainyCity.unity
+    path: Assets/Scenes/Levels/WaterStation.unity
     guid: fd2662e0b1345e740867beaf88025dea
   - enabled: 1
     path: Assets/Scenes/Levels/Stacks.unity
