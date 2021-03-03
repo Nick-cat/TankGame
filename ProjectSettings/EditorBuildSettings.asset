@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Stacks.unity
     guid: 23aabbd68cc25844aa241472e40d42bd
   - enabled: 1
-    path: Assets/Scenes/Levels/TerrainTest.unity
+    path: Assets/Scenes/Levels/RollingHills.unity
     guid: 75e51d1938eea8045a6d7d48b25634ad
   m_configObjects: {}

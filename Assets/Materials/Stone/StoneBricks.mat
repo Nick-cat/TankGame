@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: StoneBricks
   m_Shader: {fileID: -6465566751694194690, guid: ab891102d2d55c541b81aa35b9027fa1, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: BOOLEAN_6649A62A9C6C467DBEA2238500770EEE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -97,13 +97,17 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - BOOLEAN_6649A62A9C6C467DBEA2238500770EEE: 1
+    - BOOLEAN_E44A03F7AE46400FB3F2EFAAC1093A7A: 0
     - Contrast: 1.1
+    - EMISSIONTOGGLE: 0
     - HighlightMix: 2.46
     - RimBlend: 0.563
     - RimSize: 1
     - Saturation: 1.1
     - ShadowBlend: 0.109
     - ShadowSize: 0
+    - TILEUV: 0
     - Vector1_51778100d27247a69405c24cc093b19a: 1
     - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 10
     - Vector1_e12f407a9fad4411ba33935f0bf94d32: 0
@@ -135,21 +139,23 @@ Material:
     - _ZWrite: 1
     - baseTextureMix: 0.493
     - baseTextureTint: 0
-    - contrast: 1
+    - contrast: 1.1
     - emissionHue: 1
     - emissionMultipler: 1
     - emissionToggle: 0
     - highlightRotation: 0
     - noise0Celldensity: 0.5
     - noise1Celldensity: 0.5
-    - normalStrength: 5
+    - normalStrength: 2
     - rimBlend: 1
     - rimSize: 0.43
-    - saturation: 1
+    - saturation: 1.1
     - shadowBlend: 0.1
     - shadowNormal: 1
     - shadowNormals: 1
     - shadowSize: 0
+    - snowOpacity: 1
+    - snowScale: 10
     - tileUV: 0
     - waveSpeed: 0.1
     m_Colors:
@@ -168,11 +174,13 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - baseTextureTint: {r: 1, g: 1, b: 1, a: 0}
     - noise0: {r: 5, g: 5, b: 0, a: 0}
     - noise1: {r: 0.25, g: 0.25, b: 0, a: 0}
     - normalScale: {r: 128, g: 128, b: 0, a: 0}
     - rimColour: {r: 0, g: 0, b: 0, a: 0}
     - shadowColour: {r: 0.45098042, g: 0.37647063, b: 0.37647063, a: 0}
+    - snowDirection: {r: 0, g: 1, b: 0, a: 0}
     - textureTiling: {r: 64, g: 64, b: 0, a: 0}
     - tint: {r: 0.762638, g: 0.7735849, b: 0.7691204, a: 1}
   m_BuildTextureStacks: []
