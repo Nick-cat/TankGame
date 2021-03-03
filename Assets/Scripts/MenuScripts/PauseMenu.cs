@@ -2,40 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+namespace SBC
 {
-
-    public static bool isPaused = false;
-
-    public GameObject pauseUI;
-
-    void Start()
+    public class PauseMenu : MonoBehaviour
     {
-       
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetButtonDown("Pause"))
+        public static bool isPaused = false;
+
+        [SerializeField] GameObject pauseUI;
+        [SerializeField] GameObject crosshair;
+
+        //get tank controller to disable on pause
+        public GameObject tank;
+        private TankController control;
+        private TankTurretMouseLook look;
+
+
+        void Start()
         {
-            if (isPaused) Resume();
-            else Pause();
+            look = tank.GetComponent<TankTurretMouseLook>();
+            control = tank.GetComponent<TankController>();
         }
-    }
 
-    void Resume()
-    {
-        pauseUI.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
-    }
+        // Update is called once per frame
+        void Update()
+        {
+            if (Input.GetButtonDown("Pause"))
+            {
+                if (isPaused) Resume();
+                else Pause();
+            }
+        }
 
-    void Pause()
-    {
-        pauseUI.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
+        public void Resume()
+        {
+            pauseUI.SetActive(false);
+            crosshair.SetActive(true);
+            Time.timeScale = 1f;
+            look.enabled = true;
+            control.enabled = true;
+            isPaused = false;
+            AudioListener.pause = false;
+        }
 
+        public void Pause()
+        {
+            pauseUI.SetActive(true);
+            crosshair.SetActive(false);
+            Time.timeScale = 0f;
+            look.enabled = false;
+            control.enabled = false;
+            isPaused = true;
+            AudioListener.pause = true;
+
+        }
     }
 }

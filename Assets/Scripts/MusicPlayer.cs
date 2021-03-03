@@ -15,6 +15,7 @@ public class MusicPlayer : MonoBehaviour
     {
         musicQueue = new MusicQueue(musicClips);
         musicSource = GetComponent<AudioSource>();
+        musicSource.ignoreListenerPause = true;
         StartMusic();
     }
 
