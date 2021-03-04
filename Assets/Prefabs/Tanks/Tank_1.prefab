@@ -3958,6 +3958,7 @@ MonoBehaviour:
   InvertMouseX: 0
   InvertMouseY: 0
   MAX_CANNON_ANGLE: 8.5
+  zoomFOV: 45
   ammo: {fileID: 728797156114499020, guid: 00b00e3210ae5ee4d915c61c617509ab, type: 3}
   turretTransform: {fileID: 816556996425024466}
   cannonTransform: {fileID: 587958507801842346}
@@ -4022,7 +4023,7 @@ AudioSource:
   m_GameObject: {fileID: 3877776766204771783}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5315361344160032781, guid: 8376c2fc7c9ace646a09ed79c05d3b95, type: 2}
   m_audioClip: {fileID: 8300000, guid: fc6d014624d78ec4bba8d3e2068e2233, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4264,7 +4265,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
