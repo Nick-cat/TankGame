@@ -13,6 +13,16 @@ namespace SBC
 
         Resolution[] resolutions;
 
+        [SerializeField] Slider mainVolume;
+        [SerializeField] Slider musicVolume;
+        [SerializeField] Slider effectsVolume;
+        [Space]
+        [SerializeField] TMPro.TMP_Dropdown quality;
+        [Space]
+        [SerializeField] Slider fov;
+        [SerializeField] TMPro.TMP_Text fovValue;
+
+
         private void Start()
         {
 
@@ -37,6 +47,18 @@ namespace SBC
             resolutionDropdown.AddOptions(options);
             resolutionDropdown.value = currentResolutionIndex;
             resolutionDropdown.RefreshShownValue();
+
+            //set initial volume settings
+            mainVolume.value = PlayerPrefs.GetFloat("mainVolume", .75f);
+            musicVolume.value = PlayerPrefs.GetFloat("musicVolume", .75f);
+            effectsVolume.value = PlayerPrefs.GetFloat("effectsVolume", .75f);
+
+            //set initial quality settings
+            quality.value = PlayerPrefs.GetInt("quality", 2);
+
+            //set initial FOV settings
+            fov.value = PlayerPrefs.GetFloat("fov", 60f);
+
         }
 
         public void SetResolution(int resolutionIndex)
@@ -45,27 +67,38 @@ namespace SBC
             Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
         }
 
-        public void SetMainVolume(float volume)
+        public void SetMainVolume(float mainVolume)
         {
-            audioMixer.SetFloat("mainVolume", Mathf.Log10(volume) * 20);
+            PlayerPrefs.SetFloat("mainVolume", mainVolume);
+            audioMixer.SetFloat("mainVolume", Mathf.Log10(PlayerPrefs.GetFloat("mainVolume", 0.75f)) * 20);
         }
-        public void SetMusicVolume(float volume)
+        public void SetMusicVolume(float musicVolume)
         {
-            audioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
+            PlayerPrefs.SetFloat("musicVolume", musicVolume);
+            audioMixer.SetFloat("musicVolume", Mathf.Log10(PlayerPrefs.GetFloat("musicVolume", 0.75f)) * 20);
         }
-        public void SetEffectsVolume(float volume)
+        public void SetEffectsVolume(float effectsVolume)
         {
-            audioMixer.SetFloat("effectsVolume", Mathf.Log10(volume) * 20);
+            PlayerPrefs.SetFloat("effectsVolume", effectsVolume);
+            audioMixer.SetFloat("effectsVolume", Mathf.Log10(PlayerPrefs.GetFloat("effectsVolume", 0.75f)) * 20);
         }
         public void SetQualityLevel(int qualityIndex)
         {
-            QualitySettings.SetQualityLevel(qualityIndex);
+            PlayerPrefs.SetInt("quality", qualityIndex);
+            QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("quality"));
         }
 
         public void ToggleFullscreen(bool fullscreen)
         {
             Screen.fullScreen = fullscreen;
             Debug.Log(Screen.fullScreenMode);
+        }
+
+        public void FOV(float fov)
+        {
+            PlayerPrefs.SetFloat("fov", Mathf.Round(Mathf.Clamp(fov, 60f, 120f)));
+            fovValue.SetText(PlayerPrefs.GetFloat("fov").ToString());
+            Camera.main.fieldOfView = PlayerPrefs.GetFloat("fov");
         }
     }
 }

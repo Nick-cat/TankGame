@@ -43,6 +43,8 @@ namespace SBC
             control.enabled = true;
             isPaused = false;
             AudioListener.pause = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         public void Pause()
@@ -54,7 +56,14 @@ namespace SBC
             control.enabled = false;
             isPaused = true;
             AudioListener.pause = true;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
 
+        }
+        public void QuitGame()
+        {
+            Debug.Log("Quit");
+            Application.Quit();
         }
     }
 }

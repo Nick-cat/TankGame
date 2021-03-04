@@ -15,6 +15,7 @@ namespace SBC {
         [SerializeField] bool InvertMouseY = false;
         [Space]
         [SerializeField] float MAX_CANNON_ANGLE = 8.5f;
+        [SerializeField] float zoomFOV = 45;
         [Space]
         [SerializeField] TankRound ammo;
         [Space]
@@ -32,6 +33,8 @@ namespace SBC {
         private float mXd;
         private float mYd;
         private bool fire;
+        private bool zoom;
+        private float fov;
 
         private float cannon_angle = 0f;
 
@@ -46,6 +49,9 @@ namespace SBC {
 
             orig_CameraQuaternion = camParent.localRotation;
             rb = GetComponent<Rigidbody>();
+
+            fov = PlayerPrefs.GetFloat("fov", 60f);
+
         }
 
         // Update is called once per frame
@@ -78,6 +84,17 @@ namespace SBC {
                 crosshair.position = cam.WorldToScreenPoint( hit.point );
                 crosshair.localScale = Vector3.one * Mathf.Lerp( 0.3f , 1f , 200f / hit.distance );
 			}
+
+            //ADS
+            zoom = Input.GetButton("ADS");
+            if (zoom)
+            {
+                Camera.main.fieldOfView = zoomFOV;
+            }
+            else 
+            { 
+                Camera.main.fieldOfView = fov; 
+            }
         }
 
         // Get mouse delta values for this frame.
