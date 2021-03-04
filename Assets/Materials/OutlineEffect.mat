@@ -39,5 +39,6 @@ Material:
     - Vector1_e8675d45f47247fc9ac30cc69fc33825: 3.7
     - _thickPower: 4
     - _thickness: 6
-    m_Colors: []
+    m_Colors:
+    - Color_39469b7396cc4e96b30f33c2ee7ffca2: {r: 0.735849, g: 0.5449448, b: 0.5449448, a: 0}
   m_BuildTextureStacks: []
