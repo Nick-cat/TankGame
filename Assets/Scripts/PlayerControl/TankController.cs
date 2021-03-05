@@ -10,6 +10,7 @@ namespace SBC
         public float tankSpeed;
         public float rotateSpeed;
         public float brakeForce = 2f;
+        [Tooltip("tank top speed")]
         public float maxVelocity;
         public float driftAngle;
         public float jumpForce;
@@ -34,21 +35,29 @@ namespace SBC
         private Rigidbody rb;
         public bool canJump = true;
 
+        private GameObject spawnPoint;
+
         private void Start()
         {
             rb = GetComponent <Rigidbody>();
             rb.centerOfMass = centerOfMass;
+            spawnPoint = GameObject.Find("SpawnPoint");
         }
+
         void FixedUpdate()
         {
-            float forwards = Input.GetAxis("Vertical");
+            //get input
             float rotate = Input.GetAxis("Horizontal");
             bool brake = Input.GetButton("Brake");
             bool jump = Input.GetButton("Jump");
+            bool respawn = Input.GetButton("Respawn");
 
             //custom gravity
             rb.AddForce(Vector3.up * -customGravity * 100f);
-            
+
+            //Resets tank to Spawnpoint
+            if(respawn) Respawn();
+
             if (jump && canJump)
             {
                 rb.AddForce(transform.up * jumpForce * 100f);
@@ -57,14 +66,10 @@ namespace SBC
             if (IsGrounded())
             {
                 canJump = true;
-                //Debug.Log("isGrounded");
 
+                //TankRotation that is disabled at top speed
                 if (rb.velocity.magnitude < maxVelocity)
                 {
-                    //Forwards Tank movement is now handled by the Suspension controller
-                    //rb.AddForce(transform.forward * forwards * tankSpeed * 100f * Time.deltaTime);
-
-                    //TankRotation
                     Vector3 rotateAmount = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime, 0f);
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
                 }
@@ -85,7 +90,7 @@ namespace SBC
                 {
                     rb.angularDrag = groundDrag / 2;
                     rb.drag = groundDrag;
-                }            
+                }
             }
             else 
             {
@@ -94,6 +99,7 @@ namespace SBC
                 canJump = false;
             }
         }
+
         bool IsGrounded(){
             //cast a ray from center of body to down direction, check if anything intersects the bottom of the body.
             LayerMask ground = LayerMask.GetMask("Ground");
@@ -102,6 +108,14 @@ namespace SBC
             return val;
             
        }
+
+        void Respawn()
+        {
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                transform.position = spawnPoint.transform.position;
+                transform.rotation = spawnPoint.transform.rotation;
+        }
     }
 }
 
