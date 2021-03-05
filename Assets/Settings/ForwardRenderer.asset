@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-350712540189337285
+--- !u!114 &-5893979681702320424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,16 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c39dea412cddd9942a4afaf331d4640d, type: 3}
-  m_Name: NewBlit
+  m_Script: {fileID: 11500000, guid: 9dea88b8bfbd93941b433ee338a4192d, type: 3}
+  m_Name: OutlineEffect
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   settings:
-    Event: 300
+    Event: 1000
     blitMaterial: {fileID: 2100000, guid: 36f68297b848aa54997d718f4baca06c, type: 2}
     blitMaterialPassIndex: 0
-    destination: 0
-    textureId: _BlitPassTexture
+    setInverseViewMatrix: 0
+    srcType: 1
+    srcTextureId: _AfterPostProcessTexture
+    srcTextureObject: {fileID: 0}
+    dstType: 1
+    dstTextureId: _AfterPostProcessTexture
+    dstTextureObject: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,8 +37,8 @@ MonoBehaviour:
   m_Name: ForwardRenderer
   m_EditorClassIdentifier: 
   m_RendererFeatures:
-  - {fileID: -350712540189337285}
-  m_RendererFeatureMap: 3b59bd87cd0422fb
+  - {fileID: -5893979681702320424}
+  m_RendererFeatureMap: d866c306b56034ae
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   shaders:
