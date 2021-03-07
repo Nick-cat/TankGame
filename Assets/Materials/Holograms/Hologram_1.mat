@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Hologram_1
   m_Shader: {fileID: -6465566751694194690, guid: b5e38208fee5f194caaca06eb27f4bc2, type: 3}
-  m_ShaderKeywords: BOOLEAN_0B4C05513A634DA08A2FF31474AA98DE_ON
+  m_ShaderKeywords: BOOLEAN_0031B97156044A4488D689B91EB1E8C4_ON BOOLEAN_0B4C05513A634DA08A2FF31474AA98DE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -52,6 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - BOOLEAN_0031B97156044A4488D689B91EB1E8C4: 1
     - BOOLEAN_0B4C05513A634DA08A2FF31474AA98DE: 1
     - Boolean_4c55d4807a6545c8aee015b505152028: 1
     - Boolean_dcd6cb76535d4c11931848ff163d570c: 1
@@ -59,6 +60,7 @@ Material:
     - Vector1_4f44872435f94d279079afc40eac620d: 0.1
     - Vector1_60b08614b2284f3298221e449907c373: 3
     - Vector1_6de00bad0a054cb0b030d40b151b66dc: 0.5
+    - colourTextureMix: 0
     - distortionDensity: 10
     - distortionScale: 10
     - distortionSpeed: 1
