@@ -7,6 +7,7 @@ public class CreateTextureArray : MonoBehaviour
 {
 
     public Texture2D[] textures;
+    public string textureName = "_MainTex";
 
 
 
@@ -30,7 +31,7 @@ public class CreateTextureArray : MonoBehaviour
         // Apply our changes
         texture2DArray.Apply();
 
-        GetComponent<Renderer>().sharedMaterial.SetTexture("_MainTex", texture2DArray);
+        GetComponent<Renderer>().sharedMaterial.SetTexture(textureName, texture2DArray);
     }
 
 
