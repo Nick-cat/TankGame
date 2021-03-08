@@ -10,16 +10,16 @@ namespace SBC
         public float tankSpeed;
         public float rotateSpeed;
         public float brakeForce = 2f;
-        [Tooltip("tank top speed")]
         public float maxVelocity;
         public float driftAngle;
         public float jumpForce;
-        public Vector3 centerOfMass;
         
         public float distanceToGround = .5f;
         public Transform rayPoint;
 
+        [Header("Gravity and Drag")]
         public float customGravity = 2f;
+        public Vector3 centerOfMass;
         public float groundDrag = 3f;
         public float airDrag = 0f;
 
@@ -33,7 +33,7 @@ namespace SBC
         public float wheelRadius;
 
         private Rigidbody rb;
-        public bool canJump = true;
+        private bool canJump = true;
 
         private GameObject spawnPoint;
 

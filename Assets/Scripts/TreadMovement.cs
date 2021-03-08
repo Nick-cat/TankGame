@@ -10,7 +10,7 @@ namespace SBC
         private Renderer treads;
 
         //get treadspeed from tank controller
-        public TankController tank;
+        [SerializeField] TankController tank;
 
         void Start()
         {

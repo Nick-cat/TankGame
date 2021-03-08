@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
-    public List<AudioClip> musicClips = new List<AudioClip>();
+    [SerializeField] List<AudioClip> musicClips = new List<AudioClip>();
     private AudioSource musicSource;
     AudioClip currentTrack;
     private float length;

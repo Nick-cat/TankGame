@@ -6,8 +6,8 @@ namespace SBC
 {
     public class JumpPad : MonoBehaviour
     {
-        public float padForce;
-        public Vector3 launchDirection;
+        [SerializeField] float padForce;
+        [SerializeField] Vector3 launchDirection;
 
         void OnTriggerEnter(Collider other)
         {

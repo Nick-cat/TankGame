@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
+    [Tooltip("Makes the billboard face the player instead of the camera")]
+    [SerializeField] bool lookAtPlayer;
+
     private GameObject player;
-    public bool lookAtPlayer;
 
     private void Start()
     {

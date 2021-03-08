@@ -7,7 +7,6 @@ public class CameraFollower : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position = Camera.main.transform.position;
-
     }
 
 }
