@@ -2772,7 +2772,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 17, y: 160.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7665373934188224870
 CanvasRenderer:
@@ -4121,10 +4121,10 @@ MonoBehaviour:
   maxVelocity: 504
   driftAngle: 20
   jumpForce: 40
-  centerOfMass: {x: 0, y: -0.25, z: 0}
   distanceToGround: 1
   rayPoint: {fileID: 4317496733733423152}
   customGravity: 2
+  centerOfMass: {x: 0, y: -0.25, z: 0}
   groundDrag: 3
   airDrag: 0
   treadSpeed: 20
@@ -4133,7 +4133,6 @@ MonoBehaviour:
   springStiffness: 200
   damperStiffness: 20
   wheelRadius: 0.4
-  canJump: 1
 --- !u!54 &2245938511210598322
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4364,7 +4363,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1500
+  far clip plane: 2000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -4417,7 +4416,7 @@ MonoBehaviour:
   m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
-  m_Dithering: 0
+  m_Dithering: 1
   m_ClearDepth: 1
   m_AllowXRRendering: 1
   m_RequiresDepthTexture: 0
@@ -9393,7 +9392,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1366, y: 768}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
