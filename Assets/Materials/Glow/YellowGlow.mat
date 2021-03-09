@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_39ba1d51c8bd4427a19ec2dd143a0fe1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_8d9c99224fb84bc7bba3384f091d24e2:
         m_Texture: {fileID: 2800000, guid: 5579e885c9df32a4bb82344ce5fc3f46, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -84,14 +88,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - BOOLEAN_E44A03F7AE46400FB3F2EFAAC1093A7A: 0
     - Boolean_cd329a602c004655a0282b355981e908: 1
+    - EMISSIONTOGGLE: 0
     - HighlightMix: 1
+    - TILEUV: 0
     - Vector1_322a5977c997464ba8029bfcd10386b4: 1
     - Vector1_5ae86f1ddb1a478088e1e24275e6a095: 1
     - Vector1_630ecd83e7ca43649d2ff48f08f9a494: 2
     - Vector1_6831147e4df54f77998262305e69d158: 1
     - Vector1_881cd917b9464d84bed7d9eca6b873b8: 1
     - Vector1_90c61bc17a1d494cbb8eef58353e9e0f: 0
+    - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 10
     - Vector1_d6eba9a780f14e1aaaa72f4d798798d4: 0
     - _AlphaClip: 0
     - _Blend: 0
@@ -119,6 +127,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - baseTextureMix: 0
     - contrast: 1
     - emissionHue: 1
     - emissionMultipler: 1
@@ -132,7 +141,10 @@ Material:
     - rimSize: 0.57
     - saturation: 1
     - shadowBlend: 0.1
+    - shadowNormal: 1
     - shadowSize: 0
+    - snowOpacity: 1
+    - snowScale: 10
     - waveSpeed: 0.1
     m_Colors:
     - Color_11ce3ab1bb464bc5b8b520675d7bbc9a: {r: 0, g: 0, b: 0, a: 1}
@@ -140,11 +152,11 @@ Material:
     - Color_90e7a4db6e164ace8b4287ac0de2d215: {r: 0.49930143, g: 0.5188679, b: 0.28146136, a: 1}
     - Color_998a863085434630b3b8dbcc190263dc: {r: 0.92549014, g: 1, b: 0, a: 1}
     - Color_b5840d6591814bb5812e29843e1aa744: {r: 0.5813676, g: 0.5849056, b: 0.28417587, a: 1}
-    - Gradient0_Colour0: {r: 0.9559822, g: 1, b: 0, a: 1}
-    - Gradient0_Colour1: {r: 0.8151567, g: 0.8490566, b: 0.084104665, a: 1}
-    - Gradient1_Colour0: {r: 0.5660378, g: 0.4047704, b: 0.16286935, a: 1}
-    - Gradient1_Colour1: {r: 0.3962264, g: 0.3962264, b: 0.106532566, a: 1}
-    - HighlightColor: {r: 0.52180487, g: 0.592791, b: 0.7735849, a: 0}
+    - Gradient0_Colour0: {r: 0.10196066, g: 1, b: 0, a: 1}
+    - Gradient0_Colour1: {r: 0.3030883, g: 0.46226418, b: 0.33313683, a: 1}
+    - Gradient1_Colour0: {r: 0.5030705, g: 0.8962264, b: 0.59172326, a: 1}
+    - Gradient1_Colour1: {r: 0.13536845, g: 0.24528301, b: 0.17250176, a: 1}
+    - HighlightColor: {r: 0.52156866, g: 0.77254903, b: 0.6966562, a: 0}
     - HighlightDetail: {r: 1, g: 2, b: 0, a: 0}
     - HighlightScale: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_a193f463bafc41fa8481cdcdbd335c36: {r: 4, g: 2, b: 0, a: 0}
@@ -158,11 +170,13 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0.5092592, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - baseTextureTint: {r: 1, g: 1, b: 1, a: 0}
     - noise0: {r: 1, g: 1, b: 0, a: 0}
     - noise1: {r: 1, g: 1, b: 0, a: 0}
     - normalScale: {r: 0, g: 0, b: 0, a: 0}
     - rimColour: {r: 0.9568628, g: 1, b: 0, a: 0}
     - shadowColour: {r: 0.81568635, g: 0.85098046, b: 0.08235294, a: 0}
+    - snowDirection: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6445297848220209022
 MonoBehaviour:

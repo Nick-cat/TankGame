@@ -18,6 +18,12 @@ namespace SBC {
             foreach ( Collider c in cols ) {
                 Rigidbody rb = c.attachedRigidbody;
                 if ( rb != null ) rb.AddExplosionForce( explosionForce , pos , explosionRadius , 1.0f );
+                
+                //deal damage
+                if (c.gameObject.CompareTag("Enemy"))
+                {
+                    c.gameObject.GetComponent<HealthManager>().Hurt(explosionForce);
+                }
             }
 
             if ( explosionEffectObject != null ) Instantiate( explosionEffectObject , transform.position , Quaternion.identity );

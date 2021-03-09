@@ -50,8 +50,6 @@ namespace SBC {
             orig_CameraQuaternion = camParent.localRotation;
             rb = GetComponent<Rigidbody>();
 
-            fov = PlayerPrefs.GetFloat("fov", 60f);
-
         }
 
         // Update is called once per frame
@@ -79,6 +77,8 @@ namespace SBC {
                 if ( fireSoundHandler != null ) fireSoundHandler.Fire();
 			}
 
+
+
             RaycastHit hit;
             if (Physics.Raycast(cannonTipTransform.position, cannonTipTransform.forward, out hit, 500f, ~(1 << 11))) {
                 crosshair.position = cam.WorldToScreenPoint( hit.point );
@@ -93,7 +93,7 @@ namespace SBC {
             }
             else 
             { 
-                Camera.main.fieldOfView = fov; 
+                Camera.main.fieldOfView = PlayerPrefs.GetFloat("fov", 60f); 
             }
         }
 

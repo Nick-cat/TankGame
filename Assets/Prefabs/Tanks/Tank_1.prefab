@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 304928179667466945}
   m_Layer: 0
   m_Name: TurretBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4041,8 +4041,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 107650126704451574}
+  - component: {fileID: 4046712353929396510}
   - component: {fileID: 7952173011122793669}
   - component: {fileID: 2814932708221376481}
+  - component: {fileID: 8102230174228913709}
   - component: {fileID: 2245938511210598322}
   - component: {fileID: 8495047969773635527}
   - component: {fileID: 7744120977413587943}
@@ -4076,6 +4078,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4046712353929396510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877776766204771783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01afc666f51d904498402fc101abe9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 200
+  fullHealth: 0
 --- !u!114 &7952173011122793669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4132,6 +4149,18 @@ MonoBehaviour:
   springStiffness: 200
   damperStiffness: 20
   wheelRadius: 0.4
+--- !u!114 &8102230174228913709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877776766204771783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2790b5c81789524da9d3976c2a58a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &2245938511210598322
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8241,7 +8270,7 @@ GameObject:
   - component: {fileID: 8664287897018214577}
   m_Layer: 0
   m_Name: TankBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8318,7 +8347,7 @@ MeshCollider:
   m_GameObject: {fileID: 7785738539399784031}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
