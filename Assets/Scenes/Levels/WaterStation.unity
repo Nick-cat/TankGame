@@ -451,11 +451,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f20607a91fcd7649aa711fbe9e4fc90, type: 3}
---- !u!4 &213622523 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3051446112008334460, guid: 76e0003e6e2bb81438066c6cca7166ad, type: 3}
-  m_PrefabInstance: {fileID: 1719310803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &261773770 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: abe3b6b4b20a7194a82ed89174228c09, type: 3}
@@ -621,24 +616,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4f3082d9336d0b048bbc6b44a0d0b00e, type: 3}
   m_PrefabInstance: {fileID: 2062090959}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &407438054 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2990866839763251458, guid: 76e0003e6e2bb81438066c6cca7166ad, type: 3}
-  m_PrefabInstance: {fileID: 1719310803}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &407438055
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 407438054}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.8
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &451833824
 GameObject:
   m_ObjectHideFlags: 0
@@ -6173,7 +6150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9064577636042028792, guid: 55da8542c60f9c34e94f44b219979aa1, type: 3}
       propertyPath: m_Name
-      value: SpawnPoint (1)
+      value: SpawnPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55da8542c60f9c34e94f44b219979aa1, type: 3}
@@ -6291,7 +6268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 1776105278}
-  crosshair: {fileID: 0}
+  gameUI: {fileID: 0}
   tank: {fileID: 0}
 --- !u!1 &1068474949
 GameObject:
@@ -8086,6 +8063,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76e0003e6e2bb81438066c6cca7166ad, type: 3}
+--- !u!4 &1719310804 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1611179454112832492, guid: 76e0003e6e2bb81438066c6cca7166ad, type: 3}
+  m_PrefabInstance: {fileID: 1719310803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1733286561 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: abe3b6b4b20a7194a82ed89174228c09, type: 3}
@@ -8447,7 +8429,7 @@ Transform:
   - {fileID: 2002830436}
   - {fileID: 1365211567}
   - {fileID: 1459219566}
-  - {fileID: 213622523}
+  - {fileID: 1719310804}
   - {fileID: 54201985}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -9439,6 +9421,10 @@ PrefabInstance:
     - target: {fileID: 1385715027681465111, guid: 9c5465f1a069e2e48896b046e49509f6, type: 3}
       propertyPath: m_Name
       value: Billboard_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385715027681465111, guid: 9c5465f1a069e2e48896b046e49509f6, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c5465f1a069e2e48896b046e49509f6, type: 3}
