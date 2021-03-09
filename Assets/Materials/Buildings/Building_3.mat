@@ -138,7 +138,7 @@ Material:
     - shadowSize: 0
     - snowOpacity: 1
     - snowScale: 10
-    - textureRotate: 90
+    - textureRotate: 0
     - waveSpeed: 0.1
     m_Colors:
     - Gradient0_Colour0: {r: 0.20558918, g: 0.22022957, b: 0.26415086, a: 1}
@@ -164,7 +164,7 @@ Material:
     - shadowColour: {r: 0, g: 0, b: 0, a: 0}
     - snowDirection: {r: 0, g: 1, b: 0, a: 0}
     - textureOffset: {r: 0, g: 0, b: 0, a: 0}
-    - textureTiling: {r: 1.5, g: 1.5, b: 0, a: 0}
+    - textureTiling: {r: 0.75, g: 0.75, b: 0, a: 0}
     - tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5285597056900848691
