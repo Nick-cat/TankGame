@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] float currentHealth;
-    [SerializeField] float maxHealth;
+    public float currentHealth;
+    public float maxHealth;
     public bool fullHealth;
 
     void Start()
@@ -25,6 +25,7 @@ public class HealthManager : MonoBehaviour
     public void Hurt (float damageDealt)
     {
         currentHealth -= damageDealt;
+        Debug.Log("CurrentHealth =" + currentHealth);
     }
 
     public void Heal(float healAmount)
@@ -32,6 +33,7 @@ public class HealthManager : MonoBehaviour
         currentHealth += healAmount;
 
         if (currentHealth > maxHealth) currentHealth = maxHealth;
+        Debug.Log("CurrentHealth =" + currentHealth);
     }
 
     public void ResetHealth()

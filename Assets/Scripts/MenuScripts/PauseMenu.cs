@@ -10,7 +10,7 @@ namespace SBC
         public static bool isPaused = false;
 
         [SerializeField] GameObject pauseUI;
-        [SerializeField] GameObject crosshair;
+        [SerializeField] GameObject gameUI;
 
         //get tank controller to disable on pause
         public GameObject tank;
@@ -37,7 +37,7 @@ namespace SBC
         public void Resume()
         {
             pauseUI.SetActive(false);
-            crosshair.SetActive(true);
+            gameUI.SetActive(true);
             Time.timeScale = 1f;
             look.enabled = true;
             control.enabled = true;
@@ -50,7 +50,7 @@ namespace SBC
         public void Pause()
         {
             pauseUI.SetActive(true);
-            crosshair.SetActive(false);
+            gameUI.SetActive(false);
             Time.timeScale = 0f;
             look.enabled = false;
             control.enabled = false;

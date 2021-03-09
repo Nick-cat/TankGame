@@ -12,7 +12,6 @@ public class CollisionDamage : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         float collisionForce = Mathf.Round((collision.impulse.magnitude / Time.fixedDeltaTime)/ 1000f);
-        Debug.Log(collisionForce);
         if (collisionForce > 10f)
         {
             healthManager.Hurt(collisionForce - 10f);
