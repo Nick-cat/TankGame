@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionDamage : MonoBehaviour
+namespace SBC
 {
-    private HealthManager healthManager;
-    private void Start()
+    public class CollisionDamage : MonoBehaviour
     {
-        healthManager = GetComponent<HealthManager>();
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        float collisionForce = Mathf.Round((collision.impulse.magnitude / Time.fixedDeltaTime)/ 1000f);
-        if (collisionForce > 10f)
+        private HealthManager healthManager;
+        private void Start()
         {
-            healthManager.Hurt(collisionForce - 10f);
+            healthManager = GetComponent<HealthManager>();
         }
+        private void OnCollisionEnter(Collision collision)
+        {
+            float collisionForce = Mathf.Round((collision.impulse.magnitude / Time.fixedDeltaTime) / 1000f);
+            if (collisionForce > 10f)
+            {
+                healthManager.Hurt(collisionForce - 10f);
+            }
 
+        }
     }
 }

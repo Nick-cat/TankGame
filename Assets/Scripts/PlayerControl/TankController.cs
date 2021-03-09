@@ -109,7 +109,7 @@ namespace SBC
             
        }
 
-        void Respawn()
+        public void Respawn()
         {
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;

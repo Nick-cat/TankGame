@@ -20,6 +20,9 @@ namespace SBC
 
         //get suspension values from tank controller
         public TankController tank;
+
+        //get gas input from TankAcceleration
+        public TankAcceleration gas;
         
         void Start()
         {
@@ -58,7 +61,7 @@ namespace SBC
                     Vector3 moveDirection = Quaternion.AngleAxis(driftDirection, Vector3.up) * transform.forward;
 
                     //adds forward force to the tank at the wheels
-                    forwardForce = Input.GetAxis("Vertical") * tank.tankSpeed * 100f;
+                    forwardForce = gas.acceleration * tank.tankSpeed * 100f;
                     rb.AddForceAtPosition(forwardForce * moveDirection * Time.deltaTime, Hit.point, ForceMode.Acceleration);
                 }
             }

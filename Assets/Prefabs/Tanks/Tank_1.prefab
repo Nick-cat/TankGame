@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+  gas: {fileID: 8399523769151903330}
 --- !u!1 &277731058236050749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,6 +2499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+  gas: {fileID: 8399523769151903330}
 --- !u!1 &2470494395082827398
 GameObject:
   m_ObjectHideFlags: 0
@@ -3585,6 +3587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+  gas: {fileID: 8399523769151903330}
 --- !u!1 &3358412139355751297
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,6 +4110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+  gas: {fileID: 8399523769151903330}
 --- !u!1 &3877776766204771783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4118,6 +4122,7 @@ GameObject:
   - component: {fileID: 107650126704451574}
   - component: {fileID: 4046712353929396510}
   - component: {fileID: 7952173011122793669}
+  - component: {fileID: 8399523769151903330}
   - component: {fileID: 2814932708221376481}
   - component: {fileID: 8102230174228913709}
   - component: {fileID: 2245938511210598322}
@@ -4194,6 +4199,20 @@ MonoBehaviour:
   cam: {fileID: 433608549044093899}
   crosshair: {fileID: 9099936520003028955}
   fireSoundHandler: {fileID: 1852096006221109457}
+--- !u!114 &8399523769151903330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877776766204771783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f0ac35867502a44ad9f9cdccd54709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accelerationTime: 0.001
+  acceleration: 0
 --- !u!114 &2814932708221376481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4209,7 +4228,7 @@ MonoBehaviour:
   tankSpeed: 40
   rotateSpeed: 50
   brakeForce: 5
-  maxVelocity: 504
+  maxVelocity: 200
   driftAngle: 20
   jumpForce: 40
   distanceToGround: 1
@@ -5422,6 +5441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+  gas: {fileID: 8399523769151903330}
 --- !u!1 &4474442086191766669
 GameObject:
   m_ObjectHideFlags: 0
@@ -5700,6 +5720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+  gas: {fileID: 8399523769151903330}
 --- !u!1 &4546702035940138026
 GameObject:
   m_ObjectHideFlags: 0
@@ -6339,6 +6360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+  gas: {fileID: 8399523769151903330}
 --- !u!1 &5211782445574015168
 GameObject:
   m_ObjectHideFlags: 0
@@ -7615,6 +7637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+  gas: {fileID: 8399523769151903330}
 --- !u!1 &6743330406274030812
 GameObject:
   m_ObjectHideFlags: 0
@@ -9803,6 +9826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+  gas: {fileID: 8399523769151903330}
 --- !u!1 &8576477011897685690
 GameObject:
   m_ObjectHideFlags: 0
@@ -9848,6 +9872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+  gas: {fileID: 8399523769151903330}
 --- !u!1 &8677865629761448733
 GameObject:
   m_ObjectHideFlags: 0
@@ -9931,6 +9956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+  gas: {fileID: 8399523769151903330}
 --- !u!1 &8750009894998879617
 GameObject:
   m_ObjectHideFlags: 0
@@ -10439,6 +10465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+  gas: {fileID: 8399523769151903330}
 --- !u!1 &9208408929607945200
 GameObject:
   m_ObjectHideFlags: 0

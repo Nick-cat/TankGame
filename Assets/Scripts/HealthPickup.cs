@@ -2,23 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthPickup : MonoBehaviour
+namespace SBC
 {
-    [SerializeField] float restoreAmount;
-    [SerializeField] GameObject healthRestoreEffect;
-    private HealthManager target;
-    private void OnTriggerEnter(Collider other)
+    public class HealthPickup : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+        [SerializeField] float restoreAmount;
+        [SerializeField] GameObject healthRestoreEffect;
+        private HealthManager target;
+        private void OnTriggerEnter(Collider other)
         {
-            target = other.transform.root.GetComponent<HealthManager>();
-            if (!target.fullHealth)
+            if (other.CompareTag("Player"))
             {
-                target.Heal(restoreAmount);
-                if (healthRestoreEffect != null) Instantiate(healthRestoreEffect, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                target = other.transform.root.GetComponent<HealthManager>();
+                if (!target.fullHealth)
+                {
+                    target.Heal(restoreAmount);
+                    if (healthRestoreEffect != null) Instantiate(healthRestoreEffect, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
             }
         }
     }
-
 }
