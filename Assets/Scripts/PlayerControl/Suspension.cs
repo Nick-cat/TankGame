@@ -54,7 +54,7 @@ namespace SBC
                     //adds drift
                     bool drift = Input.GetButton("Drift");
                     float rotate = Input.GetAxis("Horizontal");
-                    
+
                     if (drift) driftDirection = tank.driftAngle * rotate;
                     else driftDirection = 0;
                     

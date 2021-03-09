@@ -7,21 +7,19 @@ public class TankAcceleration : MonoBehaviour
     [SerializeField] float accelerationTime = 0.05f;
     
     private float oldAcceleration;
+    private float gas;
     [HideInInspector] public float acceleration;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        StartCoroutine(nameof(Acceleration));
+        gas = Input.GetAxisRaw("Vertical");
+        Acceleration();
     }
 
-    IEnumerator Acceleration()
+    void Acceleration()
     {
-        float gas = Input.GetAxis("Vertical");
         oldAcceleration = acceleration;
-        acceleration = Mathf.Lerp(oldAcceleration, gas, accelerationTime);
-
-        yield return new WaitForSeconds(accelerationTime);
-
+        acceleration = Mathf.MoveTowards(oldAcceleration, gas, accelerationTime * Time.deltaTime);
     }
 }

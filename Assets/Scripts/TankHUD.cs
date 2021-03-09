@@ -9,9 +9,12 @@ namespace SBC
     {
 
         [SerializeField] TMPro.TMP_Text speedometer;
+        [Header("Health")]
         [SerializeField] Image healthBar;
         [SerializeField] Image slowHealthBar;
-
+        [SerializeField] Image barBase;
+        [Tooltip("health lower than this percent triggers warnings")] 
+        [SerializeField] float danger = .1f;
         [SerializeField] float easeTime = 0.1f;
 
         private float tankVelocity;
@@ -64,7 +67,12 @@ namespace SBC
             slowHealth = Mathf.Lerp(oldSlowHealth, healthPercent, easeTime / 4);
             slowHealthBar.fillAmount = slowHealth;
 
+            //change the base colour
+            if (healthPercent <= danger) barBase.color = Color.red;
+            else barBase.color = Color.white;
+
             yield return new WaitForSeconds(easeTime);
         }
+        
     }
 }

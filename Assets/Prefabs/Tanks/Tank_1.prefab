@@ -3114,14 +3114,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.3764706}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dd62075910d835f4f978b41acca3b471, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9242bfd1a13e35b458f6a37170ff5048, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4124,11 +4124,11 @@ GameObject:
   - component: {fileID: 7952173011122793669}
   - component: {fileID: 8399523769151903330}
   - component: {fileID: 2814932708221376481}
-  - component: {fileID: 8102230174228913709}
+  - component: {fileID: 1755671199055048753}
   - component: {fileID: 2245938511210598322}
   - component: {fileID: 8495047969773635527}
+  - component: {fileID: 8102230174228913709}
   - component: {fileID: 7744120977413587943}
-  - component: {fileID: 1755671199055048753}
   m_Layer: 0
   m_Name: Tank_1
   m_TagString: Player
@@ -4211,7 +4211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f0ac35867502a44ad9f9cdccd54709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationTime: 0.001
+  accelerationTime: 0.05
   acceleration: 0
 --- !u!114 &2814932708221376481
 MonoBehaviour:
@@ -4243,7 +4243,7 @@ MonoBehaviour:
   springStiffness: 200
   damperStiffness: 20
   wheelRadius: 0.4
---- !u!114 &8102230174228913709
+--- !u!114 &1755671199055048753
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4252,9 +4252,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3877776766204771783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2790b5c81789524da9d3976c2a58a65, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ff5cee9d6c67f547aabfda355d8bac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedometer: {fileID: 7318737540493083278}
+  healthBar: {fileID: 6476455938662065006}
+  slowHealthBar: {fileID: 4079898778497240469}
+  barBase: {fileID: 3577072058808471161}
+  danger: 0.1
+  easeTime: 0.05
 --- !u!54 &2245938511210598322
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4367,6 +4373,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8102230174228913709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877776766204771783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2790b5c81789524da9d3976c2a58a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7744120977413587943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4379,22 +4397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee28fd0ab21b9734b8847f296a0e8c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1755671199055048753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3877776766204771783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff5cee9d6c67f547aabfda355d8bac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedometer: {fileID: 7318737540493083278}
-  healthBar: {fileID: 6476455938662065006}
-  slowHealthBar: {fileID: 4079898778497240469}
-  easeTime: 0.1
 --- !u!1 &3915026765732629661
 GameObject:
   m_ObjectHideFlags: 0

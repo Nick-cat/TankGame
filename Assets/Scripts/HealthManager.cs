@@ -18,18 +18,22 @@ namespace SBC
         // Update is called once per frame
         void Update()
         {
+            //makes sure to not heal object over max health
+            if (currentHealth > maxHealth) currentHealth = maxHealth;
+            
+            //is object dead?
             if (currentHealth <= 0)
             {
                 //Respawns if player, otherwise it destroys the object
                 if (gameObject.CompareTag("Player"))
-                { 
+                {
                     gameObject.GetComponent<TankController>().Respawn();
                     ResetHealth();
                 }
                 else Destroy(gameObject);
             }
 
-            //checks and sets if the player is at full health
+            //checks and sets if the object is at full health
             if (currentHealth == maxHealth) fullHealth = true;
             else fullHealth = false;
         }
@@ -37,16 +41,13 @@ namespace SBC
         public void Hurt(float damageDealt)
         {
             currentHealth -= damageDealt;
-            Debug.Log("CurrentHealth =" + currentHealth);
+            Debug.Log(gameObject.name + " currentHealth = " + currentHealth);
         }
 
         public void Heal(float healAmount)
         {
             currentHealth += healAmount;
-
-            //makes sure to not heal the target over max health
-            if (currentHealth > maxHealth) currentHealth = maxHealth;
-            Debug.Log("CurrentHealth =" + currentHealth);
+            Debug.Log(gameObject.name + " currentHealth = " + currentHealth);
         }
 
         public void ResetHealth()
