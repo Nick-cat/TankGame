@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_17ad2eca3284470f81c628fee7216958:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_39ba1d51c8bd4427a19ec2dd143a0fe1:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -67,6 +71,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b0bf3cac94984801b961182202e4912b_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 4b303e6688f36474a93930ee0911a4fc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -88,8 +96,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - BOOLEAN_985BFF4DC9984E47AD20050C0D9598F0: 0
+    - BOOLEAN_E44A03F7AE46400FB3F2EFAAC1093A7A: 0
     - Boolean_cd329a602c004655a0282b355981e908: 1
+    - EMISSIONTOGGLE: 0
     - HighlightMix: 1
+    - TILEUV: 0
     - Vector1_322a5977c997464ba8029bfcd10386b4: 1
     - Vector1_5ae86f1ddb1a478088e1e24275e6a095: 1
     - Vector1_630ecd83e7ca43649d2ff48f08f9a494: 2
@@ -97,6 +109,7 @@ Material:
     - Vector1_8652533be92b432d9855e93854eefa1f: 0
     - Vector1_881cd917b9464d84bed7d9eca6b873b8: 1
     - Vector1_90c61bc17a1d494cbb8eef58353e9e0f: 0
+    - Vector1_bc830d15de754f48b256e6088fb91849: 0.4
     - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 10
     - Vector1_d6eba9a780f14e1aaaa72f4d798798d4: 0
     - _AlphaClip: 0
@@ -141,6 +154,9 @@ Material:
     - shadowBlend: 0.1
     - shadowNormal: 1
     - shadowSize: 0
+    - snowHieght: 0.5
+    - snowOpacity: 0.5
+    - snowScale: 10
     - tileUV: 0
     - waveSpeed: 0.1
     m_Colors:
@@ -167,11 +183,13 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0.5092592, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - baseTextureTint: {r: 1, g: 1, b: 1, a: 0}
     - noise0: {r: 1, g: 1, b: 0, a: 0}
     - noise1: {r: 1, g: 1, b: 0, a: 0}
     - normalScale: {r: 1, g: 1, b: 0, a: 0}
     - rimColour: {r: 0, g: 0, b: 0, a: 0}
     - shadowColour: {r: 1, g: 1, b: 1, a: 0}
+    - snowDirection: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6445297848220209022
 MonoBehaviour:

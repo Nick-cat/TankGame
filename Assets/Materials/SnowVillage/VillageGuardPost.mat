@@ -153,7 +153,7 @@ Material:
     - highlightRotation: 0
     - noise0Celldensity: 1
     - noise1Celldensity: 0.32
-    - normalStrength: 0
+    - normalStrength: 1
     - rimBlend: 0.094
     - rimSize: 0.708
     - saturation: 1.1

@@ -36,6 +36,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - Texture2D_17ad2eca3284470f81c628fee7216958:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_39ba1d51c8bd4427a19ec2dd143a0fe1:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -84,6 +88,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b0bf3cac94984801b961182202e4912b_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 4b303e6688f36474a93930ee0911a4fc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -106,6 +114,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - BOOLEAN_880D493E04C04CCBABA029DE4BE00A8D: 0
+    - BOOLEAN_985BFF4DC9984E47AD20050C0D9598F0: 0
     - BOOLEAN_A5F375183FE94ABCB764552F45645F3B: 0
     - BOOLEAN_E44A03F7AE46400FB3F2EFAAC1093A7A: 0
     - Boolean_cd329a602c004655a0282b355981e908: 0
@@ -122,6 +131,7 @@ Material:
     - Vector1_6831147e4df54f77998262305e69d158: 0.08
     - Vector1_881cd917b9464d84bed7d9eca6b873b8: 0.75
     - Vector1_90c61bc17a1d494cbb8eef58353e9e0f: 0
+    - Vector1_bc830d15de754f48b256e6088fb91849: 0.4
     - Vector1_cb88799f2bb14b949251db438d9346a7: 1
     - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 10
     - Vector1_d6eba9a780f14e1aaaa72f4d798798d4: 0
@@ -167,6 +177,7 @@ Material:
     - shadowBlend: 0.1
     - shadowNormal: 1
     - shadowSize: 0
+    - snowHieght: 0.5
     - snowOpacity: 1
     - snowScale: 10
     - tileUV: 0

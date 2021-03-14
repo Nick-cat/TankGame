@@ -32,6 +32,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_17ad2eca3284470f81c628fee7216958:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_39ba1d51c8bd4427a19ec2dd143a0fe1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -72,6 +80,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b0bf3cac94984801b961182202e4912b_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 4b303e6688f36474a93930ee0911a4fc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -93,13 +105,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - BOOLEAN_985BFF4DC9984E47AD20050C0D9598F0: 0
+    - BOOLEAN_E44A03F7AE46400FB3F2EFAAC1093A7A: 0
     - Boolean_706ac75a2b3d479aa2f0f779829c24af: 0
+    - EMISSIONTOGGLE: 0
     - HighlightMix: 0.25
+    - TILEUV: 0
     - Vector1_0aa4b202278a44e0b76393f53a5cc7dc: 0.35
     - Vector1_323bb96e315645b6b0015edac5dd46a5: 0
     - Vector1_370faab0ed204cae8573a5cf9c254a15: 1
     - Vector1_90c61bc17a1d494cbb8eef58353e9e0f: 0
     - Vector1_b4f91df6446344f89d1e25195969b9fd: 0.1
+    - Vector1_bc830d15de754f48b256e6088fb91849: 0.4
     - Vector1_c06160f1d9b947cfaca64592760b4860: 0.4
     - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 10
     - _AlphaClip: 0
@@ -128,6 +145,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - baseTextureMix: 0
     - contrast: 1
     - emissionHue: 0
     - emissionMultipler: 0
@@ -143,6 +161,9 @@ Material:
     - shadowBlend: 0.05
     - shadowNormal: 0.5
     - shadowSize: 0
+    - snowHieght: 0.5
+    - snowOpacity: 0.5
+    - snowScale: 10
     - tileUV: 1
     - waveSpeed: 0.1
     - windDensity: 5
@@ -167,9 +188,11 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - baseTextureTint: {r: 1, g: 1, b: 1, a: 0}
     - noise0: {r: 10, g: 10, b: 0, a: 0}
     - noise1: {r: 0.5, g: 0.5, b: 0, a: 0}
     - normalScale: {r: 1, g: 1, b: 0, a: 0}
     - rimColour: {r: 0.54901963, g: 0.46274513, b: 0.46274513, a: 0}
     - shadowColour: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 0}
+    - snowDirection: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
