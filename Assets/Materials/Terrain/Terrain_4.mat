@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_17ad2eca3284470f81c628fee7216958:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_39ba1d51c8bd4427a19ec2dd143a0fe1:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -63,6 +67,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b0bf3cac94984801b961182202e4912b_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 4b303e6688f36474a93930ee0911a4fc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -84,10 +92,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - BOOLEAN_985BFF4DC9984E47AD20050C0D9598F0: 0
     - BOOLEAN_E44A03F7AE46400FB3F2EFAAC1093A7A: 0
     - EMISSIONTOGGLE: 0
     - HighlightMix: 0.2
     - TILEUV: 0
+    - Vector1_abeeb9b075544ccd8ea2635d13f23ffe: 1
+    - Vector1_bc830d15de754f48b256e6088fb91849: 0.4
     - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 10
     - _AlphaClip: 0
     - _Blend: 0
@@ -130,6 +141,7 @@ Material:
     - shadowBlend: 0
     - shadowNormal: 0.5
     - shadowSize: 0
+    - snowHieght: 0.5
     - snowOpacity: 1
     - snowScale: 10
     - tileUV: 0
