@@ -70,7 +70,12 @@ namespace SBC
                 //TankRotation that is disabled at top speed
                 if (rb.velocity.magnitude < maxVelocity)
                 {
-                    Vector3 rotateAmount = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime, 0f);
+                    //this kind of works to turn the tank when upside down
+                    int upsidedown = 1;
+                    if (Vector3.Dot(transform.up, Vector3.down) > 0) upsidedown = -1;
+                    
+                    //get and set tank rotation
+                    Vector3 rotateAmount = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime * upsidedown, 0f);
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
                 }
                 //TankBrake
