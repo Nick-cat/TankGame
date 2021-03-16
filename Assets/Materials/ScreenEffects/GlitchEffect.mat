@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GlitchEffect
+  m_Shader: {fileID: -6465566751694194690, guid: f00797047481c264484a7dbbedfdf71a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_561c884d734c4ffea6ff813cada8d3c6: 2
+    - Vector1_674198e1c0854c70b1ec42222f482005: 0
+    - Vector1_7dfb3e81b7df4ea392e29fdbeaf42ade: 0.3
+    - Vector1_8610ca9414da4e2a884281f5caf3cc91: 0
+    - Vector1_a1094cbc19b945a394e82472bad0eed4: 0
+    - Vector1_abc10366d04c4aa6bb16f31a9db755c1: 0
+    - Vector1_b1d7e97fdba243f3937e6324beb80b46: 20
+    - Vector1_b5f2a45aba9e4dfc8d2b595d8258056f: 1
+    - Vector1_ce5ed531937f4ef68175e23629af92a3: 3.38
+    - Vector1_ebbfc5dc5bba4e83b3591370a50ef71f: 1.66
+    - distortionSpeed: 0.3
+    m_Colors:
+    - Color_7f33b322c75a4d0ab02c8d7a83aa3aaf: {r: 0.21960784, g: 0.627451, b: 1.1764706, a: 0}
+    - Color_86134dc0195e4ba2b80bb9874eb5fa1c: {r: 0.027450994, g: 0.106122084, b: 0.65882355, a: 0}
+    - Color_c143dabba045403eaec89b19cdf056ca: {r: 0.031372543, g: 0.67783564, b: 0.69803923, a: 0}
+    - Vector2_22448031a9254ef3b00ce8418dda8c32: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_54556f5c6d254bed88a7d1611c8f79e3: {r: 1, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
