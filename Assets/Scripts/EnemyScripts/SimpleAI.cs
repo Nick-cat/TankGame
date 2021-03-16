@@ -8,30 +8,28 @@ namespace SBC
     {
         [SerializeField] GameObject target;
         [SerializeField] Vector3 centerOfMass;
-        [Space]
-        [ReadOnly] public float moveSpeed;
-        [SerializeField] Vector2 moveSpeedRange = new Vector2(10f, 20f);
+        [SerializeField] Vector2 moveSpeedRange;
         public float maxSpeed = 30f;
-        [ReadOnly] [SerializeField] float turnSpeed;
-        [SerializeField] Vector2 turnSpeedRange = new Vector2(0.01f, 0.05f);
-        [ReadOnly] [Tooltip("The distance from the player that the enemy will start to cirle")]
-        public float strafeDistance;
-        [Tooltip("Randomly sets strafe distance to a value between x and y")]
-        [SerializeField] Vector2 strafeRange = new Vector2(10f, 20f);
-
+        [SerializeField] Vector2 turnSpeedRange;
+        [SerializeField] Vector2 strafeRange;
+        [SerializeField] TankRound ammo;
+        [SerializeField] GameObject cannonTip;
+        [SerializeField] FireSoundHandler fireSoundHandler;
         [Header("Suspension")]
         public float suspensionHeight;
         public float springTravel;
         public float springStiffness;
         public float damperStiffness;
         public float wheelRadius;
-
-        [HideInInspector] public int rotateDirection;
-        private Rigidbody rb;
-
+        [SerializeField] SimpleSuspension[] suspension;
         [SerializeField] bool drawDebug = false;
 
-        [SerializeField] SimpleSuspension[] suspension;
+        [HideInInspector] public float moveSpeed;
+        [HideInInspector] public float strafeDistance;
+        private float angle;
+        private float turnSpeed;
+        [HideInInspector] public int rotateDirection;
+        private Rigidbody rb;
 
         private void Start()
         {
@@ -49,7 +47,7 @@ namespace SBC
             rb.centerOfMass = centerOfMass;
         }
 
-        void Update()
+        void FixedUpdate()
         {
             if (target == null)
             {
@@ -57,14 +55,24 @@ namespace SBC
                 target = GameObject.FindWithTag("Player");
             }
             else AutoPilot();
+            
         }
 
         void AutoPilot()
         {
+            CalculateAngle();
             //Rotation
-            transform.Rotate(0, CalculateAngle() * turnSpeed, 0);
+            transform.Rotate(0, angle * turnSpeed, 0);
             //suspension and movement handled in SimpleSuspension script on each wheel
             foreach (SimpleSuspension wheel in suspension) wheel.Suspension();
+            
+            if (Input.GetKeyDown("t"))
+            {
+                TankRound round = Instantiate(ammo);
+                round.Shoot(cannonTip.transform.position, cannonTip.transform.forward, ammo.projectileSpeed);
+                rb.AddForceAtPosition(-cannonTip.transform.forward * ammo.projectileForce, cannonTip.transform.position);
+                if (fireSoundHandler != null) fireSoundHandler.Fire();
+            }
         }
 
         public float CalculateDistance()
@@ -73,37 +81,19 @@ namespace SBC
             return distance;
         }
 
-        float CalculateAngle()
+        void CalculateAngle()
         {
             //calculate direction to target
             Vector3 pathToTarget = target.transform.position - transform.position;
 
-            //get and set rotation to target
-            float angle = (Vector3.SignedAngle(transform.forward, pathToTarget, transform.up));
-
+            //get rotation to target
+            angle = (Vector3.SignedAngle(transform.forward, pathToTarget, transform.up));
+            Debug.Log(angle);
             //draws forward vector and pathToTarget vector
             if (drawDebug == true)
             {
                 Debug.DrawRay(transform.position, pathToTarget, Color.red, 1);
                 Debug.DrawRay(transform.position, transform.forward * 10, Color.green, 1);
-            }
-            return angle;
-        }
-        void Movement()
-        {
-            if (CalculateDistance() > strafeDistance)
-            {
-                if (rb.velocity.magnitude < maxSpeed)
-                {
-                    Vector3 forwards = transform.forward * moveSpeed * Time.deltaTime * 100f;
-                    rb.AddForce(forwards, ForceMode.Acceleration);
-                }
-            }
-            else
-            {
-                //makes the enemy strafe around the player when within strafeDistance
-                Vector3 strafe = transform.right * moveSpeed * Time.deltaTime * 50f * rotateDirection;
-                rb.AddForce(strafe, ForceMode.Acceleration);
             }
         }
     }
