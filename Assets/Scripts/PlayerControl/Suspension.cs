@@ -67,8 +67,6 @@ namespace SBC
             }
             //displays the suspension
             Debug.DrawRay(transform.position, -transform.up * Hit.distance, Color.green);
-            
-
         }
     }
 }

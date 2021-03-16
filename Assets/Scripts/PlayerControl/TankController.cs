@@ -73,7 +73,6 @@ namespace SBC
                     //this kind of works to turn the tank when upside down
                     int upsidedown = 1;
                     if (Vector3.Dot(transform.up, Vector3.down) > 0) upsidedown = -1;
-                    
                     //get and set tank rotation
                     Vector3 rotateAmount = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime * upsidedown, 0f);
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
@@ -105,14 +104,14 @@ namespace SBC
             }
         }
 
-        bool IsGrounded(){
+        bool IsGrounded()
+        {
             //cast a ray from center of body to down direction, check if anything intersects the bottom of the body.
             LayerMask ground = LayerMask.GetMask("Ground");
 
             bool val = Physics.Raycast(rayPoint.position, -transform.up, distanceToGround, ground);
             return val;
-            
-       }
+        }
 
         public void Respawn()
         {
