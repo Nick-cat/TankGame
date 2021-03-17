@@ -51,8 +51,8 @@ Material:
     - cloudCutoff: 0.1413
     - cloudOpacity: 0.5
     - cloudScale: 0.1
-    - cloudSpeedX: 0.1
-    - cloudSpeedZ: -0.1
+    - cloudSpeedX: 0.05
+    - cloudSpeedZ: -0.05
     - fuzzyness: 0.046
     - skyIntensity: 1.25
     - sunExponent: 1
