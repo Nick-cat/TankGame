@@ -170,8 +170,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 669.9999389648438,
-            "y": -254.0000457763672
+            "x": 521.0000610351563,
+            "y": -220.99998474121095
         },
         "m_Blocks": [
             {
@@ -187,8 +187,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 669.9999389648438,
-            "y": -65.00004577636719
+            "x": 521.0000610351563,
+            "y": -31.999977111816408
         },
         "m_Blocks": [
             {
@@ -202,7 +202,7 @@
             "m_Guid": ""
         }
     },
-    "m_Path": "Shader Graphs",
+    "m_Path": "Shader Graphs/Post",
     "m_ConcretePrecision": 0,
     "m_OutputNode": {
         "m_Id": ""
