@@ -88,7 +88,7 @@ namespace SBC
 
             //get rotation to target
             angle = (Vector3.SignedAngle(transform.forward, pathToTarget, transform.up));
-            Debug.Log(angle);
+            //Debug.Log(angle);
             //draws forward vector and pathToTarget vector
             if (drawDebug == true)
             {

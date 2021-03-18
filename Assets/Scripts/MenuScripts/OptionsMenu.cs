@@ -98,7 +98,7 @@ namespace SBC
         {
             PlayerPrefs.SetFloat("fov", Mathf.Round(Mathf.Clamp(fov, 60f, 120f)));
             fovValue.SetText(PlayerPrefs.GetFloat("fov").ToString());
-            Camera.main.fieldOfView = PlayerPrefs.GetFloat("fov");
+            if (Camera.main != null) Camera.main.fieldOfView = PlayerPrefs.GetFloat("fov");
         }
     }
 }
