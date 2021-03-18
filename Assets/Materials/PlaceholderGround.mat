@@ -80,7 +80,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Contrast: 1.1
+    - Contrast: 0.9
     - RimBlend: 0.7
     - RimSize: 0.35
     - Saturation: 0.9

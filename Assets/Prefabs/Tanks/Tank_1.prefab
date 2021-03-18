@@ -5090,7 +5090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f0ac35867502a44ad9f9cdccd54709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationTime: 0.05
+  accelerationTime: 0.5
   acceleration: 0
 --- !u!114 &2814932708221376481
 MonoBehaviour:
@@ -5104,7 +5104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f079f0e6a88a6408bef850fa57b48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankSpeed: 40
+  tankSpeed: 10
   rotateSpeed: 50
   brakeForce: 5
   maxVelocity: 200

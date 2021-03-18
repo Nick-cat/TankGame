@@ -10,20 +10,11 @@ public class TankAcceleration : MonoBehaviour
     private float gas;
     [HideInInspector] public float acceleration;
 
-    private Rigidbody rb;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
         gas = Input.GetAxisRaw("Vertical");
         Acceleration();
-        if (rb.velocity.magnitude < 1) accelerationTime = 1f;
-        else accelerationTime = 0.05f;
     }
 
     void Acceleration()

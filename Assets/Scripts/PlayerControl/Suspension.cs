@@ -18,6 +18,11 @@ namespace SBC
         private float forwardForce;
         private float driftDirection;
 
+        //PlayerInputs
+        bool drift;
+        float rotate;
+
+
         //get suspension values from tank controller
         public TankController tank;
 
@@ -32,6 +37,13 @@ namespace SBC
             minlength = tank.suspensionHeight - tank.springTravel;
             maxLength = tank.suspensionHeight + tank.springTravel;
         }
+        private void Update()
+        {
+            //get player inputs
+            drift = Input.GetButton("Drift");
+            rotate = Input.GetAxis("Horizontal");
+        }
+
         void FixedUpdate()
         {
             //this provides suspension but does not actually move the wheels
@@ -52,9 +64,6 @@ namespace SBC
                 if (rb.velocity.magnitude < tank.maxVelocity)
                 {
                     //adds drift
-                    bool drift = Input.GetButton("Drift");
-                    float rotate = Input.GetAxis("Horizontal");
-
                     if (drift) driftDirection = tank.driftAngle * rotate;
                     else driftDirection = 0;
                     
