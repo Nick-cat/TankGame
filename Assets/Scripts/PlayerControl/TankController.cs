@@ -37,6 +37,12 @@ namespace SBC
 
         private GameObject spawnPoint;
 
+        //player inputs
+        float rotate;
+        bool brake;
+        bool jump;
+        bool respawn;
+
         private void Start()
         {
             rb = GetComponent <Rigidbody>();
@@ -44,14 +50,17 @@ namespace SBC
             spawnPoint = GameObject.Find("SpawnPoint");
         }
 
+        private void Update()
+        {
+            //get player inputs
+            rotate = Input.GetAxis("Horizontal");
+            brake = Input.GetButton("Brake");
+            jump = Input.GetButton("Jump");
+            respawn = Input.GetButton("Respawn");
+        }
+
         void FixedUpdate()
         {
-            //get input
-            float rotate = Input.GetAxis("Horizontal");
-            bool brake = Input.GetButton("Brake");
-            bool jump = Input.GetButton("Jump");
-            bool respawn = Input.GetButton("Respawn");
-
             //custom gravity
             rb.AddForce(Vector3.up * -customGravity * 100f);
 
