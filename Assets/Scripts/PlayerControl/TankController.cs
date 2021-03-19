@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace SBC
 {
-
     public class TankController : MonoBehaviour
     {
         public float tankSpeed;
+        [SerializeField] float accelerationTime = 0.05f;
         public float rotateSpeed;
         public float rotateSmoothing = 0.5f;
         public float brakeForce = 2f;
@@ -42,10 +42,18 @@ namespace SBC
         private Vector3 rotateChangeVelocity;
 
         //player inputs
+        private float gas;
         float rotate;
         bool brake;
         bool jump;
         bool respawn;
+        bool boost;
+
+        private float oldAcceleration = 0f;
+        private float forwards = 0f;
+        [HideInInspector] public float acceleration;
+
+        private float velocityChange = 0f;
 
         private void Start()
         {
@@ -57,10 +65,13 @@ namespace SBC
         private void Update()
         {
             //get player inputs
+            gas = Input.GetAxisRaw("Vertical");
             rotate = Input.GetAxis("Horizontal");
             brake = Input.GetButton("Brake");
             jump = Input.GetButton("Jump");
             respawn = Input.GetButton("Respawn");
+            boost = Input.GetButton("Boost");
+            if (boost) Debug.Log("Boost!");
         }
 
         void FixedUpdate()
@@ -68,8 +79,9 @@ namespace SBC
             //custom gravity
             rb.AddForce(Vector3.up * -customGravity * 100f);
 
-            //Resets tank to Spawnpoint
             if(respawn) Respawn();
+
+            Acceleration();
 
             if (jump && canJump)
             {
@@ -79,44 +91,48 @@ namespace SBC
             if (IsGrounded())
             {
                 canJump = true;
-
-                //this kind of works to turn the tank when upside down
-                int upsidedown = 1;
-                if (Vector3.Dot(transform.up, Vector3.down) > 0) upsidedown = -1;
-
-                //get and set tank rotation
-                Vector3 rotateOld = rotateAmount;
-                //Vector3 roateNew = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime * upsidedown, 0f);
-                Vector3 rotateNew = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime * upsidedown, 0f);
-                //smooths tank rotation value to
-                rotateAmount = Vector3.SmoothDamp(rotateOld, rotateNew, ref rotateChangeVelocity, rotateSmoothing);
-                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
-
-                //TankBrake
-                if (brake)
-                {
-                    rb.angularDrag = brakeForce;
-                    rb.drag = brakeForce;
-
-                    //Drift?
-                    //Experimental, comment this out if tank is too buggy
-                    if (rb.velocity.sqrMagnitude > Mathf.Sqrt(maxVelocity))
-                    {
-                        rb.angularVelocity = new Vector3(0f, rotate * (rotateSpeed / 2f) * Time.deltaTime, 0f);
-                    }
-                }
-                else
-                {
-                    rb.angularDrag = groundDrag / 2;
-                    rb.drag = groundDrag;
-                }
+                Rotate();
+                Brake();
+                return;
             }
-            else 
+            rb.drag = 0;
+            rb.angularDrag = airDrag;
+            canJump = false;
+        }
+
+        private void Brake()
+        {
+            if (brake)
             {
-                rb.drag = 0;
-                rb.angularDrag = airDrag;
-                canJump = false;
+                forwards = 0f;
+                rb.angularDrag = brakeForce;
+                rb.drag = brakeForce;
+                return;
+                //Experimental Drift, comment this out if tank is too buggy
+                //if (rb.velocity.sqrMagnitude > Mathf.Sqrt(maxVelocity))
+                //{
+                //    rb.angularVelocity = new Vector3(0f, rotate * (rotateSpeed / 2f) * Time.deltaTime, 0f);
+                //}
             }
+            forwards = gas;
+            rb.angularDrag = groundDrag / 2;
+            rb.drag = groundDrag;
+        }
+
+        private void Rotate()
+        {
+            //turn the tank correctly when upside down
+            int upsidedown = 1;
+            if (Vector3.Dot(transform.up, Vector3.down) > 0) upsidedown = -1;
+
+            //adjust rotatation depending on speed
+            float rotateSpeedMod = Mathf.Clamp(1f - rb.velocity.magnitude / (maxVelocity * 2), 0.8f, 1f);
+
+            //smooths tank rotation value
+            Vector3 rotateOld = rotateAmount;
+            Vector3 rotateNew = new Vector3(0f, rotate * rotateSpeed * rotateSpeedMod * Time.deltaTime * upsidedown, 0f);
+            rotateAmount = Vector3.SmoothDamp(rotateOld, rotateNew, ref rotateChangeVelocity, rotateSmoothing);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
         }
 
         bool IsGrounded()
@@ -130,10 +146,17 @@ namespace SBC
 
         public void Respawn()
         {
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
-                transform.position = spawnPoint.transform.position;
-                transform.rotation = spawnPoint.transform.rotation;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            transform.position = spawnPoint.transform.position;
+            transform.rotation = spawnPoint.transform.rotation;
+            acceleration = 0f;
+        }
+
+        void Acceleration()
+        {
+            oldAcceleration = acceleration;
+            acceleration = Mathf.SmoothDamp(oldAcceleration, forwards, ref velocityChange, accelerationTime);
         }
     }
 }

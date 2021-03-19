@@ -99,15 +99,12 @@ namespace SBC {
             }
 
             //ADS
-            zoom = Input.GetButton("ADS");
-            if (zoom)
-            {
-                Camera.main.fieldOfView = zoomFOV;
-            }
-            else 
+            if (zoom) 
             { 
-                Camera.main.fieldOfView = PlayerPrefs.GetFloat("fov", 60f); 
+                Camera.main.fieldOfView = zoomFOV; 
+                return; 
             }
+            Camera.main.fieldOfView = PlayerPrefs.GetFloat("fov", 60f);
         }
 
         // Get mouse delta values for this frame.
@@ -120,7 +117,8 @@ namespace SBC {
 
             // Mouse click.
             fire = Input.GetButtonDown( "Fire1" );
-		}
+            zoom = Input.GetButton("ADS");
+        }
 
         // Take arbitrary float angle value and apply it to quaternion rotation, apply it to cannon and camera.
         void UpdateCannonAngle() {
