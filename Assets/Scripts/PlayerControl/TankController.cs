@@ -9,6 +9,7 @@ namespace SBC
     {
         public float tankSpeed;
         public float rotateSpeed;
+        public float rotateSmoothing = 0.5f;
         public float brakeForce = 2f;
         public float maxVelocity;
         public float driftAngle;
@@ -36,6 +37,9 @@ namespace SBC
         private bool canJump = true;
 
         private GameObject spawnPoint;
+
+        private Vector3 rotateAmount;
+        private Vector3 rotateChangeVelocity;
 
         //player inputs
         float rotate;
@@ -76,16 +80,18 @@ namespace SBC
             {
                 canJump = true;
 
-                //TankRotation that is disabled at top speed
-                if (rb.velocity.magnitude < maxVelocity)
-                {
-                    //this kind of works to turn the tank when upside down
-                    int upsidedown = 1;
-                    if (Vector3.Dot(transform.up, Vector3.down) > 0) upsidedown = -1;
-                    //get and set tank rotation
-                    Vector3 rotateAmount = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime * upsidedown, 0f);
-                    transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
-                }
+                //this kind of works to turn the tank when upside down
+                int upsidedown = 1;
+                if (Vector3.Dot(transform.up, Vector3.down) > 0) upsidedown = -1;
+
+                //get and set tank rotation
+                Vector3 rotateOld = rotateAmount;
+                //Vector3 roateNew = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime * upsidedown, 0f);
+                Vector3 rotateNew = new Vector3(0f, rotate * rotateSpeed * Time.deltaTime * upsidedown, 0f);
+                //smooths tank rotation value to
+                rotateAmount = Vector3.SmoothDamp(rotateOld, rotateNew, ref rotateChangeVelocity, rotateSmoothing);
+                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
+
                 //TankBrake
                 if (brake)
                 {

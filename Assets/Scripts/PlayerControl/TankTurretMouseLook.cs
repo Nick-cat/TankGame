@@ -36,7 +36,6 @@ namespace SBC {
         private float mYd;
         private bool fire;
         private bool zoom;
-        private float fov;
 
         private float cannon_angle = 0f;
 
