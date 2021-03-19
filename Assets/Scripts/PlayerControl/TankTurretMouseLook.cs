@@ -16,6 +16,8 @@ namespace SBC {
         [Space]
         [SerializeField] float MAX_CANNON_ANGLE = 8.5f;
         [SerializeField] float zoomFOV = 45;
+        [SerializeField] float crosshairScaleTime = 0.01f;
+        [SerializeField] float crosshairMoveTime = 0.5f;
         [Space]
         [SerializeField] TankRound ammo;
         [Space]
@@ -41,6 +43,9 @@ namespace SBC {
         private Quaternion orig_CameraQuaternion;
 
         private Rigidbody rb;
+
+        private Vector3 crosshairScaleVelocity = Vector3.zero;
+        private Vector3 crosshairPosVelocity = Vector3.zero;
 
         // Start is called before the first frame update
         void Start () {
@@ -77,13 +82,22 @@ namespace SBC {
                 if ( fireSoundHandler != null ) fireSoundHandler.Fire();
 			}
 
-
-
             RaycastHit hit;
             if (Physics.Raycast(cannonTipTransform.position, cannonTipTransform.forward, out hit, 500f, ~(1 << 11))) {
-                crosshair.position = cam.WorldToScreenPoint( hit.point );
-                crosshair.localScale = Vector3.one * Mathf.Lerp( 0.3f , 1f , 200f / hit.distance );
-			}
+                //Smoothed Crosshair Position
+                Vector3 oldPos = crosshair.position;
+                Vector3 newPos = cam.WorldToScreenPoint(hit.point);
+                crosshair.position = Vector3.SmoothDamp(oldPos, newPos, ref crosshairPosVelocity, crosshairMoveTime);
+                //unsmoothed crosshair position
+                //crosshair.position = cam.WorldToScreenPoint(hit.point);
+                
+                //Smoothed Crosshair Scale
+                Vector3 oldScale = crosshair.localScale;
+                Vector3 newScale = Vector3.one * Mathf.Lerp(0.3f, 1f, 200f / hit.distance);
+                crosshair.localScale = Vector3.SmoothDamp(oldScale, newScale, ref crosshairScaleVelocity, crosshairScaleTime);
+                //unsmoothed crosshair scale
+                //crosshair.localScale = Vector3.one * Mathf.Lerp( 0.3f , 1f , 200f / hit.distance );
+            }
 
             //ADS
             zoom = Input.GetButton("ADS");
