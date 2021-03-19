@@ -15,7 +15,6 @@ namespace SBC
             ResetHealth();
         }
 
-        // Update is called once per frame
         void Update()
         {
             //makes sure to not heal object over max health
@@ -54,6 +53,5 @@ namespace SBC
         {
             currentHealth = maxHealth;
         }
-
     }
 }

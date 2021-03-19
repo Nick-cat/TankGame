@@ -22,8 +22,7 @@ namespace SBC
         bool drift;
         float rotate;
 
-
-        //get suspension values from tank controller
+        //get suspension and acceleration values from tank controller
         public TankController tank;
         
         void Start()
@@ -67,8 +66,7 @@ namespace SBC
                     Vector3 moveDirection = Quaternion.AngleAxis(driftDirection, Vector3.up) * transform.forward;
 
                     //adds forward force to the tank at the wheels
-                    forwardForce = tank.acceleration * tank.tankSpeed * 100f;
-                    rb.AddForceAtPosition(forwardForce * moveDirection * Time.deltaTime, Hit.point, ForceMode.Acceleration);
+                    rb.AddForceAtPosition(tank.forwardForce * moveDirection * Time.deltaTime, Hit.point, ForceMode.Acceleration);
                 }
             }
             //displays the suspension

@@ -6,7 +6,9 @@ namespace SBC
 {
     public class TankController : MonoBehaviour
     {
-        public float tankSpeed;
+        public float tankSpeed = 10f;
+        [SerializeField] float boostSpeed = 1.5f;
+        public float boostTimer = 100f;
         [SerializeField] float accelerationTime = 0.05f;
         public float rotateSpeed;
         public float rotateSmoothing = 0.5f;
@@ -43,23 +45,27 @@ namespace SBC
 
         //player inputs
         private float gas;
-        float rotate;
-        bool brake;
-        bool jump;
-        bool respawn;
-        bool boost;
+        private float rotate;
+        private bool brake;
+        private bool jump;
+        private bool respawn;
+        private bool boost;
 
+        //acceleration variables
         private float oldAcceleration = 0f;
         private float forwards = 0f;
         [HideInInspector] public float acceleration;
-
+        [HideInInspector] public float forwardForce;
         private float velocityChange = 0f;
+
+        [HideInInspector] public float boostRemaining;
 
         private void Start()
         {
             rb = GetComponent <Rigidbody>();
             rb.centerOfMass = centerOfMass;
             spawnPoint = GameObject.Find("SpawnPoint");
+            boostRemaining = boostTimer;
         }
 
         private void Update()
@@ -71,16 +77,19 @@ namespace SBC
             jump = Input.GetButton("Jump");
             respawn = Input.GetButton("Respawn");
             boost = Input.GetButton("Boost");
-            if (boost) Debug.Log("Boost!");
         }
 
         void FixedUpdate()
         {
+            if (respawn)
+            {
+                Respawn();
+                return;
+            }
             //custom gravity
             rb.AddForce(Vector3.up * -customGravity * 100f);
 
-            if(respawn) Respawn();
-
+            //calculates acceleration which is used by the suspension script
             Acceleration();
 
             if (jump && canJump)
@@ -88,6 +97,7 @@ namespace SBC
                 rb.AddForce(transform.up * jumpForce * 100f);
                 canJump = false;
             }
+
             if (IsGrounded())
             {
                 canJump = true;
@@ -95,6 +105,7 @@ namespace SBC
                 Brake();
                 return;
             }
+
             rb.drag = 0;
             rb.angularDrag = airDrag;
             canJump = false;
@@ -157,6 +168,17 @@ namespace SBC
         {
             oldAcceleration = acceleration;
             acceleration = Mathf.SmoothDamp(oldAcceleration, forwards, ref velocityChange, accelerationTime);
+            Boost();
+            forwardForce = acceleration * tankSpeed * 100f * Boost();
+        }
+        private float Boost()
+        {
+            if (boost && boostRemaining != 0f)
+            {
+                boostRemaining -= 1f;
+                return boostSpeed;
+            }
+            return 1f;
         }
     }
 }
