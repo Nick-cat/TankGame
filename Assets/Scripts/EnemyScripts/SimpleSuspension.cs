@@ -17,12 +17,16 @@ namespace SBC
         private Rigidbody rb;
 
         //get suspension values
-        public SimpleAI simpleAI;
-
+        public GameObject enemy;
+        private SimpleAI simpleAI;
+        
         void Start()
         {
             //get rigidbody
-            rb = transform.root.GetComponent<Rigidbody>();
+            rb = enemy.GetComponent<Rigidbody>();
+
+            //get simpleAI
+            simpleAI = enemy.GetComponent<SimpleAI>();
 
             minlength = simpleAI.suspensionHeight - simpleAI.springTravel;
             maxLength = simpleAI.suspensionHeight + simpleAI.springTravel;
