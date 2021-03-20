@@ -59,6 +59,7 @@ namespace SBC
         private float velocityChange = 0f;
 
         [HideInInspector] public float boostRemaining;
+        private BoostEffect boostEffect;
 
         private void Start()
         {
@@ -66,6 +67,7 @@ namespace SBC
             rb.centerOfMass = centerOfMass;
             spawnPoint = GameObject.Find("SpawnPoint");
             boostRemaining = boostTimer;
+            boostEffect = GetComponent<BoostEffect>();
         }
 
         private void Update()
@@ -168,7 +170,6 @@ namespace SBC
         {
             oldAcceleration = acceleration;
             acceleration = Mathf.SmoothDamp(oldAcceleration, forwards, ref velocityChange, accelerationTime);
-            Boost();
             forwardForce = acceleration * tankSpeed * 100f * Boost();
         }
         private float Boost()
@@ -176,8 +177,10 @@ namespace SBC
             if (boost && boostRemaining != 0f)
             {
                 boostRemaining -= 1f;
+                boostEffect.Boost();
                 return boostSpeed;
             }
+            boostEffect.NoBoost();
             return 1f;
         }
     }

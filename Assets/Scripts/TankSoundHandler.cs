@@ -24,7 +24,7 @@ namespace SBC
             //currently adjusts the pitch and volume of the sound based on the tank velocity
             engineSpeed = Mathf.InverseLerp(0, tank.maxVelocity, rb.velocity.magnitude);
             engine.pitch = Mathf.SmoothStep(0.75f, 1.5f, engineSpeed);
-            engine.volume = Mathf.SmoothStep(0.4f, 1f, engineSpeed);
+            engine.volume = Mathf.SmoothStep(0.6f, 1f, engineSpeed);
         }
 
 
