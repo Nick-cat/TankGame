@@ -7,7 +7,7 @@ namespace SBC
     public class TankController : MonoBehaviour
     {
         public float tankSpeed = 10f;
-        [SerializeField] float boostSpeed = 1.5f;
+        [SerializeField] float boostSpeed = 60f;
         public float boostTimer = 100f;
         [SerializeField] float accelerationTime = 0.05f;
         public float rotateSpeed;
@@ -103,6 +103,7 @@ namespace SBC
             if (IsGrounded())
             {
                 canJump = true;
+                Boost();
                 Rotate();
                 Brake();
                 return;
@@ -170,18 +171,18 @@ namespace SBC
         {
             oldAcceleration = acceleration;
             acceleration = Mathf.SmoothDamp(oldAcceleration, forwards, ref velocityChange, accelerationTime);
-            forwardForce = acceleration * tankSpeed * 100f * Boost();
+            forwardForce = acceleration * tankSpeed * 100f;
         }
-        private float Boost()
+        private void Boost()
         {
             if (boost && boostRemaining != 0f)
             {
                 boostRemaining -= 1f;
                 boostEffect.Boost();
-                return boostSpeed;
+                rb.AddForce(transform.forward * boostSpeed * 100f * Time.deltaTime, ForceMode.Acceleration);
+                return;
             }
             boostEffect.NoBoost();
-            return 1f;
         }
     }
 }

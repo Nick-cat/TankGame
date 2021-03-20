@@ -36,6 +36,8 @@ namespace SBC {
         private float mYd;
         private bool fire;
         private bool zoom;
+        //set by the boost script
+        [HideInInspector] public float fovMod;
 
         private float cannon_angle = 0f;
 
@@ -101,10 +103,10 @@ namespace SBC {
             //ADS
             if (zoom) 
             { 
-                Camera.main.fieldOfView = zoomFOV; 
+                Camera.main.fieldOfView = PlayerPrefs.GetFloat("fov", 60f) + fovMod - zoomFOV; 
                 return; 
             }
-            Camera.main.fieldOfView = PlayerPrefs.GetFloat("fov", 60f);
+            Camera.main.fieldOfView = PlayerPrefs.GetFloat("fov", 60f) + fovMod;
         }
 
         // Get mouse delta values for this frame.

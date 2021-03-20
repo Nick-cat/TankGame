@@ -11,6 +11,8 @@ namespace SBC
         [SerializeField] List<Transform> exhaustPipes;
         [SerializeField] GameObject exhaustEffect;
         [SerializeField] Volume postProcess;
+        [SerializeField] TankTurretMouseLook turret;
+        [SerializeField] float boostFOV = 20f;
         [Range(0f,1f)]
         [SerializeField] float effectStrength;
         [SerializeField] float effectSmoothTime = 1f;
@@ -19,8 +21,19 @@ namespace SBC
         private float chromValue;
         private float chromChange;
 
+        private float oldFOVMod;
+        private float fovChange;
+
+
+        private void Start()
+        {
+           
+        }
+
+
         public void Boost()
         {
+            //Chromatic Abberation Effect
             if (postProcess.profile.TryGet(out chromaticAberration))
             {
                 oldChromValue = chromValue;
@@ -28,10 +41,14 @@ namespace SBC
                 chromaticAberration.intensity.value = Mathf.Clamp(chromValue, 0f, 1f);
             }
 
+            //Exhaust Effect
             foreach (Transform p in exhaustPipes)
             {
                 p.GetComponentInChildren<ParticleSystem>().Play();
             }
+
+            oldFOVMod = turret.fovMod;
+            turret.fovMod = Mathf.SmoothDamp(oldFOVMod, boostFOV, ref fovChange, effectSmoothTime);
         }
 
         public void NoBoost()
@@ -48,6 +65,8 @@ namespace SBC
                 p.GetComponentInChildren<ParticleSystem>().Stop();
             }
 
+            oldFOVMod = turret.fovMod;
+            turret.fovMod = Mathf.SmoothDamp(oldFOVMod, 0f, ref fovChange, effectSmoothTime);
         }
     }
 }
