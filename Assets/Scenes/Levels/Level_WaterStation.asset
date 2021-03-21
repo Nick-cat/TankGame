@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Water Station
   levelThumb: {fileID: 21300000, guid: c79c1a793509f2747b8e0295efcabc26, type: 3}
-  levelIndex: 0
+  levelIndex: 6

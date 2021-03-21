@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Arena
   levelThumb: {fileID: 21300000, guid: 5503f717a64455248b972a7b55260a69, type: 3}
-  levelIndex: 0
+  levelIndex: 3

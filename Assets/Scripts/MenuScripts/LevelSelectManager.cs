@@ -19,18 +19,16 @@ public class LevelSelectManager : MonoBehaviour
         }
     }
 
-    private void SpawnLevelSelectObject(Levels level)
+    private void SpawnLevelSelectObject(Levels l)
     {
         GameObject levelCell = Instantiate(levelSelectObject, transform);
 
         Image thumbnail = levelCell.transform.Find("levelThumb").GetComponent<Image>();
         TMPro.TMP_Text name = levelCell.transform.Find("LevelName").GetComponentInChildren<TMPro.TMP_Text>();
+        Button cell = levelCell.transform.GetComponent<Button>();
 
-        thumbnail.sprite = level.levelThumb;
-        name.text = level.levelName;
-    }
-    public void LoadLevel(int levels)
-    {
-        level = levels;
+        thumbnail.sprite = l.levelThumb;
+        name.text = l.levelName;
+        cell.onClick.AddListener(delegate { level = l.levelIndex; });
     }
 }
