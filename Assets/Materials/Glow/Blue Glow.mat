@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Blue Glow
   m_Shader: {fileID: -6465566751694194690, guid: ab891102d2d55c541b81aa35b9027fa1, type: 3}
-  m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _NORMALMAP
+  m_ShaderKeywords: EMISSIONTOGGLE_ON _DETAIL_MULX2 _EMISSION _NORMALMAP
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -99,7 +99,7 @@ Material:
     - BOOLEAN_985BFF4DC9984E47AD20050C0D9598F0: 0
     - BOOLEAN_E44A03F7AE46400FB3F2EFAAC1093A7A: 0
     - Boolean_cd329a602c004655a0282b355981e908: 1
-    - EMISSIONTOGGLE: 0
+    - EMISSIONTOGGLE: 1
     - HighlightMix: 1
     - TILEUV: 0
     - Vector1_322a5977c997464ba8029bfcd10386b4: 1
@@ -139,8 +139,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - baseTextureMix: 0
-    - contrast: 1
-    - emissionHue: 1
+    - contrast: 1.148
+    - emissionHue: 0
     - emissionMultipler: 1
     - emissionToggle: 1
     - highlightRotation: 0
@@ -148,9 +148,9 @@ Material:
     - noise1Celldensity: 0.5
     - normalRotate: 0
     - normalStrength: 5
-    - rimBlend: 0.35
-    - rimSize: 0.6
-    - saturation: 1
+    - rimBlend: 0
+    - rimSize: 0
+    - saturation: 1.162
     - shadowBlend: 0.1
     - shadowNormal: 1
     - shadowSize: 0
@@ -187,7 +187,7 @@ Material:
     - noise0: {r: 1, g: 1, b: 0, a: 0}
     - noise1: {r: 1, g: 1, b: 0, a: 0}
     - normalScale: {r: 1, g: 1, b: 0, a: 0}
-    - rimColour: {r: 0, g: 0, b: 0, a: 0}
+    - rimColour: {r: 1, g: 1, b: 1, a: 0}
     - shadowColour: {r: 1, g: 1, b: 1, a: 0}
     - snowDirection: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

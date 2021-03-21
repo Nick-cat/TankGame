@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: GreenGlow
   m_Shader: {fileID: -6465566751694194690, guid: ab891102d2d55c541b81aa35b9027fa1, type: 3}
-  m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _NORMALMAP
+  m_ShaderKeywords: EMISSIONTOGGLE_ON _DETAIL_MULX2 _EMISSION _NORMALMAP
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -99,7 +99,7 @@ Material:
     - BOOLEAN_985BFF4DC9984E47AD20050C0D9598F0: 0
     - BOOLEAN_E44A03F7AE46400FB3F2EFAAC1093A7A: 0
     - Boolean_cd329a602c004655a0282b355981e908: 1
-    - EMISSIONTOGGLE: 0
+    - EMISSIONTOGGLE: 1
     - HighlightMix: 1
     - TILEUV: 0
     - Vector1_322a5977c997464ba8029bfcd10386b4: 1
@@ -140,7 +140,7 @@ Material:
     - baseTextureMix: 0
     - contrast: 1
     - emissionHue: 1
-    - emissionMultipler: 1
+    - emissionMultipler: 10
     - emissionToggle: 1
     - highlightRotation: 0
     - noise0Celldensity: 0.75
