@@ -96,7 +96,7 @@ Material:
     - Contrast: 1.2
     - RimBlend: 0.234
     - RimSize: 0.529
-    - Saturation: 1
+    - Saturation: 1.2
     - ShadowBlend: 0.1
     - ShadowSize: 0.138
     - _AlphaClip: 0
@@ -125,6 +125,9 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - normalStrength: 0
+    - shadowNormals: 1
+    - textureRotate: 0
     m_Colors:
     - RimColour: {r: 1, g: 1, b: 1, a: 0}
     - ShadowColour: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0}
@@ -132,6 +135,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - textureOffset: {r: 0, g: 0, b: 0, a: 0}
     - textureTiling: {r: 4, g: 4, b: 0, a: 0}
     - tint: {r: 0.7075472, g: 0.66415983, b: 0.66415983, a: 1}
   m_BuildTextureStacks: []

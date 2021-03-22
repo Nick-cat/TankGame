@@ -9,11 +9,12 @@ public class SpawnPoint : MonoBehaviour
 
     void Start()
     {
-        //how many tanks
+        //get which tank
         tankIndex = PlayerPrefs.GetInt("Tank");
 
         //Spawn in saved tank
         Instantiate(tankList[tankIndex], transform.position, transform.rotation);
+
     }
 
 

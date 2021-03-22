@@ -84,7 +84,7 @@ Material:
     - HighlightMix: 0
     - RimBlend: 0.2345
     - RimSize: 0.529
-    - Saturation: 1
+    - Saturation: 1.1
     - ShadowBlend: 0.1
     - ShadowSize: 0.138
     - Vector1_e12f407a9fad4411ba33935f0bf94d32: 0
@@ -123,6 +123,7 @@ Material:
     - normalRotate: 0
     - normalStrength: 1
     - shadowNormals: 1
+    - textureRotate: 0
     - waveSpeed: 0.1
     m_Colors:
     - Gradient0_Colour0: {r: 0.20558918, g: 0.22022957, b: 0.26415086, a: 1}
@@ -143,6 +144,7 @@ Material:
     - noise0: {r: 1, g: 1, b: 0, a: 0}
     - noise1: {r: 1, g: 1, b: 0, a: 0}
     - normalScale: {r: 1, g: 1, b: 0, a: 0}
+    - textureOffset: {r: 0, g: 0, b: 0, a: 0}
     - textureTiling: {r: 1, g: 1, b: 0, a: 0}
     - tint: {r: 0.7058824, g: 0.6627451, b: 0.6627451, a: 1}
   m_BuildTextureStacks: []

@@ -10,7 +10,9 @@ namespace SBC
 
         private GameObject[] tankList;
         private int tankIndex;
-        public LevelSelectManager levelSelect;
+        [SerializeField] LevelSelectManager levelSelect;
+        [SerializeField] Animator elevator;
+        [SerializeField] Animator fadeToBlack;
 
         void Start()
         {
@@ -59,10 +61,13 @@ namespace SBC
             PlayerPrefs.SetInt("Tank", tankIndex);
             if (PlayerPrefs.HasKey("Tank"))
                 Debug.Log(PlayerPrefs.GetInt("Tank"));
-            //Debug.Log(levelSelect.level);
-            SceneManager.LoadScene(levelSelect.level);
-
+            elevator.SetTrigger("Lift");
+            fadeToBlack.SetTrigger("FadeToBlack");
         }
 
+        public void LoadLevel()
+        {
+            SceneManager.LoadScene(levelSelect.level);
+        }
     }
 }
