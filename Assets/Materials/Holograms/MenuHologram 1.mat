@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MenuHologram
+  m_Name: MenuHologram 1
   m_Shader: {fileID: -6465566751694194690, guid: b5e38208fee5f194caaca06eb27f4bc2, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: BOOLEAN_0031B97156044A4488D689B91EB1E8C4_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -52,7 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - BOOLEAN_0031B97156044A4488D689B91EB1E8C4: 0
+    - BOOLEAN_0031B97156044A4488D689B91EB1E8C4: 1
     - BOOLEAN_0B4C05513A634DA08A2FF31474AA98DE: 0
     - Boolean_4c55d4807a6545c8aee015b505152028: 1
     - Boolean_dcd6cb76535d4c11931848ff163d570c: 1
@@ -62,22 +62,22 @@ Material:
     - Vector1_6de00bad0a054cb0b030d40b151b66dc: 0
     - colourTextureMix: 0
     - distortionDensity: 10
-    - distortionScale: 8.61
-    - distortionSpeed: 1
-    - distortionStrength: 0.1
+    - distortionScale: 0.5
+    - distortionSpeed: 0.1
+    - distortionStrength: 0.01
     - distrotionSpeed: 1
     - fresnelPower: 0
-    - glitchAmount: 0.059
+    - glitchAmount: 0.023
     - glitchSize: 10
     - glitchSpeed: 1
     - glitchStrength: 0.1
-    - lineSize: 720
-    - scanSize: 0.26
-    - scanSpeed: 0.39
-    - scanWidth: 8.7
+    - lineSize: 0
+    - scanSize: 0.1
+    - scanSpeed: 0
+    - scanWidth: 17.6
     - textureIndex: 0
     m_Colors:
     - Color_93465db232124f56bef1960a3861670e: {r: 0.031372543, g: 0.69803923, b: 0.25728574, a: 0}
-    - Color_a0085ed0562f4d9cb9e9b0874e08f27f: {r: 0.13013652, g: 0.9911022, b: 0.9911022, a: 1}
+    - Color_a0085ed0562f4d9cb9e9b0874e08f27f: {r: 0.073179066, g: 1.331859, b: 1.3977201, a: 1}
     - Color_d4c1675a2a764bd6bd1722c98e7ad2fa: {r: 0.6603774, g: 0.02803488, b: 0.02803488, a: 0}
   m_BuildTextureStacks: []
