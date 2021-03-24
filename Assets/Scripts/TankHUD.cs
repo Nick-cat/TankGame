@@ -89,7 +89,7 @@ namespace SBC
             oldBoost = boost;
             oldSlowBoost = slowBoost;
 
-            boostPercent = Mathf.Clamp(tank.boostRemaining / tank.boostTimer, 0f, 1f);
+            boostPercent = Mathf.Clamp(tank.boostRemaining / tank.boostMax, 0f, 1f);
 
             boost = Mathf.Lerp(oldBoost, boostPercent, easeTime);
             boostBar.fillAmount = boost;

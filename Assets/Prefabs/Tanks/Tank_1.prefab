@@ -5169,7 +5169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankSpeed: 10
   boostSpeed: 60
-  boostTimer: 500
+  boostMax: 70
   accelerationTime: 0.5
   rotateSpeed: 50
   rotateSmoothing: 0.5
@@ -10206,7 +10206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8667230884946570788
 RectTransform:
   m_ObjectHideFlags: 0

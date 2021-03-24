@@ -9,16 +9,20 @@ namespace SBC
         [SerializeField] float restoreAmount;
         [SerializeField] GameObject boostRestoreEffect;
         private TankController target;
+        private GameObject particleEffect;
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
                 target = other.transform.root.GetComponent<TankController>();
-                if (target.boostRemaining < target.boostTimer)
+                if (target.boostRemaining < target.boostMax)
                 {
                     target.boostRemaining += restoreAmount;
-                    Debug.Log(restoreAmount);
-                    if (boostRestoreEffect != null) Instantiate(boostRestoreEffect, transform.position, Quaternion.identity);
+                    if (boostRestoreEffect != null)
+                    {
+                        particleEffect = Instantiate(boostRestoreEffect, other.transform.position, Quaternion.identity);
+                        particleEffect.transform.SetParent(other.transform.root);
+                    }
                     Destroy(gameObject);
                 }
             }

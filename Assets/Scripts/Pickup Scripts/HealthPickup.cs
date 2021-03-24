@@ -9,6 +9,7 @@ namespace SBC
         [SerializeField] float restoreAmount;
         [SerializeField] GameObject healthRestoreEffect;
         private HealthManager target;
+        private GameObject particleEffect;
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
@@ -17,7 +18,11 @@ namespace SBC
                 if (!target.fullHealth)
                 {
                     target.Heal(restoreAmount);
-                    if (healthRestoreEffect != null) Instantiate(healthRestoreEffect, transform.position, Quaternion.identity);
+                    if (healthRestoreEffect != null)
+                    {
+                        particleEffect = Instantiate(healthRestoreEffect, other.transform.position, Quaternion.identity);
+                        particleEffect.transform.SetParent(other.transform.root);
+                    }
                     Destroy(gameObject);
                 }
             }
