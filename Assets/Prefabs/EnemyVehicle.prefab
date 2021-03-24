@@ -93,7 +93,7 @@ MonoBehaviour:
   centerOfMass: {x: 0, y: -0.5, z: 0}
   moveSpeedRange: {x: 10, y: 20}
   maxSpeed: 30
-  turnSpeedRange: {x: 0.02, y: 0.06}
+  turnSpeedRange: {x: 0.05, y: 0.06}
   strafeRange: {x: 20, y: 30}
   ammo: {fileID: 728797156114499020, guid: 00b00e3210ae5ee4d915c61c617509ab, type: 3}
   cannonTip: {fileID: 9078694646931645282}
@@ -166,6 +166,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 971362102305717365}
+--- !u!95 &3698164204846985038
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673887728839351464}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d94167040bbcd3b439603f3f15aa4435, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!135 &2789534705062821736
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -513,6 +532,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 963de8fe478927140be98b31061a3f38, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d700fdc25deab81458c9f4c40634e19b, type: 3}
+--- !u!1 &5673887728839351464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d700fdc25deab81458c9f4c40634e19b, type: 3}
+  m_PrefabInstance: {fileID: 4790944905401197049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5041325132473861650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d700fdc25deab81458c9f4c40634e19b, type: 3}
