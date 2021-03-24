@@ -733,6 +733,10 @@ MonoBehaviour:
   mouseYSensitivity: 100
   InvertMouseX: 0
   InvertMouseY: 0
+  MAX_CANNON_ANGLE: 8.5
+  zoomFOV: 45
+  crosshairScaleTime: 0.01
+  crosshairMoveTime: 0.5
   ammo: {fileID: 728797156114499020, guid: 00b00e3210ae5ee4d915c61c617509ab, type: 3}
   turretTransform: {fileID: 7781192848854026868}
   cannonTransform: {fileID: 5107822551668834429}
@@ -741,6 +745,7 @@ MonoBehaviour:
   cam: {fileID: 4152736188111680973}
   crosshair: {fileID: 5340584461003393983}
   fireSoundHandler: {fileID: 397097883672500051}
+  fovMod: 0
 --- !u!114 &7678180752883083264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,15 +758,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f079f0e6a88a6408bef850fa57b48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankSpeed: 15
+  tankSpeed: 10
+  boostSpeed: 60
+  boostMax: 100
+  accelerationTime: 0.05
   rotateSpeed: 100
+  rotateSmoothing: 0.5
   brakeForce: 5
   maxVelocity: 140
+  driftAngle: 0
   jumpForce: 100
-  centerOfMass: {x: 0, y: -0.25, z: 0}
   distanceToGround: 0.75
   rayPoint: {fileID: 1617219008645726019}
   customGravity: 2
+  centerOfMass: {x: 0, y: -0.25, z: 0}
   groundDrag: 3
   airDrag: 0
   treadSpeed: 20
@@ -770,6 +780,9 @@ MonoBehaviour:
   springStiffness: 200
   damperStiffness: 20
   wheelRadius: 0.4
+  acceleration: 0
+  forwardForce: 0
+  boostRemaining: 0
 --- !u!54 &7131326755930474395
 Rigidbody:
   m_ObjectHideFlags: 0

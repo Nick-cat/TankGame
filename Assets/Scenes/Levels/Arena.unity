@@ -1503,6 +1503,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9064577636042028775, guid: 55da8542c60f9c34e94f44b219979aa1, type: 3}
+      propertyPath: tankList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064577636042028775, guid: 55da8542c60f9c34e94f44b219979aa1, type: 3}
+      propertyPath: tankList.Array.data[3]
+      value: 
+      objectReference: {fileID: 4707722653245517352, guid: f2b27c8e5864aee4e9a4aca640cb7fde, type: 3}
     - target: {fileID: 9064577636042028792, guid: 55da8542c60f9c34e94f44b219979aa1, type: 3}
       propertyPath: m_Name
       value: SpawnPoint
