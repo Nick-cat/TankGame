@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Leaves 1
+  m_Name: OakTreeLeaves
   m_Shader: {fileID: -6465566751694194690, guid: ab891102d2d55c541b81aa35b9027fa1, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: EMISSIONTOGGLE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -134,8 +134,8 @@ Material:
     - BOOLEAN_E44A03F7AE46400FB3F2EFAAC1093A7A: 0
     - Boolean_8b7b8593dcc147539fd2b922118e59d3: 0
     - Boolean_cd329a602c004655a0282b355981e908: 0
-    - EMISSIONTOGGLE: 0
-    - HighlightMix: 0.1
+    - EMISSIONTOGGLE: 1
+    - HighlightMix: 0.3
     - TILEUV: 0
     - Vector1_322a5977c997464ba8029bfcd10386b4: 0.1
     - Vector1_5ae86f1ddb1a478088e1e24275e6a095: 0
@@ -175,21 +175,21 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - baseTextureMix: 0
-    - contrast: 1.1
+    - contrast: 1.3
     - emissionHue: 0
-    - emissionMultipler: 0
+    - emissionMultipler: 0.9
     - emissionToggle: 0
     - highlightRotation: 0
-    - noise0Celldensity: 1
-    - noise1Celldensity: 0.1
+    - noise0Celldensity: 0.431
+    - noise1Celldensity: 0.462
     - normalRotate: 45
-    - normalStrength: 0
-    - rimBlend: 0.35
-    - rimSize: 0.48
+    - normalStrength: 1
+    - rimBlend: 0.338
+    - rimSize: 0.119
     - saturation: 1.1
-    - shadowBlend: 0.4
-    - shadowNormal: 1
-    - shadowSize: 0.01
+    - shadowBlend: 0.192
+    - shadowNormal: 0
+    - shadowSize: 0
     - snowHieght: 0.5
     - snowOpacity: 1
     - snowScale: 10
@@ -204,13 +204,13 @@ Material:
     - Color_90e7a4db6e164ace8b4287ac0de2d215: {r: 0.03404236, g: 0.4811321, b: 0.19662039, a: 1}
     - Color_998a863085434630b3b8dbcc190263dc: {r: 0.19063722, g: 0.7924528, b: 0.7578159, a: 1}
     - Color_b5840d6591814bb5812e29843e1aa744: {r: 0.31728375, g: 0.4339623, b: 0.4072929, a: 1}
-    - Gradient0_Colour0: {r: 0.12771448, g: 0.6603774, b: 0.62904423, a: 1}
-    - Gradient0_Colour1: {r: 0.10070309, g: 0.6886792, b: 0.32764122, a: 1}
-    - Gradient1_Colour0: {r: 0.31764707, g: 0.43529415, b: 0.40784317, a: 1}
-    - Gradient1_Colour1: {r: 0.03529412, g: 0.48235297, b: 0.19607845, a: 1}
-    - HighlightColor: {r: 0.735849, g: 0.62942505, b: 0.03818085, a: 0}
-    - HighlightDetail: {r: 8, g: 1, b: 0, a: 0}
-    - HighlightScale: {r: 1, g: 1, b: 0, a: 0}
+    - Gradient0_Colour0: {r: 0.2507597, g: 0.372, b: 0.248124, a: 1}
+    - Gradient0_Colour1: {r: 0.3592058, g: 0.474, b: 0.316158, a: 1}
+    - Gradient1_Colour0: {r: 0.50980395, g: 0.54901963, b: 0.31764707, a: 1}
+    - Gradient1_Colour1: {r: 0.215775, g: 0.41099998, b: 0.21984217, a: 1}
+    - HighlightColor: {r: 0.4528302, g: 0.2488916, b: 0.22000714, a: 0}
+    - HighlightDetail: {r: 8, g: 4, b: 0, a: 0}
+    - HighlightScale: {r: 8, g: 8, b: 0, a: 0}
     - Vector2_6fe9d67c7bc24914851eaa1d6e8ecf54: {r: 1, g: 1, b: 1, a: 0}
     - Vector2_a193f463bafc41fa8481cdcdbd335c36: {r: 8, g: 1, b: 0, a: 0}
     - Vector3_0623b63218574ebb99a43fe0a59c1435: {r: 1, g: 0.1, b: 1, a: 0}
@@ -232,10 +232,10 @@ Material:
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - baseTextureTint: {r: 1, g: 1, b: 1, a: 0}
     - noise0: {r: 0.5, g: 0.5, b: 1, a: 1}
-    - noise1: {r: 1, g: 1, b: 0, a: 0}
+    - noise1: {r: 0.1, g: 0.1, b: 0, a: 0}
     - normalScale: {r: 1, g: 1, b: 0, a: 0}
-    - rimColour: {r: 0.31764707, g: 0.43529415, b: 0.40784317, a: 0}
-    - shadowColour: {r: 0.15619439, g: 0.735849, b: 0.3646667, a: 0}
+    - rimColour: {r: 0, g: 0, b: 0, a: 0}
+    - shadowColour: {r: 1, g: 1, b: 1, a: 0}
     - snowDirection: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1791111519053156866

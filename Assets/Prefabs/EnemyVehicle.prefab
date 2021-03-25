@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f79c82f30ddcf747a00a923e3861ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  player: {fileID: 6708147105239024223, guid: a8e5dea5ac6fed84cb65637ae845ea80, type: 3}
   centerOfMass: {x: 0, y: -0.5, z: 0}
   moveSpeedRange: {x: 10, y: 20}
   maxSpeed: 30
@@ -108,7 +108,6 @@ MonoBehaviour:
   - {fileID: 621222764394036824}
   - {fileID: 6079318220201361004}
   - {fileID: 6913118678007338007}
-  drawDebug: 0
   moveSpeed: 10
   strafeDistance: 0
   rotateDirection: 0
