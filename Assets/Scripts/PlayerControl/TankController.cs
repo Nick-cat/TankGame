@@ -149,7 +149,7 @@ namespace SBC
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
         }
 
-        bool IsGrounded()
+        public bool IsGrounded()
         {
             //cast a ray from center of body to down direction, check if anything intersects the bottom of the body.
             LayerMask ground = LayerMask.GetMask("Ground");

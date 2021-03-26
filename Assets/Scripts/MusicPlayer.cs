@@ -57,7 +57,7 @@ public class MusicQueue
         }
     }
 
-    public IEnumerator Run(List<AudioClip> tracks, float delay,System.Action<AudioClip> playFunction)
+    public IEnumerator Run(List<AudioClip> tracks, float delay, System.Action<AudioClip> playFunction)
     {
         foreach(AudioClip clip in tracks)
         {
