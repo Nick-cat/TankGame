@@ -64,7 +64,7 @@ namespace SBC
             CalculateAngle();
             //Rotation
             //transform.Rotate(0, angle * turnSpeed, 0);
-            this.transform.rotation = Quaternion.Slerp(transform.rotation, angleToTarget, turnSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, angleToTarget, turnSpeed * Time.deltaTime);
             //suspension and movement handled in SimpleSuspension script on each wheel
             foreach (SimpleSuspension wheel in suspension) wheel.Suspension();
             Debug.Log(target);
