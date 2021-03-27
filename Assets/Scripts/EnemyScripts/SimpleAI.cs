@@ -6,7 +6,7 @@ namespace SBC
 {
     public class SimpleAI : MonoBehaviour
     {
-        [SerializeField] GameObject target;
+        private Vector3 target;
         [SerializeField] Vector3 centerOfMass;
         [SerializeField] Vector2 moveSpeedRange;
         public float maxSpeed = 30f;
@@ -23,6 +23,7 @@ namespace SBC
         public float wheelRadius;
         [SerializeField] SimpleSuspension[] suspension;
         [SerializeField] bool drawDebug = false;
+        [SerializeField] FollowWP wpManager;
 
         [HideInInspector] public float moveSpeed;
         [HideInInspector] public float strafeDistance;
@@ -30,6 +31,8 @@ namespace SBC
         private float turnSpeed;
         [HideInInspector] public int rotateDirection;
         private Rigidbody rb;
+
+        private Quaternion angleToTarget;
 
         private void Start()
         {
@@ -45,26 +48,26 @@ namespace SBC
 
             rb = GetComponent<Rigidbody>();
             rb.centerOfMass = centerOfMass;
+            wpManager = GetComponent<FollowWP>();
+            //getFirstTarget
+            target = wpManager.waypoints[0].transform.position;
         }
 
         void FixedUpdate()
         {
-            if (target == null)
-            {
-                //find the player character
-                target = GameObject.FindWithTag("Player");
-            }
-            else AutoPilot();
-            
+            if (CalculateDistance() < strafeDistance) target = wpManager.GetNextTarget();
+            Roam();
         }
 
-        void AutoPilot()
+        void Roam()
         {
             CalculateAngle();
             //Rotation
-            transform.Rotate(0, angle * turnSpeed, 0);
+            //transform.Rotate(0, angle * turnSpeed, 0);
+            this.transform.rotation = Quaternion.Slerp(transform.rotation, angleToTarget, turnSpeed * Time.deltaTime);
             //suspension and movement handled in SimpleSuspension script on each wheel
             foreach (SimpleSuspension wheel in suspension) wheel.Suspension();
+            Debug.Log(target);
             
             if (Input.GetKeyDown("t"))
             {
@@ -77,17 +80,18 @@ namespace SBC
 
         public float CalculateDistance()
         {
-            float distance = Vector3.Distance(transform.position, target.transform.position);
+            float distance = Vector3.Distance(transform.position, target);
             return distance;
         }
 
         void CalculateAngle()
         {
             //calculate direction to target
-            Vector3 pathToTarget = target.transform.position - transform.position;
+            Vector3 pathToTarget = target - transform.position;
 
             //get rotation to target
-            angle = (Vector3.SignedAngle(transform.forward, pathToTarget, transform.up));
+            //angle = (Vector3.SignedAngle(transform.forward, pathToTarget, transform.up));
+            angleToTarget = Quaternion.LookRotation(target - transform.position);
             //Debug.Log(angle);
             //draws forward vector and pathToTarget vector
             if (drawDebug == true)

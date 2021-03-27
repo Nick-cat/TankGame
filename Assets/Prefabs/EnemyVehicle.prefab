@@ -20,7 +20,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95429618412712163}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 100e98f0e5bd67e469985ba93383daef, type: 3}
   m_Name: 
@@ -39,6 +39,8 @@ GameObject:
   - component: {fileID: 2550614030073641110}
   - component: {fileID: 9199146686727970875}
   - component: {fileID: 6067193467560578337}
+  - component: {fileID: 1872113120177535791}
+  - component: {fileID: 6448810733202839363}
   m_Layer: 0
   m_Name: EnemyVehicle
   m_TagString: Enemy
@@ -84,16 +86,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971362102305717365}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f79c82f30ddcf747a00a923e3861ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6708147105239024223, guid: a8e5dea5ac6fed84cb65637ae845ea80, type: 3}
   centerOfMass: {x: 0, y: -0.5, z: 0}
   moveSpeedRange: {x: 10, y: 20}
   maxSpeed: 30
-  turnSpeedRange: {x: 0.05, y: 0.06}
+  turnSpeedRange: {x: 0.5, y: 3}
   strafeRange: {x: 20, y: 30}
   ammo: {fileID: 728797156114499020, guid: 00b00e3210ae5ee4d915c61c617509ab, type: 3}
   cannonTip: {fileID: 9078694646931645282}
@@ -108,6 +109,8 @@ MonoBehaviour:
   - {fileID: 621222764394036824}
   - {fileID: 6079318220201361004}
   - {fileID: 6913118678007338007}
+  drawDebug: 0
+  wpManager: {fileID: 0}
   moveSpeed: 10
   strafeDistance: 0
   rotateDirection: 0
@@ -139,6 +142,40 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.79
   m_Center: {x: 0, y: 2.5, z: 0}
+--- !u!195 &1872113120177535791
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971362102305717365}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 2.75
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 4.5
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &6448810733202839363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971362102305717365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0be3ee86e04f54188ec8460239cbc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &6541542843482295366
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -159,7 +196,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4041791068936982487}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 100e98f0e5bd67e469985ba93383daef, type: 3}
   m_Name: 
@@ -204,7 +241,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5716865444173780541}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 100e98f0e5bd67e469985ba93383daef, type: 3}
   m_Name: 
@@ -230,7 +267,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6158538155672479295}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 100e98f0e5bd67e469985ba93383daef, type: 3}
   m_Name: 
