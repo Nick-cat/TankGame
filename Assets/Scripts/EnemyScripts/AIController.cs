@@ -27,7 +27,7 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(target == null)
+        if (target == null)
         {
             target = GameObject.FindGameObjectWithTag("Player");
         }
@@ -51,6 +51,11 @@ public class AIController : MonoBehaviour
             isStrafe = false;
         }
 
+        Chase();
+    }
+
+    private void Chase()
+    {
         agent.SetDestination(target.transform.position);
     }
 
@@ -63,9 +68,8 @@ public class AIController : MonoBehaviour
 
     void LookAtPlayer()
     {
-        //Quaternion angleToTarget = Quaternion.LookRotation(target.transform.position - turret.transform.position);
-        //turret.transform.rotation = Quaternion.Lerp(turret.transform.rotation, angleToTarget, 10f * Time.deltaTime);
-        turret.transform.LookAt(target.transform);
+        Quaternion angleToTarget = Quaternion.LookRotation(target.transform.position - turret.transform.position);
+        turret.transform.rotation = Quaternion.Lerp(turret.transform.rotation, angleToTarget, 10f * Time.deltaTime);
     }
 
     public float CalculateDistance()
