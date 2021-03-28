@@ -63,8 +63,9 @@ public class AIController : MonoBehaviour
 
     void LookAtPlayer()
     {
-        Quaternion angleToTarget = Quaternion.LookRotation(target.transform.position - turret.transform.position);
-        turret.transform.rotation = Quaternion.Lerp(turret.transform.rotation, angleToTarget, 10f * Time.deltaTime);
+        //Quaternion angleToTarget = Quaternion.LookRotation(target.transform.position - turret.transform.position);
+        //turret.transform.rotation = Quaternion.Lerp(turret.transform.rotation, angleToTarget, 10f * Time.deltaTime);
+        turret.transform.LookAt(target.transform);
     }
 
     public float CalculateDistance()

@@ -21,7 +21,8 @@ public class GroundAlign : MonoBehaviour
         if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 20, ground))
         {
             Quaternion targetRotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.parent.rotation;
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 15 * Time.deltaTime);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 15 * Time.deltaTime);
+            transform.up = Vector3.Lerp(transform.up, hit.normal, 15*Time.deltaTime);
         }
     }
 }
