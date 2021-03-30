@@ -7,7 +7,7 @@ public class SpawnPoint : MonoBehaviour
     public GameObject[] tankList;
     private int tankIndex;
 
-    void Start()
+    void Awake()
     {
         //get which tank
         tankIndex = PlayerPrefs.GetInt("Tank");
@@ -16,6 +16,4 @@ public class SpawnPoint : MonoBehaviour
         Instantiate(tankList[tankIndex], transform.position, transform.rotation);
 
     }
-
-
 }
