@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Red Glow
+  m_Name: YellowGlow
   m_Shader: {fileID: -6465566751694194690, guid: ab891102d2d55c541b81aa35b9027fa1, type: 3}
   m_ShaderKeywords: EMISSIONTOGGLE_ON _DETAIL_MULX2 _EMISSION _NORMALMAP
   m_LightmapFlags: 2
@@ -84,7 +84,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - normalMap:
-        m_Texture: {fileID: 2800000, guid: b56f2c44d36246c42bbcda5a12ed8353, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5579e885c9df32a4bb82344ce5fc3f46, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -111,7 +111,6 @@ Material:
     - Vector1_5ae86f1ddb1a478088e1e24275e6a095: 1
     - Vector1_630ecd83e7ca43649d2ff48f08f9a494: 2
     - Vector1_6831147e4df54f77998262305e69d158: 1
-    - Vector1_8652533be92b432d9855e93854eefa1f: 0
     - Vector1_881cd917b9464d84bed7d9eca6b873b8: 1
     - Vector1_90c61bc17a1d494cbb8eef58353e9e0f: 0
     - Vector1_bc830d15de754f48b256e6088fb91849: 0.4
@@ -145,24 +144,23 @@ Material:
     - _ZWrite: 1
     - baseTextureMix: 0
     - contrast: 1
-    - emissionHue: 0
+    - emissionHue: 1
     - emissionMultipler: 10
     - emissionToggle: 1
     - highlightRotation: 0
     - noise0Celldensity: 0.75
     - noise1Celldensity: 0.5
     - normalRotate: 0
-    - normalStrength: 5
+    - normalStrength: 1
     - rimBlend: 0.35
-    - rimSize: 0.6
+    - rimSize: 0.57
     - saturation: 1
     - shadowBlend: 0.1
     - shadowNormal: 1
     - shadowSize: 0
     - snowHieght: 0.5
-    - snowOpacity: 0.5
+    - snowOpacity: 1
     - snowScale: 10
-    - tileUV: 0
     - waveSpeed: 0.1
     m_Colors:
     - Color_11ce3ab1bb464bc5b8b520675d7bbc9a: {r: 0, g: 0, b: 0, a: 1}
@@ -170,11 +168,11 @@ Material:
     - Color_90e7a4db6e164ace8b4287ac0de2d215: {r: 0.49930143, g: 0.5188679, b: 0.28146136, a: 1}
     - Color_998a863085434630b3b8dbcc190263dc: {r: 0.92549014, g: 1, b: 0, a: 1}
     - Color_b5840d6591814bb5812e29843e1aa744: {r: 0.5813676, g: 0.5849056, b: 0.28417587, a: 1}
-    - Gradient0_Colour0: {r: 1, g: 0.0625283, b: 0, a: 1}
-    - Gradient0_Colour1: {r: 0.8509804, g: 0.082352914, b: 0.19439507, a: 1}
-    - Gradient1_Colour0: {r: 0.5647059, g: 0.19050041, b: 0.16470587, a: 1}
-    - Gradient1_Colour1: {r: 0.34567598, g: 0.39607844, b: 0.10588235, a: 1}
-    - HighlightColor: {r: 0.77254903, g: 0.52156866, b: 0.5385581, a: 0}
+    - Gradient0_Colour0: {r: 0.48900002, g: 0.45448238, b: 0, a: 1}
+    - Gradient0_Colour1: {r: 0.4627451, g: 0.44333097, b: 0.3019608, a: 1}
+    - Gradient1_Colour0: {r: 0.8980392, g: 0.64069265, b: 0.5019608, a: 1}
+    - Gradient1_Colour1: {r: 0.24705882, g: 0.23828956, b: 0.13725491, a: 1}
+    - HighlightColor: {r: 1, g: 0.7015875, b: 0.631, a: 0}
     - HighlightDetail: {r: 1, g: 2, b: 0, a: 0}
     - HighlightScale: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_a193f463bafc41fa8481cdcdbd335c36: {r: 4, g: 2, b: 0, a: 0}
@@ -191,9 +189,9 @@ Material:
     - baseTextureTint: {r: 1, g: 1, b: 1, a: 0}
     - noise0: {r: 1, g: 1, b: 0, a: 0}
     - noise1: {r: 1, g: 1, b: 0, a: 0}
-    - normalScale: {r: 1, g: 1, b: 0, a: 0}
-    - rimColour: {r: 0, g: 0, b: 0, a: 0}
-    - shadowColour: {r: 1, g: 1, b: 1, a: 0}
+    - normalScale: {r: 0, g: 0, b: 0, a: 0}
+    - rimColour: {r: 0.9568628, g: 1, b: 0, a: 0}
+    - shadowColour: {r: 0.81568635, g: 0.85098046, b: 0.08235294, a: 0}
     - snowDirection: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6445297848220209022

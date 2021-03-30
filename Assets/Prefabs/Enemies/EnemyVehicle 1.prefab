@@ -327,9 +327,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  moveSpeedRange: {x: 0, y: 0}
+  maxSpeed: 30
+  turnSpeedRange: {x: 0, y: 0}
   strafeRange: {x: 30, y: 30}
-  strafeDistance: 0
-  turret: {fileID: 1682367847396304239}
+  turret: {fileID: 6579222203727059872}
 --- !u!1 &1682367847396304239
 GameObject:
   m_ObjectHideFlags: 0

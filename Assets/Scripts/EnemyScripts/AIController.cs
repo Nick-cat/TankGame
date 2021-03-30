@@ -5,76 +5,128 @@ using UnityEngine.AI;
 
 public class AIController : MonoBehaviour
 {
-    public GameObject target;
-    private NavMeshAgent agent;
-    private int rotateDirection;
+    [SerializeField] Vector2 moveSpeedRange;
+    [SerializeField] float maxSpeed = 30f;
+    [SerializeField] Vector2 turnSpeedRange;
+    [SerializeField] Vector2 roamingRange;
     [SerializeField] Vector2 strafeRange;
-    [HideInInspector] public float strafeDistance;
-    [SerializeField] GameObject turret;
-    private bool isStrafe = false;
+    [SerializeField] Transform turret;
+
+    [Header("Materials")]
+    [SerializeField] MeshRenderer gemMat;
+    [SerializeField] Material idleGlow;
+    [SerializeField] Material searchingGlow;
+    [SerializeField] Material chaseGlow;
+
+    private Vector3 target;
+    private GameObject player;
+    private NavMeshAgent agent;
+    private float moveSpeed;
+    private float turnSpeed;
+    private float roamingDistance;
+    private float strafeDistance;
+    private int rotateDirection;
 
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        //set random movespeed, turnspeed, adn strafeDistance
+        moveSpeed = Random.Range(moveSpeedRange.x, moveSpeedRange.y);
+        turnSpeed = Random.Range(turnSpeedRange.x, turnSpeedRange.y);
+        roamingDistance = Random.Range(roamingRange.x, roamingRange.y);
+        strafeDistance = Random.Range(strafeRange.x, strafeRange.y);
 
+        //set random strafe direction
         bool dir = (Random.value < 0.5f);
         if (dir == true) rotateDirection = 1;
         else rotateDirection = -1;
 
-        strafeDistance = Random.Range(strafeRange.x, strafeRange.y);
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player");
+
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = maxSpeed;
+        agent.acceleration = moveSpeed;
+        agent.angularSpeed = turnSpeed;
+        agent.SetDestination(RandomPoint());
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (target == null)
+        LookAtTarget();
+        if (HuntPlayer())
         {
-            target = GameObject.FindGameObjectWithTag("Player");
-        }
-
-        LookAtPlayer();
-
-        if (CalculateDistance() <= strafeDistance)
-        {
-            if (!isStrafe)
+            if (DetectPlayer())
             {
-                Debug.Log("IsStraffing");
-                isStrafe = true;
+                Search();
+                return;
             }
-            Strafe();
+            Chase();
             return;
         }
+        Roam();
+    }
 
-        if (isStrafe)
-        {
-            Debug.Log("notStrafing");
-            isStrafe = false;
-        }
+    private bool HuntPlayer()
+    {
+        if (CalculateDistance(player.transform.position) < strafeDistance * 5f) return true;
+        return false;
+    }
 
-        Chase();
+    private bool DetectPlayer()
+    {
+        if (CalculateDistance(player.transform.position) < strafeDistance * 6f && !HuntPlayer()) return true;
+        return false;
+    }
+
+    private void Roam()
+    {
+        gemMat.material = idleGlow;
+        if (agent.remainingDistance < strafeDistance) agent.SetDestination(RandomPoint());
+    }
+
+    private void Search()
+    {
+        gemMat.material = searchingGlow;
+        agent.SetDestination(target);
     }
 
     private void Chase()
     {
-        agent.SetDestination(target.transform.position);
+        gemMat.material = chaseGlow;
+        if (CalculateDistance(player.transform.position) <= strafeDistance)
+        {
+            Strafe();
+            return;
+        }
+        target = player.transform.position;
+        agent.SetDestination(target);
     }
 
-    void Strafe()
+    private void Strafe()
     {
-        Vector3 pathToTarget = target.transform.position - transform.position;
+        Vector3 pathToTarget = target - transform.position;
         Vector3 dir = Vector3.Cross(pathToTarget, Vector3.up);
         agent.SetDestination(transform.position + (dir * rotateDirection));
     }
 
-    void LookAtPlayer()
+    private void LookAtTarget()
     {
-        Quaternion angleToTarget = Quaternion.LookRotation(target.transform.position - turret.transform.position);
-        turret.transform.rotation = Quaternion.Lerp(turret.transform.rotation, angleToTarget, 10f * Time.deltaTime);
+        Quaternion angleToTarget = Quaternion.LookRotation(target - turret.position);
+        turret.rotation = Quaternion.Lerp(turret.rotation, angleToTarget, 10f * Time.deltaTime);
     }
 
-    public float CalculateDistance()
+    private float CalculateDistance(Vector3 point)
     {
-        float distance = Vector3.Distance(transform.position, target.transform.position);
+        float distance = Vector3.Distance(transform.position, point);
         return distance;
+    }
+
+    private Vector3 RandomPoint()
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * roamingDistance;
+        randomDirection += transform.position;
+        NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, roamingDistance, 1);
+        target = hit.position;
+        return target;
     }
 }

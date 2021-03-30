@@ -186,11 +186,10 @@ GameObject:
   m_Component:
   - component: {fileID: 446181831881336527}
   - component: {fileID: 124853385505728410}
-  - component: {fileID: 2550614030073641110}
   - component: {fileID: 9199146686727970875}
   - component: {fileID: 6067193467560578337}
-  - component: {fileID: 1872113120177535791}
   - component: {fileID: 6448810733202839363}
+  - component: {fileID: 1872113120177535791}
   m_Layer: 0
   m_Name: EnemyVehicle
   m_TagString: Enemy
@@ -229,41 +228,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!114 &2550614030073641110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971362102305717365}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f79c82f30ddcf747a00a923e3861ed7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerOfMass: {x: 0, y: -0.5, z: 0}
-  moveSpeedRange: {x: 10, y: 20}
-  maxSpeed: 30
-  turnSpeedRange: {x: 0.5, y: 3}
-  strafeRange: {x: 20, y: 30}
-  ammo: {fileID: 728797156114499020, guid: 00b00e3210ae5ee4d915c61c617509ab, type: 3}
-  cannonTip: {fileID: 0}
-  fireSoundHandler: {fileID: 0}
-  suspensionHeight: 0.5
-  springTravel: 0.375
-  springStiffness: 200
-  damperStiffness: 20
-  wheelRadius: 0.375
-  suspension:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  drawDebug: 0
-  wpManager: {fileID: 0}
-  moveSpeed: 10
-  strafeDistance: 0
-  rotateDirection: 0
 --- !u!114 &9199146686727970875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +256,28 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.79
   m_Center: {x: 0, y: 2.5, z: 0}
+--- !u!114 &6448810733202839363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971362102305717365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0be3ee86e04f54188ec8460239cbc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeedRange: {x: 40, y: 60}
+  maxSpeed: 40
+  turnSpeedRange: {x: 110, y: 130}
+  roamingRange: {x: 50, y: 100}
+  strafeRange: {x: 20, y: 40}
+  turret: {fileID: 6579222203727059872}
+  gemMat: {fileID: 2674379972185303679}
+  idleGlow: {fileID: 2100000, guid: 2a4003dce0a20f345b43671797e92b06, type: 2}
+  searchingGlow: {fileID: 2100000, guid: ea75d31a34f2b2f42abe71b19931339a, type: 2}
+  chaseGlow: {fileID: 2100000, guid: 35d14cdf9448deb46b0e63de4b067171, type: 2}
 --- !u!195 &1872113120177535791
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -314,22 +300,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6448810733202839363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971362102305717365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd0be3ee86e04f54188ec8460239cbc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  strafeRange: {x: 30, y: 30}
-  strafeDistance: 0
-  turret: {fileID: 1682367847396304239}
 --- !u!1 &1682367847396304239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,7 +1217,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 74106c192d0c1904fa7715efdd4f5afa, type: 2}
+  - {fileID: 2100000, guid: ea75d31a34f2b2f42abe71b19931339a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
