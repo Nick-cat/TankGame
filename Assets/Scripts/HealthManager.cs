@@ -6,9 +6,12 @@ namespace SBC
 {
     public class HealthManager : MonoBehaviour
     {
-        public float currentHealth;
-        public float maxHealth;
-        public bool fullHealth;
+        private float currentHealth;
+        [SerializeField] float maxHealth;
+
+        public float CurrentHealth { get { return currentHealth; } }
+        public float MaxHealth { get { return maxHealth; } }
+        public bool FullHealth { get { return currentHealth == maxHealth; } }
 
         void Start()
         {
@@ -17,9 +20,6 @@ namespace SBC
 
         void Update()
         {
-            //makes sure to not heal object over max health
-            if (currentHealth > maxHealth) currentHealth = maxHealth;
-            
             //is object dead?
             if (currentHealth <= 0)
             {
@@ -31,23 +31,19 @@ namespace SBC
                 }
                 else Destroy(gameObject);
             }
-
-            //checks and sets if the object is at full health
-            if (currentHealth == maxHealth) fullHealth = true;
-            else fullHealth = false;
         }
 
         public void Hurt(float damageDealt)
         {
-            currentHealth -= damageDealt;
+            currentHealth = Mathf.Min(currentHealth - damageDealt, maxHealth);
             Debug.Log(gameObject.name + " currentHealth = " + currentHealth);
         }
 
-        public void Heal(float healAmount)
-        {
-            currentHealth += healAmount;
-            Debug.Log(gameObject.name + " currentHealth = " + currentHealth);
-        }
+        //public void Heal(float healAmount)
+        //{
+        //    currentHealth += healAmount;
+        //    Debug.Log(gameObject.name + " currentHealth = " + currentHealth);
+        //}
 
         public void ResetHealth()
         {

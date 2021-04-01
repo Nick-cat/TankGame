@@ -67,7 +67,7 @@ namespace SBC
             oldSlowHealth = slowHealth;
 
             //Get Tank Health percentage
-            healthPercent = Mathf.Clamp(tankHealth.currentHealth / tankHealth.maxHealth, 0f, 1f);
+            healthPercent = Mathf.Clamp(tankHealth.CurrentHealth / tankHealth.MaxHealth, 0f, 1f);
 
             //set healthbar
             health = Mathf.Lerp(oldHealth, healthPercent, easeTime);

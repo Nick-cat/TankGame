@@ -15,9 +15,9 @@ namespace SBC
             if (other.CompareTag("Player"))
             {
                 target = other.transform.root.GetComponent<HealthManager>();
-                if (!target.fullHealth)
+                if (!target.FullHealth)
                 {
-                    target.Heal(restoreAmount);
+                    target.Hurt(-restoreAmount);
                     if (healthRestoreEffect != null)
                     {
                         particleEffect = Instantiate(healthRestoreEffect, other.transform.position, Quaternion.identity);

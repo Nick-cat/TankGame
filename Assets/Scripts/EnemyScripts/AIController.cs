@@ -46,14 +46,15 @@ public class AIController : MonoBehaviour
         agent.speed = maxSpeed;
         agent.acceleration = moveSpeed;
         agent.angularSpeed = turnSpeed;
-        agent.SetDestination(RandomPoint());
+        GetRandomNavPoint();
+        agent.SetDestination(target);
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
         LookAtTarget();
-        if (HuntPlayer())
+        if (CanHuntPlayer())
         {
             if (DetectPlayer())
             {
@@ -66,22 +67,27 @@ public class AIController : MonoBehaviour
         Roam();
     }
 
-    private bool HuntPlayer()
+    private bool CanHuntPlayer()
     {
-        if (CalculateDistance(player.transform.position) < strafeDistance * 5f) return true;
-        return false;
+        return CalculateDistance(player.transform.position) < strafeDistance * 5f;
+        //if (CalculateDistance(player.transform.position) < strafeDistance * 5f) return true;
+        //return false;
     }
 
     private bool DetectPlayer()
     {
-        if (CalculateDistance(player.transform.position) < strafeDistance * 6f && !HuntPlayer()) return true;
+        if (CalculateDistance(player.transform.position) < strafeDistance * 6f) return true;
         return false;
     }
 
     private void Roam()
     {
         gemMat.material = idleGlow;
-        if (agent.remainingDistance < strafeDistance) agent.SetDestination(RandomPoint());
+        if (agent.remainingDistance < strafeDistance)
+        {
+            GetRandomNavPoint();
+            agent.SetDestination(target);
+        }
     }
 
     private void Search()
@@ -121,12 +127,11 @@ public class AIController : MonoBehaviour
         return distance;
     }
 
-    private Vector3 RandomPoint()
+    private void GetRandomNavPoint()
     {
         Vector3 randomDirection = Random.insideUnitSphere * roamingDistance;
         randomDirection += transform.position;
         NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, roamingDistance, 1);
         target = hit.position;
-        return target;
     }
 }
