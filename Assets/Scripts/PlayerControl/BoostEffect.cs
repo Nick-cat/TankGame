@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.VFX;
 
 namespace SBC
 {
     public class BoostEffect : MonoBehaviour
     {
         [SerializeField] List<Transform> exhaustPipes;
-        [SerializeField] GameObject exhaustEffect;
         [SerializeField] Volume postProcess;
         [SerializeField] TankTurretMouseLook turret;
         [SerializeField] float boostFOV = 20f;
@@ -23,7 +23,6 @@ namespace SBC
 
         private float oldFOVMod;
         private float fovChange;
-
 
         private void Start()
         {
@@ -44,7 +43,7 @@ namespace SBC
             //Exhaust Effect
             foreach (Transform p in exhaustPipes)
             {
-                p.GetComponentInChildren<ParticleSystem>().Play();
+                p.GetComponentInChildren<VisualEffect>().Play();
             }
 
             oldFOVMod = turret.fovMod;
@@ -62,7 +61,7 @@ namespace SBC
             
             foreach (Transform p in exhaustPipes)
             {
-                p.GetComponentInChildren<ParticleSystem>().Stop();
+                p.GetComponentInChildren<VisualEffect>().Stop();
             }
 
             oldFOVMod = turret.fovMod;
