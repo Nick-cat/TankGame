@@ -5124,9 +5124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01afc666f51d904498402fc101abe9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
   maxHealth: 200
-  fullHealth: 0
 --- !u!114 &7952173011122793669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5139,8 +5137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232185a8b68d0a64593de0aaeee8eaff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseXSensitivity: 200
-  mouseYSensitivity: 100
+  mouseXSensitivity: 50
+  mouseYSensitivity: 50
   InvertMouseX: 0
   InvertMouseY: 0
   MAX_CANNON_ANGLE: 8.5
@@ -5170,8 +5168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankSpeed: 10
   boostSpeed: 60
-  boostMax: 70
-  accelerationTime: 0.5
+  boostCapacity: 100
+  accelerationTime: 1
   rotateSpeed: 50
   rotateSmoothing: 0.5
   brakeForce: 5
