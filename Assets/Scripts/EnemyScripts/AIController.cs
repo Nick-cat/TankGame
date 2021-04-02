@@ -56,14 +56,17 @@ public class AIController : MonoBehaviour
         LookAtTarget();
         if (CanHuntPlayer())
         {
-            if (CanDetectPlayer())
-            {
-                Search();
-                return;
-            }
+            //if (CanDetectPlayer())
+            //{
+            //    Debug.Log("searching");
+            //    Search();
+            //    return;
+            //}
+            Debug.Log("chasing");
             Chase();
             return;
         }
+        Debug.Log("roaming");
         Roam();
     }
 
