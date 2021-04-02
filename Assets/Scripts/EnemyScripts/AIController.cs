@@ -26,10 +26,10 @@ public class AIController : MonoBehaviour
     private float roamingDistance;
     private float strafeDistance;
     private int rotateDirection;
+    private bool searchingForPlayer;
 
     private void Start()
     {
-        //set random movespeed, turnspeed, adn strafeDistance
         moveSpeed = Random.Range(moveSpeedRange.x, moveSpeedRange.y);
         turnSpeed = Random.Range(turnSpeedRange.x, turnSpeedRange.y);
         roamingDistance = Random.Range(roamingRange.x, roamingRange.y);
@@ -54,19 +54,21 @@ public class AIController : MonoBehaviour
     private void FixedUpdate()
     {
         LookAtTarget();
-        if (CanHuntPlayer())
+        if(CanDetectPlayer())
         {
-            //if (CanDetectPlayer())
-            //{
-            //    Debug.Log("searching");
-            //    Search();
-            //    return;
-            //}
-            Debug.Log("chasing");
-            Chase();
+            if (CanHuntPlayer())
+            {
+                Debug.Log("chasing");
+                Hunt();
+                return;
+            }
+
+            Debug.Log("searching");
+            Search();
             return;
         }
         Debug.Log("roaming");
+        //gets a new random point on the navmesh to move towards if it is close enough to the previous target location
         Roam();
     }
 
@@ -95,14 +97,21 @@ public class AIController : MonoBehaviour
     private void Search()
     {
         gemMat.material = searchingGlow;
+        if (!searchingForPlayer)
+        {
+            target = player.transform.position;
+            searchingForPlayer = true;
+        }
         agent.SetDestination(target);
     }
 
-    private void Chase()
+    private void Hunt()
     {
+        if (searchingForPlayer) searchingForPlayer = false;
         gemMat.material = chaseGlow;
         if (CalculateDistance(player.transform.position) <= strafeDistance)
         {
+            //makes the AI strafe around the player
             Strafe();
             return;
         }
