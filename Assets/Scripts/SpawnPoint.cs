@@ -9,7 +9,7 @@ public class SpawnPoint : MonoBehaviour
 
     void Awake()
     {
-        //get which tank
+        //get which tank to load in from player preferences
         tankIndex = PlayerPrefs.GetInt("Tank");
 
         //Spawn in saved tank

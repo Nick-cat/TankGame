@@ -56,7 +56,7 @@ public class AIController : MonoBehaviour
         LookAtTarget();
         if (CanHuntPlayer())
         {
-            if (DetectPlayer())
+            if (CanDetectPlayer())
             {
                 Search();
                 return;
@@ -74,10 +74,9 @@ public class AIController : MonoBehaviour
         //return false;
     }
 
-    private bool DetectPlayer()
+    private bool CanDetectPlayer()
     {
-        if (CalculateDistance(player.transform.position) < strafeDistance * 6f) return true;
-        return false;
+        return CalculateDistance(player.transform.position) < strafeDistance * 6f;
     }
 
     private void Roam()

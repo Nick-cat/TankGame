@@ -24,12 +24,6 @@ namespace SBC
         private float oldFOVMod;
         private float fovChange;
 
-        private void Start()
-        {
-           
-        }
-
-
         public void Boost()
         {
             //Chromatic Abberation Effect

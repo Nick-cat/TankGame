@@ -8,7 +8,9 @@ namespace SBC
     {
         public float tankSpeed = 10f;
         [SerializeField] float boostSpeed = 60f;
-        public float boostMax = 100f;
+        [Tooltip("MaxCapacity of Boost")]
+        [SerializeField] float boostCapacity = 100f;
+        public float BoostCapacity { get { return boostCapacity; } }
         [SerializeField] float accelerationTime = 0.05f;
         public float rotateSpeed;
         public float rotateSmoothing = 0.5f;
@@ -66,7 +68,7 @@ namespace SBC
             rb = GetComponent <Rigidbody>();
             rb.centerOfMass = centerOfMass;
             spawnPoint = GameObject.Find("SpawnPoint");
-            boostRemaining = boostMax;
+            boostRemaining = boostCapacity;
             boostEffect = GetComponent<BoostEffect>();
         }
 
@@ -175,7 +177,7 @@ namespace SBC
         }
         private void Boost()
         {
-            if (boostRemaining > boostMax) boostRemaining = boostMax;
+            if (boostRemaining > boostCapacity) boostRemaining = boostCapacity;
             if (boost && boostRemaining != 0f)
             {
                 boostRemaining -= 1f;

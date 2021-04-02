@@ -12,12 +12,8 @@ public class Billboard : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+    }
 
-    }
-    private void Update()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
     void LateUpdate()
     {
         if (lookAtPlayer)

@@ -15,7 +15,7 @@ namespace SBC
             if (other.CompareTag("Player"))
             {
                 target = other.transform.root.GetComponent<TankController>();
-                if (target.boostRemaining < target.boostMax)
+                if (target.boostRemaining < target.BoostCapacity)
                 {
                     target.boostRemaining += restoreAmount;
                     if (boostRestoreEffect != null)

@@ -27,8 +27,8 @@ public class LevelSelectManager : MonoBehaviour
         TMPro.TMP_Text name = levelCell.transform.Find("LevelName").GetComponentInChildren<TMPro.TMP_Text>();
         Button cell = levelCell.transform.GetComponent<Button>();
 
-        thumbnail.sprite = l.levelThumb;
-        name.text = l.levelName;
-        cell.onClick.AddListener(delegate { level = l.levelIndex; });
+        thumbnail.sprite = l.LevelThumb;
+        name.text = l.LevelName;
+        cell.onClick.AddListener(delegate { level = l.LevelIndex; });
     }
 }
