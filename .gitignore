@@ -7,3 +7,5 @@ obj/
 UserSettings/EditorUserSettings.asset
 .vs/
 *.sln
+*.suo
+
