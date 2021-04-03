@@ -58,16 +58,14 @@ public class AIController : MonoBehaviour
         {
             if (CanHuntPlayer())
             {
-                Debug.Log("chasing");
                 Hunt();
                 return;
             }
 
-            Debug.Log("searching");
             Search();
             return;
         }
-        Debug.Log("roaming");
+
         //gets a new random point on the navmesh to move towards if it is close enough to the previous target location
         Roam();
     }
@@ -140,9 +138,19 @@ public class AIController : MonoBehaviour
 
     private void GetRandomNavPoint()
     {
-        Vector3 randomDirection = Random.insideUnitSphere * roamingDistance;
+        //gets a random point roaming distance away
+        Vector3 randomDirection = new Vector3(RandomWithinRange(roamingDistance), 0, RandomWithinRange(roamingDistance));
+        randomDirection = Vector3.ClampMagnitude(randomDirection, roamingDistance);
+        Debug.DrawRay(transform.position, randomDirection, Color.green, 2f);
         randomDirection += transform.position;
+
+        //finds the closest point on the navmesh to the random point
         NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, roamingDistance, 1);
         target = hit.position;
+    }
+
+    private float RandomWithinRange(float r)
+    {
+        return Random.Range(-r, r);
     }
 }
