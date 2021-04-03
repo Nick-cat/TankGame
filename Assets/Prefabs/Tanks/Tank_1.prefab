@@ -5137,8 +5137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232185a8b68d0a64593de0aaeee8eaff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseXSensitivity: 50
-  mouseYSensitivity: 50
+  mouseXSensitivity: 100
+  mouseYSensitivity: 100
   InvertMouseX: 0
   InvertMouseY: 0
   MAX_CANNON_ANGLE: 8.5
