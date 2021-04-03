@@ -3,7 +3,12 @@ guid: bd0be3ee86e04f54188ec8460239cbc5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - turret: {instanceID: 0}
+  - gemMat: {instanceID: 0}
+  - idleGlow: {fileID: 2100000, guid: 2a4003dce0a20f345b43671797e92b06, type: 2}
+  - searchingGlow: {fileID: 2100000, guid: ea75d31a34f2b2f42abe71b19931339a, type: 2}
+  - chaseGlow: {fileID: 2100000, guid: 35d14cdf9448deb46b0e63de4b067171, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

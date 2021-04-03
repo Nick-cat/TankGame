@@ -5,11 +5,11 @@ using UnityEngine.AI;
 
 public class AIController : MonoBehaviour
 {
-    [SerializeField] Vector2 moveSpeedRange;
+    [SerializeField] Vector2 moveSpeedRange = new Vector2(40f, 60f);
     [SerializeField] float maxSpeed = 30f;
-    [SerializeField] Vector2 turnSpeedRange;
-    [SerializeField] Vector2 roamingRange;
-    [SerializeField] Vector2 strafeRange;
+    [SerializeField] Vector2 turnSpeedRange = new Vector2(110f, 130f);
+    [SerializeField] Vector2 roamingRange = new Vector2(50f, 100f);
+    [SerializeField] Vector2 strafeRange = new Vector2(20f, 40f);
     [SerializeField] Transform turret;
 
     [Header("Materials")]
