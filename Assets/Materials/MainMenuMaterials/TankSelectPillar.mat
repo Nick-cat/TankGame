@@ -105,8 +105,8 @@ Material:
     - RimBlend: 0.744
     - RimSize: 1
     - Saturation: 1.1
-    - ShadowBlend: 0.187
-    - ShadowSize: 0.062
+    - ShadowBlend: 0
+    - ShadowSize: 0.604
     - TILEUV: 0
     - Vector1_bc830d15de754f48b256e6088fb91849: 0.4
     - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 10
@@ -149,7 +149,7 @@ Material:
     - saturation: 1.1
     - shadowBlend: 0.034
     - shadowNormal: 1
-    - shadowNormals: 1
+    - shadowNormals: 0
     - shadowSize: 0.01
     - snowHieght: 0.5
     - snowOpacity: 0.5
