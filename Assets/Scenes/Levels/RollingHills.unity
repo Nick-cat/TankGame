@@ -884,7 +884,7 @@ PrefabInstance:
     - target: {fileID: 7643842389313974791, guid: dea9c790bd1bdbc42be2dd4d81985773, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b567776e342b49b459a995e8a682649e, type: 2}
+      objectReference: {fileID: 2100000, guid: 4c53ba506acbddc4381bae0fc829e8f1, type: 2}
     - target: {fileID: 8272080680171595687, guid: dea9c790bd1bdbc42be2dd4d81985773, type: 3}
       propertyPath: m_Name
       value: Pillar_1

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Terrain_2
-  m_Shader: {fileID: -6465566751694194690, guid: ab891102d2d55c541b81aa35b9027fa1, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: f285130529f08ab4eb719cfe669e434e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -24,6 +24,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_39ba1d51c8bd4427a19ec2dd143a0fe1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_698e8356aaca443aa7f70ee67bc35930:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -95,6 +99,7 @@ Material:
     - BOOLEAN_985BFF4DC9984E47AD20050C0D9598F0: 0
     - BOOLEAN_E44A03F7AE46400FB3F2EFAAC1093A7A: 0
     - Boolean_706ac75a2b3d479aa2f0f779829c24af: 1
+    - Boolean_8b7b8593dcc147539fd2b922118e59d3: 0
     - EMISSIONTOGGLE: 0
     - HighlightMix: 0.05
     - TILEUV: 0
@@ -157,13 +162,18 @@ Material:
     - Color_15f4a73e071f4aa28e3f0b1a5ff061ef: {r: 1, g: 0.9481132, b: 0.9481132, a: 0}
     - Color_8ff47fdbcfb44e90a497fb32361fea73: {r: 0.32845318, g: 0.5754717, b: 0.35468307, a: 0}
     - Gradient0_Colour0: {r: 0.46614066, g: 0.4811321, b: 0.3290762, a: 1}
+    - Gradient0_Colour0_1: {r: 0.333, g: 0.333, b: 0.333, a: 1}
     - Gradient0_Colour1: {r: 0.49056602, g: 0.38584977, b: 0.21520111, a: 1}
+    - Gradient0_Colour1_1: {r: 0.313, g: 0.27955818, b: 0.22629899, a: 1}
     - Gradient1_Colour0: {r: 0.32643625, g: 0.4509804, b: 0.32156864, a: 1}
+    - Gradient1_Colour0_1: {r: 0.532, g: 0.532, b: 0.532, a: 1}
     - Gradient1_Colour1: {r: 0.24705884, g: 0.121568635, b: 0.07450981, a: 1}
+    - Gradient1_Colour1_1: {r: 0.24, g: 0.24, b: 0.24, a: 1}
     - HighlightColor: {r: 0.14509803, g: 0.7529412, b: 0.3683864, a: 0}
     - HighlightDetail: {r: 1, g: 4, b: 0, a: 0}
     - HighlightScale: {r: 0.3, g: 0.3, b: 0, a: 0}
     - NormalScale: {r: 16, g: 16, b: 0, a: 0}
+    - Vector2_cd4c9a8c6300480b9cbf665c640b4c08: {r: 0, g: 100, b: 0, a: 0}
     - Vector2_ec873f251ca941b5bafb67f68c7300a4: {r: 16, g: 16, b: 0, a: 0}
     - Vector3_0623b63218574ebb99a43fe0a59c1435: {r: 0, g: 0, b: 0, a: 0}
     - Vector3_25a6d00effc9440b838b7cf5f9ac1c2b: {r: 5, g: 5, b: 5, a: 0}
@@ -176,7 +186,7 @@ Material:
     - noise1: {r: 0.5, g: 0.5, b: 2.21, a: 2}
     - normalScale: {r: 16, g: 16, b: 0, a: 0}
     - rimColour: {r: 1, g: 0.9490197, b: 0.9490197, a: 0}
-    - shadowColour: {r: 0.32941177, g: 0.5764706, b: 0.3529412, a: 0}
+    - shadowColour: {r: 0.681, g: 0.681, b: 0.681, a: 0}
     - snowDirection: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5609627091822924584
