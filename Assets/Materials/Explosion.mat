@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Explosion
+  m_Shader: {fileID: -6465566751694194690, guid: dc35bfee5187a5e498af2abeb5111799, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_2031a60c462c44d1bc0b080c6734a187: 0
+    - Vector1_3ed5f8d460454ef0b3e74ad48d655704: 10
+    - Vector1_5119ed39418b4c8290c06a7420590abe: 0
+    - Vector1_64a2ed62756e48a4b0eae8bde4812251: 7.4
+    - noiseScale: 100
+    - vertexOffset: 0.26
+    m_Colors:
+    - Color_c0546174b21b4b18b8a10e8593d7ad52: {r: 31.999996, g: 1.0052354, b: 0, a: 1}
+    - noiseSpeed_1: {r: 0, g: -0.01, b: 0, a: 0}
+    - noiseSpeed_2: {r: 0, g: -0.05, b: 0, a: 0}
+  m_BuildTextureStacks: []
