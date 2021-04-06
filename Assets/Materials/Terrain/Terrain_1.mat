@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Terrain_1
-  m_Shader: {fileID: -6465566751694194690, guid: ab891102d2d55c541b81aa35b9027fa1, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: f285130529f08ab4eb719cfe669e434e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -142,6 +142,7 @@ Material:
     - Vector1_cb88799f2bb14b949251db438d9346a7: 1.71
     - Vector1_cd9c247eca8c49e48b82d8062c93a4ab: 10
     - Vector1_d6eba9a780f14e1aaaa72f4d798798d4: 0
+    - Vector1_f653a0e3917f46c7b770c5890172c8b2: -50
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -188,7 +189,7 @@ Material:
     - snowOpacity: 1
     - snowScale: 10
     - tileUV: 0
-    - waveSpeed: 0.1
+    - waveSpeed: 0
     - windDensity: 5
     - windSpeed: 0.1
     - windStrength: 0
@@ -199,8 +200,10 @@ Material:
     - Color_90e7a4db6e164ace8b4287ac0de2d215: {r: 0.24528301, g: 0.12260357, b: 0.0752047, a: 1}
     - Color_998a863085434630b3b8dbcc190263dc: {r: 0.6986605, g: 0.7264151, b: 0.4488697, a: 1}
     - Color_b5840d6591814bb5812e29843e1aa744: {r: 0.3984514, g: 0.6981132, b: 0.6618555, a: 1}
-    - Gradient0_Colour0: {r: 0.35039216, g: 0.40392157, b: 0.04705882, a: 1}
-    - Gradient0_Colour1: {r: 0.3389836, g: 0.5471698, b: 0.20906018, a: 1}
+    - Gradient0_Colour0: {r: 0.3417798, g: 0.40392157, b: 0, a: 1}
+    - Gradient0_Colour0_1: {r: 0.32406685, g: 0.40392157, b: 0, a: 1}
+    - Gradient0_Colour1: {r: 0.33876407, g: 0.54901963, b: 0.21027453, a: 1}
+    - Gradient0_Colour1_1: {r: 0.3458824, g: 0.54901963, b: 0.21960784, a: 1}
     - Gradient1_Colour0: {r: 0.42200002, g: 0.4120626, b: 0.036519222, a: 1}
     - Gradient1_Colour1: {r: 0, g: 0.344, b: 0.13923815, a: 1}
     - HighlightColor: {r: 0.43701732, g: 0.461, b: 0, a: 0}
