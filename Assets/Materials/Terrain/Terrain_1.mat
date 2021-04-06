@@ -201,16 +201,19 @@ Material:
     - Color_998a863085434630b3b8dbcc190263dc: {r: 0.6986605, g: 0.7264151, b: 0.4488697, a: 1}
     - Color_b5840d6591814bb5812e29843e1aa744: {r: 0.3984514, g: 0.6981132, b: 0.6618555, a: 1}
     - Gradient0_Colour0: {r: 0.3417798, g: 0.40392157, b: 0, a: 1}
-    - Gradient0_Colour0_1: {r: 0.32406685, g: 0.40392157, b: 0, a: 1}
+    - Gradient0_Colour0_1: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
     - Gradient0_Colour1: {r: 0.33876407, g: 0.54901963, b: 0.21027453, a: 1}
-    - Gradient0_Colour1_1: {r: 0.3458824, g: 0.54901963, b: 0.21960784, a: 1}
+    - Gradient0_Colour1_1: {r: 0.2924528, g: 0.25711653, b: 0.24141152, a: 1}
     - Gradient1_Colour0: {r: 0.42200002, g: 0.4120626, b: 0.036519222, a: 1}
+    - Gradient1_Colour0_1: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
     - Gradient1_Colour1: {r: 0, g: 0.344, b: 0.13923815, a: 1}
+    - Gradient1_Colour1_1: {r: 0.4716981, g: 0.44722322, b: 0.44722322, a: 1}
     - HighlightColor: {r: 0.43701732, g: 0.461, b: 0, a: 0}
     - HighlightDetail: {r: 4, g: 2, b: 0, a: 0}
     - HighlightScale: {r: 4, g: 16, b: 0, a: 0}
     - Vector2_6fe9d67c7bc24914851eaa1d6e8ecf54: {r: 10, g: 10, b: 0, a: 0}
     - Vector2_a193f463bafc41fa8481cdcdbd335c36: {r: 4, g: 3, b: 0, a: 0}
+    - Vector2_cd4c9a8c6300480b9cbf665c640b4c08: {r: 100, g: 300, b: 0, a: 0}
     - Vector3_0623b63218574ebb99a43fe0a59c1435: {r: 0, g: 0, b: 0, a: 0}
     - Vector3_25a6d00effc9440b838b7cf5f9ac1c2b: {r: 5, g: 5, b: 5, a: 0}
     - Vector3_79cae1295b144ab0ba89f8e01cb35769: {r: 0, g: 1, b: 0, a: 0}
