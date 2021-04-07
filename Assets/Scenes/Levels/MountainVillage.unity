@@ -515,6 +515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuardPost_low
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c1c765e5ea1d274294247aa7d4e55a8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c1c765e5ea1d274294247aa7d4e55a8, type: 3}
 --- !u!1 &855739122
@@ -953,6 +957,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2d0bfe9bac2bbc84bb4dd539c107bd80, type: 3}
       propertyPath: m_Name
       value: MainGate_low
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d0bfe9bac2bbc84bb4dd539c107bd80, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d0bfe9bac2bbc84bb4dd539c107bd80, type: 3}
@@ -16286,6 +16294,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6486343dde790384c86b56e959ccc1e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6486343dde790384c86b56e959ccc1e3, type: 3}
 --- !u!1 &1767174784 stripped
@@ -21175,6 +21187,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 313ad5de739bba74eb3e16ff60bd2890, type: 3}
       propertyPath: m_Name
       value: VillageTower_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 313ad5de739bba74eb3e16ff60bd2890, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 313ad5de739bba74eb3e16ff60bd2890, type: 3}

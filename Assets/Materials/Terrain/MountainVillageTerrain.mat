@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MountainVillageTerrain
-  m_Shader: {fileID: -6465566751694194690, guid: ab891102d2d55c541b81aa35b9027fa1, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: f285130529f08ab4eb719cfe669e434e, type: 3}
   m_ShaderKeywords: BOOLEAN_E44A03F7AE46400FB3F2EFAAC1093A7A_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -41,6 +41,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_39ba1d51c8bd4427a19ec2dd143a0fe1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_698e8356aaca443aa7f70ee67bc35930:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -123,6 +127,7 @@ Material:
     - BOOLEAN_A5F375183FE94ABCB764552F45645F3B: 0
     - BOOLEAN_E44A03F7AE46400FB3F2EFAAC1093A7A: 1
     - Boolean_706ac75a2b3d479aa2f0f779829c24af: 1
+    - Boolean_8b7b8593dcc147539fd2b922118e59d3: 0
     - Boolean_cd329a602c004655a0282b355981e908: 0
     - EMISSIONTOGGLE: 0
     - HighlightMix: 3.06
@@ -198,14 +203,19 @@ Material:
     - Color_998a863085434630b3b8dbcc190263dc: {r: 0.6986605, g: 0.7264151, b: 0.4488697, a: 1}
     - Color_b5840d6591814bb5812e29843e1aa744: {r: 0.3984514, g: 0.6981132, b: 0.6618555, a: 1}
     - Gradient0_Colour0: {r: 0.52395296, g: 0.585437, b: 0.59607846, a: 1}
+    - Gradient0_Colour0_1: {r: 0.5254902, g: 0.58431375, b: 0.59607846, a: 1}
     - Gradient0_Colour1: {r: 0.39262193, g: 0.4811321, b: 0.4698544, a: 1}
+    - Gradient0_Colour1_1: {r: 0.3921569, g: 0.48235297, b: 0.47058827, a: 1}
     - Gradient1_Colour0: {r: 0.43835294, g: 0.44615224, b: 0.4509804, a: 1}
+    - Gradient1_Colour0_1: {r: 0.511, g: 0.47774962, b: 0.456834, a: 1}
     - Gradient1_Colour1: {r: 0, g: 0, b: 0, a: 1}
+    - Gradient1_Colour1_1: {r: 0.589, g: 0.589, b: 0.589, a: 1}
     - HighlightColor: {r: 0.27256143, g: 0.31563854, b: 0.3301887, a: 0}
     - HighlightDetail: {r: 2, g: 4, b: 0, a: 0}
     - HighlightScale: {r: 2, g: 2, b: 0, a: 0}
     - Vector2_6fe9d67c7bc24914851eaa1d6e8ecf54: {r: 10, g: 10, b: 0, a: 0}
     - Vector2_a193f463bafc41fa8481cdcdbd335c36: {r: 4, g: 3, b: 0, a: 0}
+    - Vector2_cd4c9a8c6300480b9cbf665c640b4c08: {r: 300, g: 600, b: 0, a: 0}
     - Vector3_0623b63218574ebb99a43fe0a59c1435: {r: 0, g: 0, b: 0, a: 0}
     - Vector3_25a6d00effc9440b838b7cf5f9ac1c2b: {r: 5, g: 5, b: 5, a: 0}
     - Vector3_79cae1295b144ab0ba89f8e01cb35769: {r: 0, g: 1, b: 0, a: 0}
