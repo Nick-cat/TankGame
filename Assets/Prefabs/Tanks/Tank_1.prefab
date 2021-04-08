@@ -5145,7 +5145,7 @@ MonoBehaviour:
   zoomFOV: 15
   crosshairScaleTime: 0.1
   crosshairMoveTime: 0.05
-  ammo: {fileID: 728797156114499020, guid: 00b00e3210ae5ee4d915c61c617509ab, type: 3}
+  ammo: {fileID: -635589573617748809, guid: 8b8962b85e8599f409598d518de096e7, type: 3}
   turretTransform: {fileID: 816556996425024466}
   cannonTransform: {fileID: 587958507801842346}
   cannonTipTransform: {fileID: 6310655700743668602}

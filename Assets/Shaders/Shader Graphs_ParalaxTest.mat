@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_ParalaxTest
+  m_Shader: {fileID: -6465566751694194690, guid: 4ee7243a27d96e445a26e3a16af2298c, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ParallaxMapping_35bd94896f9f4af8a4ef9af368a1d884_Heightmap_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_d13354e06a3143abb112cd5a6e06e46e: 1
+    - Vector1_f6d3f45a2a2346f8bd70cfc7f8d48165: 6
+    m_Colors:
+    - Color_2dab04039c6d41a3b647c629ab0ff52e: {r: 0.51772916, g: 0.7604147, b: 0.772549, a: 0}
+    - Color_ead0fa1e5a814943894e4df5d188f45a: {r: 0.17123406, g: 0.20334041, b: 0.503, a: 1}
+    - Vector2_ae7249080f254e768db7c1ae78b3a45e: {r: 16.29, g: 0, b: 0, a: 0}
+    - Vector2_bee849feee50401b9c30db04583f9258: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_d6570de53ebf4a4d86150f7bd875e2e0: {r: 0, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
