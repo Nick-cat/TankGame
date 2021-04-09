@@ -13,7 +13,6 @@ namespace SBC
         public float BoostCapacity { get { return boostCapacity; } }
         [SerializeField] float accelerationTime = 0.05f;
         public float rotateSpeed;
-        public float rotateSmoothing = 0.5f;
         public float brakeForce = 2f;
         public float maxVelocity;
         public float driftAngle;
@@ -41,9 +40,6 @@ namespace SBC
         private bool canJump = true;
 
         private GameObject spawnPoint;
-
-        private Vector3 rotateAmount;
-        private Vector3 rotateChangeVelocity;
 
         //player inputs
         private float gas;
@@ -98,7 +94,7 @@ namespace SBC
 
             if (jump && canJump)
             {
-                rb.AddForce(transform.up * jumpForce * 100f);
+                rb.AddForceAtPosition(transform.up * jumpForce, rb.position, ForceMode.Impulse);
                 canJump = false;
             }
 
@@ -125,18 +121,11 @@ namespace SBC
 
         private void Rotate()
         {
-            //turn the tank correctly when upside down
-            int upsidedown = 1;
-            if (Vector3.Dot(transform.up, Vector3.down) > 0) upsidedown = -1;
-
             //adjust rotatation depending on speed
             float rotateSpeedMod = Mathf.Clamp(1f - rb.velocity.magnitude / (maxVelocity * 2), 0.8f, 1f);
 
-            //smooths tank rotation value
-            Vector3 rotateOld = rotateAmount;
-            Vector3 rotateNew = new Vector3(0f, rotate * rotateSpeed * rotateSpeedMod * Time.deltaTime * upsidedown, 0f);
-            rotateAmount = Vector3.SmoothDamp(rotateOld, rotateNew, ref rotateChangeVelocity, rotateSmoothing);
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotateAmount);
+            float rotationTorque = rotate * rotateSpeedMod * rotateSpeed * Time.fixedDeltaTime;
+            rb.AddRelativeTorque(0f, rotationTorque, 0f, ForceMode.VelocityChange);
         }
 
         public bool IsGrounded()

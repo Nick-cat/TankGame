@@ -5170,12 +5170,11 @@ MonoBehaviour:
   boostSpeed: 60
   boostCapacity: 100
   accelerationTime: 1
-  rotateSpeed: 50
-  rotateSmoothing: 0.5
+  rotateSpeed: 3
   brakeForce: 5
   maxVelocity: 110
   driftAngle: 20
-  jumpForce: 40
+  jumpForce: 100
   distanceToGround: 1
   rayPoint: {fileID: 4317496733733423152}
   customGravity: 2
