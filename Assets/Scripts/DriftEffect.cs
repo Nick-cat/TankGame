@@ -10,15 +10,15 @@ namespace SBC
         [SerializeField] List<AudioClip> driftSounds = new List<AudioClip>();
         [SerializeField] AudioSource driftStartSource;
         private AudioSource driftLoop;
-        private Rigidbody rb;
         private TankController tank;
+        private TankComponentManager tcm;
         private bool drift;
         private float turn;
         private bool isDrifting = false;
 
         private void Start()
         {
-            rb = transform.root.GetComponent<Rigidbody>();
+            tcm = GetComponent<TankComponentManager>();
             tank = transform.root.GetComponent<TankController>();
             driftLoop = GetComponent<AudioSource>();
         }
@@ -27,7 +27,7 @@ namespace SBC
             drift = Input.GetButton("Drift");
             turn = Input.GetAxis("Horizontal");
 
-            if ((rb.velocity.magnitude > 0) && drift && tank.IsGrounded())
+            if ((tcm.rb.velocity.magnitude > 0) && drift && tcm.isGrounded)
             {
                 Drift();
                 return;
