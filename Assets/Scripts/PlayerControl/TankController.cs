@@ -118,21 +118,9 @@ namespace SBC
 
         private void Brake()
         {
-            if (brake)
-            {
-                forwards = 0f;
-                rb.angularDrag = brakeForce;
-                rb.drag = brakeForce;
-                return;
-                //Experimental Drift, comment this out if tank is too buggy
-                //if (rb.velocity.sqrMagnitude > Mathf.Sqrt(maxVelocity))
-                //{
-                //    rb.angularVelocity = new Vector3(0f, rotate * (rotateSpeed / 2f) * Time.deltaTime, 0f);
-                //}
-            }
-            forwards = gas;
-            rb.angularDrag = groundDrag / 2;
-            rb.drag = groundDrag;
+            forwards = brake ? 0f : gas;
+            rb.angularDrag = brake ? brakeForce : groundDrag / 2;
+            rb.drag = brake ? brakeForce : groundDrag;
         }
 
         private void Rotate()
