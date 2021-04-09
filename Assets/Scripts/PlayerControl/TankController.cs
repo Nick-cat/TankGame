@@ -131,15 +131,6 @@ namespace SBC
             rb.AddRelativeTorque(0f, rotationTorque, 0f, ForceMode.VelocityChange);
         }
 
-        public bool IsGrounded()
-        {
-            //cast a ray from center of body to down direction, check if anything intersects the bottom of the body.
-            LayerMask ground = LayerMask.GetMask("Ground");
-
-            bool val = Physics.Raycast(rayPoint.position, -transform.up, distanceToGround, ground);
-            return val;
-        }
-
         public void Respawn()
         {
             rb.velocity = Vector3.zero;
