@@ -9,13 +9,12 @@ namespace SBC
         private float minlength;
         private float maxLength;
         private float lastLength;
-        private float springLength;
+        //private float springLength;
         private float springForce;
         private float damperForce;
         private float springVelocity;
         private Vector3 suspensionForce;
-        private Rigidbody rb;
-        private float forwardForce;
+        //private Rigidbody rb;
         private float driftDirection;
 
         //PlayerInputs
@@ -24,11 +23,18 @@ namespace SBC
 
         //get suspension and acceleration values from tank controller
         public TankController tank;
-        
+        private TankComponentManager tcm;
+
+        private void Awake()
+        {
+            tcm = GetComponent<TankComponentManager>();
+            tank = GetComponent<TankController>();
+        }
+
         void Start()
         {
             //get tank rigidbody
-            rb = transform.root.GetComponent <Rigidbody>();
+            //rb = tcm.rb;
 
             minlength = tank.suspensionHeight - tank.springTravel;
             maxLength = tank.suspensionHeight + tank.springTravel;
@@ -42,35 +48,46 @@ namespace SBC
 
         void FixedUpdate()
         {
-            //this provides suspension but does not actually move the wheels
             LayerMask ground = LayerMask.GetMask("Ground");
-            if (Physics.Raycast(transform.position, -transform.up, out RaycastHit Hit, maxLength + tank.wheelRadius, ground))
+            ApplySuspension(tcm.wheels, ground, tcm.rb);
+        }
+
+        private void ApplySuspension(Transform[] wheels, LayerMask ground, Rigidbody rb)
+        {
+            tcm.numberOfGroundedWheels = 0;
+            foreach (var wheel in wheels)
             {
-                lastLength = springLength;
-                springLength = Hit.distance - tank.wheelRadius;
-                springLength = Mathf.Clamp(springLength, minlength, maxLength);
-                springVelocity = (lastLength - springLength) / Time.fixedDeltaTime;
-                springForce = tank.springStiffness * (tank.suspensionHeight - springLength);
-                damperForce = tank.damperStiffness * springVelocity;
-
-                suspensionForce = (springForce + damperForce) * transform.up;
-                rb.AddForceAtPosition(suspensionForce, Hit.point);
-
-
-                if (rb.velocity.magnitude < tank.maxVelocity)
+                WheelInfo wheelInfo = wheel.GetComponent<WheelInfo>();
+                if (Physics.Raycast(wheel.position, -transform.up, out RaycastHit Hit, maxLength + tank.wheelRadius, ground))
                 {
-                    //adds drift
-                    if (drift) driftDirection = tank.driftAngle * rotate;
-                    else driftDirection = 0;
-                    
-                    Vector3 moveDirection = Quaternion.AngleAxis(driftDirection, Vector3.up) * transform.forward;
+                    lastLength = wheelInfo.springLength;
+                    wheelInfo.springLength = Hit.distance - tank.wheelRadius;
+                    wheelInfo.springLength = Mathf.Clamp(wheelInfo.springLength, minlength, maxLength);
+                    springVelocity = (lastLength - wheelInfo.springLength) / Time.fixedDeltaTime;
+                    springForce = tank.springStiffness * (tank.suspensionHeight - wheelInfo.springLength);
+                    damperForce = tank.damperStiffness * springVelocity;
 
-                    //adds forward force to the tank at the wheels
-                    rb.AddForceAtPosition(tank.forwardForce * moveDirection * Time.deltaTime, Hit.point, ForceMode.Acceleration);
-                }
+                    suspensionForce = (springForce + damperForce) * wheel.up;
+                    rb.AddForceAtPosition(suspensionForce, Hit.point);
+
+                    Debug.DrawRay(wheel.position, -wheel.up * Hit.distance, Color.green);
+
+                    tcm.isGrounded = true;
+                    tcm.numberOfGroundedWheels += 1;
+
+                    if (rb.velocity.magnitude < tank.maxVelocity)
+                    {
+                        //adds drift
+                        if (drift) driftDirection = tank.driftAngle * rotate;
+                        else driftDirection = 0;
+
+                        Vector3 moveDirection = Quaternion.AngleAxis(driftDirection, Vector3.up) * transform.forward;
+
+                        //adds forward force to the tank at the wheels
+                        rb.AddForceAtPosition(tank.forwardForce * moveDirection * Time.deltaTime, Hit.point, ForceMode.Acceleration);
+                    }
+                } 
             }
-            //displays the suspension
-            Debug.DrawRay(transform.position, -transform.up * Hit.distance, Color.green);
         }
     }
 }

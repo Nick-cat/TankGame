@@ -6,6 +6,8 @@ namespace SBC
 {
     public class TankController : MonoBehaviour
     {
+        private TankComponentManager tcm;
+
         public float tankSpeed = 10f;
         [SerializeField] float boostSpeed = 60f;
         [Tooltip("MaxCapacity of Boost")]
@@ -61,7 +63,8 @@ namespace SBC
 
         private void Start()
         {
-            rb = GetComponent <Rigidbody>();
+            tcm = GetComponent<TankComponentManager>();
+            rb = tcm.rb;
             rb.centerOfMass = centerOfMass;
             spawnPoint = GameObject.Find("SpawnPoint");
             boostRemaining = boostCapacity;
@@ -98,7 +101,7 @@ namespace SBC
                 canJump = false;
             }
 
-            if (IsGrounded())
+            if (tcm.isGrounded)
             {
                 canJump = true;
                 Boost();

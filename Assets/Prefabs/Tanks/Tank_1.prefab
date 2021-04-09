@@ -46,6 +46,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1172011074663910100}
   - component: {fileID: 740504395025698624}
+  - component: {fileID: 7099560819426433654}
   m_Layer: 0
   m_Name: Wheel_3L
   m_TagString: Untagged
@@ -75,12 +76,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235548290012832944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+--- !u!114 &7099560819426433654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235548290012832944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ac915a0565a94cadf0bb1e5b1ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springLength: 0
 --- !u!1 &277731058236050749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2730,6 +2744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8459951744605917787}
   - component: {fileID: 4793188758409199685}
+  - component: {fileID: 5956007586014841626}
   m_Layer: 0
   m_Name: Wheel_7L
   m_TagString: Untagged
@@ -2759,12 +2774,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2356973118649262156}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+--- !u!114 &5956007586014841626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356973118649262156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ac915a0565a94cadf0bb1e5b1ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springLength: 0
 --- !u!1 &2444427411365336653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4160,6 +4188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6326884150729692229}
   - component: {fileID: 3521284795698868104}
+  - component: {fileID: 5540910323134115161}
   m_Layer: 0
   m_Name: Wheel_7R
   m_TagString: Untagged
@@ -4189,12 +4218,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3208310357081349474}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+--- !u!114 &5540910323134115161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3208310357081349474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ac915a0565a94cadf0bb1e5b1ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springLength: 0
 --- !u!1 &3358412139355751297
 GameObject:
   m_ObjectHideFlags: 0
@@ -5026,6 +5068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8198645306598530497}
   - component: {fileID: 2327555762507360451}
+  - component: {fileID: 3372753765422803186}
   m_Layer: 0
   m_Name: Wheel_2R
   m_TagString: Untagged
@@ -5055,12 +5098,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3843033093251987557}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+--- !u!114 &3372753765422803186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3843033093251987557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ac915a0565a94cadf0bb1e5b1ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springLength: 0
 --- !u!1 &3877776766204771783
 GameObject:
   m_ObjectHideFlags: 0
@@ -5071,6 +5127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107650126704451574}
   - component: {fileID: 4046712353929396510}
+  - component: {fileID: 3357735801588258400}
   - component: {fileID: 7952173011122793669}
   - component: {fileID: 2814932708221376481}
   - component: {fileID: 1755671199055048753}
@@ -5079,6 +5136,9 @@ GameObject:
   - component: {fileID: 8495047969773635527}
   - component: {fileID: 8102230174228913709}
   - component: {fileID: 7744120977413587943}
+  - component: {fileID: 8271951669445774719}
+  - component: {fileID: 495543962862694987}
+  - component: {fileID: 9184843479531071484}
   m_Layer: 0
   m_Name: Tank_1
   m_TagString: Player
@@ -5125,6 +5185,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
+--- !u!114 &3357735801588258400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877776766204771783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051f7ae98f097c6478ff54d046c4063b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheels:
+  - {fileID: 5147848616978840056}
+  - {fileID: 1172011074663910100}
+  - {fileID: 5467637850570557591}
+  - {fileID: 7614764543471869304}
+  - {fileID: 7043674344958206442}
+  - {fileID: 8459951744605917787}
+  - {fileID: 8198645306598530497}
+  - {fileID: 6849504037081261780}
+  - {fileID: 999542688134479509}
+  - {fileID: 2164286436249336795}
+  - {fileID: 2881056264582574210}
+  - {fileID: 6326884150729692229}
+  isGrounded: 0
+  rb: {fileID: 0}
+  numberOfGroundedWheels: 0
+  averageColliderSurfaceNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &7952173011122793669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5364,6 +5453,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee28fd0ab21b9734b8847f296a0e8c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8271951669445774719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877776766204771783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tank: {fileID: 0}
+--- !u!114 &495543962862694987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877776766204771783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da8f3906c0fd1741b1f1241218dbf3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linearStabilityForce: 100
+  angularStabilityForce: 100
+--- !u!114 &9184843479531071484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877776766204771783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbf8db4aca2a7546896f5fbd3020f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3915026765732629661
@@ -6526,6 +6654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6849504037081261780}
   - component: {fileID: 3685718675970766750}
+  - component: {fileID: 8881980534194965717}
   m_Layer: 0
   m_Name: Wheel_3R
   m_TagString: Untagged
@@ -6555,12 +6684,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4367900373282087120}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+--- !u!114 &8881980534194965717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367900373282087120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ac915a0565a94cadf0bb1e5b1ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springLength: 0
 --- !u!1 &4474442086191766669
 GameObject:
   m_ObjectHideFlags: 0
@@ -6804,6 +6946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2164286436249336795}
   - component: {fileID: 7925846438912915249}
+  - component: {fileID: 163582538322889546}
   m_Layer: 0
   m_Name: Wheel_5R
   m_TagString: Untagged
@@ -6833,12 +6976,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4498270940834337887}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+--- !u!114 &163582538322889546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4498270940834337887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ac915a0565a94cadf0bb1e5b1ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springLength: 0
 --- !u!1 &4546702035940138026
 GameObject:
   m_ObjectHideFlags: 0
@@ -7570,6 +7726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7043674344958206442}
   - component: {fileID: 2107757954820467720}
+  - component: {fileID: 3884359346812605904}
   m_Layer: 0
   m_Name: Wheel_6L
   m_TagString: Untagged
@@ -7599,12 +7756,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4960220972658374931}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+--- !u!114 &3884359346812605904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960220972658374931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ac915a0565a94cadf0bb1e5b1ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springLength: 0
 --- !u!1 &5211782445574015168
 GameObject:
   m_ObjectHideFlags: 0
@@ -8909,6 +9079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7614764543471869304}
   - component: {fileID: 6884476433745949481}
+  - component: {fileID: 7478926800628463849}
   m_Layer: 0
   m_Name: Wheel_5L
   m_TagString: Untagged
@@ -8938,12 +9109,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6646648161628616166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+--- !u!114 &7478926800628463849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6646648161628616166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ac915a0565a94cadf0bb1e5b1ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springLength: 0
 --- !u!1 &6743330406274030812
 GameObject:
   m_ObjectHideFlags: 0
@@ -11365,6 +11549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5147848616978840056}
   - component: {fileID: 1190530049550405769}
+  - component: {fileID: 5126797019912860617}
   m_Layer: 0
   m_Name: Wheel_2L
   m_TagString: Untagged
@@ -11394,12 +11579,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8448634746904610243}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+--- !u!114 &5126797019912860617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8448634746904610243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ac915a0565a94cadf0bb1e5b1ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springLength: 0
 --- !u!1 &8576477011897685690
 GameObject:
   m_ObjectHideFlags: 0
@@ -11410,6 +11608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2881056264582574210}
   - component: {fileID: 8060960478536734597}
+  - component: {fileID: 3050087358608238510}
   m_Layer: 0
   m_Name: Wheel_6R
   m_TagString: Untagged
@@ -11439,12 +11638,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8576477011897685690}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+--- !u!114 &3050087358608238510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8576477011897685690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ac915a0565a94cadf0bb1e5b1ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springLength: 0
 --- !u!1 &8677865629761448733
 GameObject:
   m_ObjectHideFlags: 0
@@ -11493,6 +11705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5467637850570557591}
   - component: {fileID: 5818797721923285563}
+  - component: {fileID: 5239151949868984212}
   m_Layer: 0
   m_Name: Wheel_4L
   m_TagString: Untagged
@@ -11522,12 +11735,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8749813032421103473}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+--- !u!114 &5239151949868984212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8749813032421103473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ac915a0565a94cadf0bb1e5b1ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springLength: 0
 --- !u!1 &8750009894998879617
 GameObject:
   m_ObjectHideFlags: 0
@@ -12054,6 +12280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 999542688134479509}
   - component: {fileID: 7952161669385650655}
+  - component: {fileID: 8025032124450317715}
   m_Layer: 0
   m_Name: Wheel_4R
   m_TagString: Untagged
@@ -12083,12 +12310,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9194463299111964802}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2814932708221376481}
+--- !u!114 &8025032124450317715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9194463299111964802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ac915a0565a94cadf0bb1e5b1ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springLength: 0
 --- !u!1 &9208408929607945200
 GameObject:
   m_ObjectHideFlags: 0
@@ -12385,14 +12625,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bc0f8e8ca84b2748bfc53f1ab92dbd7, type: 3}
---- !u!4 &5076787814962645290 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1202196179462973324, guid: 0bc0f8e8ca84b2748bfc53f1ab92dbd7, type: 3}
-  m_PrefabInstance: {fileID: 6258684690423197350}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &703836342687005553 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 6854434636622714327, guid: 0bc0f8e8ca84b2748bfc53f1ab92dbd7, type: 3}
+  m_PrefabInstance: {fileID: 6258684690423197350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5076787814962645290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1202196179462973324, guid: 0bc0f8e8ca84b2748bfc53f1ab92dbd7, type: 3}
   m_PrefabInstance: {fileID: 6258684690423197350}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6354128968620286760
@@ -12533,14 +12773,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bc0f8e8ca84b2748bfc53f1ab92dbd7, type: 3}
---- !u!198 &4273965866005909176 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6854434636622714327, guid: 0bc0f8e8ca84b2748bfc53f1ab92dbd7, type: 3}
-  m_PrefabInstance: {fileID: 7228271577373776751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8422001497936657635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1202196179462973324, guid: 0bc0f8e8ca84b2748bfc53f1ab92dbd7, type: 3}
+  m_PrefabInstance: {fileID: 7228271577373776751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4273965866005909176 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6854434636622714327, guid: 0bc0f8e8ca84b2748bfc53f1ab92dbd7, type: 3}
   m_PrefabInstance: {fileID: 7228271577373776751}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8781020244768319658
