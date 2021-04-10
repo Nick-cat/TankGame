@@ -55,6 +55,9 @@ namespace SBC
                     suspensionForce = (springForce + damperForce) * wheel.up;
                     rb.AddForceAtPosition(suspensionForce, Hit.point);
 
+                    //until I can figure out how to properly export rigs from blender to unity, this wont work
+                    //wheel.transform.position = new Vector3(Hit.point.x, Hit.point.y, Hit.point.z + Hit.distance);
+
                     Debug.DrawRay(wheel.position, -wheel.up * Hit.distance, Color.green);
 
                     tcm.isGroundedLeft = true;

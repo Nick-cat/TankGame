@@ -45,7 +45,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1172011074663910100}
-  - component: {fileID: 740504395025698624}
   - component: {fileID: 7099560819426433654}
   m_Layer: 0
   m_Name: Wheel_3L
@@ -69,19 +68,6 @@ Transform:
   m_Father: {fileID: 7736506569300221676}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &740504395025698624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235548290012832944}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tank: {fileID: 2814932708221376481}
 --- !u!114 &7099560819426433654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2743,7 +2729,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8459951744605917787}
-  - component: {fileID: 4793188758409199685}
   - component: {fileID: 5956007586014841626}
   m_Layer: 0
   m_Name: Wheel_7L
@@ -2767,19 +2752,6 @@ Transform:
   m_Father: {fileID: 7736506569300221676}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4793188758409199685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2356973118649262156}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tank: {fileID: 2814932708221376481}
 --- !u!114 &5956007586014841626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3720,7 +3692,8 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 5910432033443529800}
   m_Father: {fileID: 7736506569300221676}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4187,7 +4160,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6326884150729692229}
-  - component: {fileID: 3521284795698868104}
   - component: {fileID: 5540910323134115161}
   m_Layer: 0
   m_Name: Wheel_7R
@@ -4211,19 +4183,6 @@ Transform:
   m_Father: {fileID: 5958271757674203191}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3521284795698868104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3208310357081349474}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tank: {fileID: 2814932708221376481}
 --- !u!114 &5540910323134115161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5067,7 +5026,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8198645306598530497}
-  - component: {fileID: 2327555762507360451}
   - component: {fileID: 3372753765422803186}
   m_Layer: 0
   m_Name: Wheel_2R
@@ -5091,19 +5049,6 @@ Transform:
   m_Father: {fileID: 5958271757674203191}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2327555762507360451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3843033093251987557}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tank: {fileID: 2814932708221376481}
 --- !u!114 &3372753765422803186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5284,7 +5229,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0.003802281
-      value: 0.29766566
+      value: 1
       inSlope: -0.007896483
       outSlope: -0.007896483
       tangentMode: 0
@@ -5292,10 +5237,64 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.61742425
     - serializedVersion: 3
+      time: 0.21814549
+      value: 0.76308787
+      inSlope: -0.76706135
+      outSlope: -0.76706135
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.36563852
+      value: 0.7214091
+      inSlope: -1.0274855
+      outSlope: -1.0274855
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5314727
+      value: 0.5735712
+      inSlope: -0.258641
+      outSlope: -0.258641
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6775472
+      value: 0.5335414
+      inSlope: -1.1993247
+      outSlope: -1.1993247
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.290751
+      outWeight: 0.22088467
+    - serializedVersion: 3
+      time: 0.86215365
+      value: 0.3939452
+      inSlope: -1.2333992
+      outSlope: -1.2333992
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.19588742
+      outWeight: 0.30494636
+    - serializedVersion: 3
+      time: 0.96903384
+      value: 0.28942084
+      inSlope: -2.9820852
+      outSlope: -2.9820852
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0.29880178
-      outSlope: -0.29880178
+      inSlope: -9.346358
+      outSlope: -9.346358
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -5307,12 +5306,13 @@ MonoBehaviour:
   jumpForce: 100
   customGravity: 2
   centerOfMass: {x: 0, y: -0.25, z: 0}
-  groundDrag: 3
+  groundDrag: 0
+  angularDrag: 1.5
   airDrag: 0
   treadSpeed: 20
   suspensionHeight: 0.8
   springTravel: 0.4
-  springStiffness: 200
+  springStiffness: 400
   damperStiffness: 20
   wheelRadius: 0.4
   acceleration: 0
@@ -5545,8 +5545,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4dcf7b43fdc4e4ab60df68ba7729fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftTread: {fileID: 5714243853450996431}
-  rightTread: {fileID: 5977096997085800905}
+  leftTread: {fileID: 5910432033443529800}
+  rightTread: {fileID: 4624523926734282247}
+  drag: 0
 --- !u!1 &3915026765732629661
 GameObject:
   m_ObjectHideFlags: 0
@@ -6706,7 +6707,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6849504037081261780}
-  - component: {fileID: 3685718675970766750}
   - component: {fileID: 8881980534194965717}
   m_Layer: 0
   m_Name: Wheel_3R
@@ -6730,19 +6730,6 @@ Transform:
   m_Father: {fileID: 5958271757674203191}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3685718675970766750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4367900373282087120}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tank: {fileID: 2814932708221376481}
 --- !u!114 &8881980534194965717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6998,7 +6985,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2164286436249336795}
-  - component: {fileID: 7925846438912915249}
   - component: {fileID: 163582538322889546}
   m_Layer: 0
   m_Name: Wheel_5R
@@ -7022,19 +7008,6 @@ Transform:
   m_Father: {fileID: 5958271757674203191}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7925846438912915249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4498270940834337887}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tank: {fileID: 2814932708221376481}
 --- !u!114 &163582538322889546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7778,7 +7751,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7043674344958206442}
-  - component: {fileID: 2107757954820467720}
   - component: {fileID: 3884359346812605904}
   m_Layer: 0
   m_Name: Wheel_6L
@@ -7802,19 +7774,6 @@ Transform:
   m_Father: {fileID: 7736506569300221676}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2107757954820467720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4960220972658374931}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tank: {fileID: 2814932708221376481}
 --- !u!114 &3884359346812605904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7999,6 +7958,36 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &5352237835323647651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4624523926734282247}
+  m_Layer: 0
+  m_Name: TreadContact_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4624523926734282247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352237835323647651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.717, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5977096997085800905}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5363374027173804799
 GameObject:
   m_ObjectHideFlags: 0
@@ -9131,7 +9120,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7614764543471869304}
-  - component: {fileID: 6884476433745949481}
   - component: {fileID: 7478926800628463849}
   m_Layer: 0
   m_Name: Wheel_5L
@@ -9155,19 +9143,6 @@ Transform:
   m_Father: {fileID: 7736506569300221676}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6884476433745949481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6646648161628616166}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tank: {fileID: 2814932708221376481}
 --- !u!114 &7478926800628463849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9522,6 +9497,36 @@ RectTransform:
   m_AnchoredPosition: {x: -474, y: -32.07}
   m_SizeDelta: {x: 762.65, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &7133379285466075020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5910432033443529800}
+  m_Layer: 0
+  m_Name: TreadContact_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5910432033443529800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7133379285466075020}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.717, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5714243853450996431}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7300074049093846230
 GameObject:
   m_ObjectHideFlags: 0
@@ -10334,7 +10339,8 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4624523926734282247}
   m_Father: {fileID: 5958271757674203191}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11571,7 +11577,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5147848616978840056}
-  - component: {fileID: 1190530049550405769}
   - component: {fileID: 5126797019912860617}
   m_Layer: 0
   m_Name: Wheel_2L
@@ -11595,19 +11600,6 @@ Transform:
   m_Father: {fileID: 7736506569300221676}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1190530049550405769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8448634746904610243}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tank: {fileID: 2814932708221376481}
 --- !u!114 &5126797019912860617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11630,7 +11622,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2881056264582574210}
-  - component: {fileID: 8060960478536734597}
   - component: {fileID: 3050087358608238510}
   m_Layer: 0
   m_Name: Wheel_6R
@@ -11654,19 +11645,6 @@ Transform:
   m_Father: {fileID: 5958271757674203191}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8060960478536734597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576477011897685690}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tank: {fileID: 2814932708221376481}
 --- !u!114 &3050087358608238510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11727,7 +11705,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5467637850570557591}
-  - component: {fileID: 5818797721923285563}
   - component: {fileID: 5239151949868984212}
   m_Layer: 0
   m_Name: Wheel_4L
@@ -11751,19 +11728,6 @@ Transform:
   m_Father: {fileID: 7736506569300221676}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5818797721923285563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8749813032421103473}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tank: {fileID: 2814932708221376481}
 --- !u!114 &5239151949868984212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12302,7 +12266,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 999542688134479509}
-  - component: {fileID: 7952161669385650655}
   - component: {fileID: 8025032124450317715}
   m_Layer: 0
   m_Name: Wheel_4R
@@ -12326,19 +12289,6 @@ Transform:
   m_Father: {fileID: 5958271757674203191}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7952161669385650655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9194463299111964802}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88194cff16e55c64ea8561ecb571b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tank: {fileID: 2814932708221376481}
 --- !u!114 &8025032124450317715
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,7 +23,10 @@ namespace SBC
         [Header("Gravity and Drag")]
         public float customGravity = 2f;
         public Vector3 centerOfMass;
-        public float groundDrag = 3f;
+        public float accelDrag = 0.1f;
+        public float deccelDrag = 3f;
+        private float groundDrag;
+        public float angularDrag;
         public float airDrag = 0f;
 
         public float treadSpeed;
@@ -51,7 +54,6 @@ namespace SBC
         //acceleration variables
         [HideInInspector] public float acceleration;
         private float speedPercent;
-        private float forwards;
         [HideInInspector] public float forwardForce;
 
         [HideInInspector] public float boostRemaining;
@@ -85,11 +87,14 @@ namespace SBC
                 Respawn();
                 return;
             }
+
+            //removed the need for this by increasing the gravity in the physics settings
             //custom gravity
-            rb.AddForce(Vector3.up * -customGravity * 100f);
+            //rb.AddForce(Vector3.up * -customGravity * 100f);
 
             //calculates acceleration which is used by the suspension script
             Acceleration();
+            groundDrag = gas != 0 ? accelDrag : deccelDrag;
 
             if (jump && canJump)
             {
@@ -112,8 +117,7 @@ namespace SBC
 
         private void Brake()
         {
-            forwards = brake ? 0f : gas;
-            rb.angularDrag = brake ? brakeForce : groundDrag / 2;
+            rb.angularDrag = brake ? brakeForce : angularDrag;
             rb.drag = brake ? brakeForce : groundDrag;
         }
 
@@ -137,12 +141,11 @@ namespace SBC
 
         void Acceleration()
         {
-            Debug.Log(gas);
             speedPercent = rb.velocity.magnitude / maxVelocity;
-            Debug.Log("speedPercent =" + speedPercent);
+            //Debug.Log("speedPercent =" + speedPercent);
             acceleration = accelerationCurve.Evaluate(speedPercent);
-            Debug.Log("acceleration =" + acceleration);
-            forwardForce = acceleration * tankSpeed * gas;
+            //Debug.Log("acceleration =" + acceleration);
+            forwardForce = (acceleration * tankSpeed * gas);
         }
 
         private void Boost()
