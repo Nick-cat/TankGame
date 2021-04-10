@@ -9,19 +9,12 @@ namespace SBC
         private float minlength;
         private float maxLength;
         private float lastLength;
-        //private float springLength;
         private float springForce;
         private float damperForce;
         private float springVelocity;
         private Vector3 suspensionForce;
-        //private Rigidbody rb;
-        private float driftDirection;
 
-        //PlayerInputs
-        bool drift;
-        float rotate;
-
-        //get suspension and acceleration values from tank controller
+        //get suspension values from tank controller
         public TankController tank;
         private TankComponentManager tcm;
 
@@ -33,29 +26,21 @@ namespace SBC
 
         void Start()
         {
-            //get tank rigidbody
-            //rb = tcm.rb;
-
             minlength = tank.suspensionHeight - tank.springTravel;
             maxLength = tank.suspensionHeight + tank.springTravel;
-        }
-        private void Update()
-        {
-            //get player inputs
-            drift = Input.GetButton("Drift");
-            rotate = Input.GetAxis("Horizontal");
         }
 
         void FixedUpdate()
         {
             LayerMask ground = LayerMask.GetMask("Ground");
-            ApplySuspension(tcm.wheels, ground, tcm.rb);
+            ApplySuspension(tcm.wheelsLeft, tcm.wheelsRight, ground, tcm.rb);
         }
 
-        private void ApplySuspension(Transform[] wheels, LayerMask ground, Rigidbody rb)
+        private void ApplySuspension(Transform[] wheelsLeft, Transform[] wheelsRight,LayerMask ground, Rigidbody rb)
         {
-            tcm.numberOfGroundedWheels = 0;
-            foreach (var wheel in wheels)
+            tcm.numberOfGroundedWheelsLeft = 0;
+            tcm.numberOfGroundedWheelsRight = 0;
+            foreach (var wheel in wheelsLeft)
             {
                 WheelInfo wheelInfo = wheel.GetComponent<WheelInfo>();
                 if (Physics.Raycast(wheel.position, -transform.up, out RaycastHit Hit, maxLength + tank.wheelRadius, ground))
@@ -72,22 +57,32 @@ namespace SBC
 
                     Debug.DrawRay(wheel.position, -wheel.up * Hit.distance, Color.green);
 
-                    tcm.isGrounded = true;
-                    tcm.numberOfGroundedWheels += 1;
-
-                    if (rb.velocity.magnitude < tank.maxVelocity)
-                    {
-                        //adds drift
-                        if (drift) driftDirection = tank.driftAngle * rotate;
-                        else driftDirection = 0;
-
-                        Vector3 moveDirection = Quaternion.AngleAxis(driftDirection, Vector3.up) * transform.forward;
-
-                        //adds forward force to the tank at the wheels
-                        rb.AddForceAtPosition(tank.forwardForce * moveDirection * Time.deltaTime, Hit.point, ForceMode.Acceleration);
-                    }
+                    tcm.isGroundedLeft = true;
+                    tcm.numberOfGroundedWheelsLeft += 1;
                 } 
             }
+            foreach (var wheel in wheelsRight)
+            {
+                WheelInfo wheelInfo = wheel.GetComponent<WheelInfo>();
+                if (Physics.Raycast(wheel.position, -transform.up, out RaycastHit Hit, maxLength + tank.wheelRadius, ground))
+                {
+                    lastLength = wheelInfo.springLength;
+                    wheelInfo.springLength = Hit.distance - tank.wheelRadius;
+                    wheelInfo.springLength = Mathf.Clamp(wheelInfo.springLength, minlength, maxLength);
+                    springVelocity = (lastLength - wheelInfo.springLength) / Time.fixedDeltaTime;
+                    springForce = tank.springStiffness * (tank.suspensionHeight - wheelInfo.springLength);
+                    damperForce = tank.damperStiffness * springVelocity;
+
+                    suspensionForce = (springForce + damperForce) * wheel.up;
+                    rb.AddForceAtPosition(suspensionForce, Hit.point);
+
+                    Debug.DrawRay(wheel.position, -wheel.up * Hit.distance, Color.green);
+
+                    tcm.isGroundedRight = true;
+                    tcm.numberOfGroundedWheelsRight += 1;
+                }
+            }
+
         }
     }
 }

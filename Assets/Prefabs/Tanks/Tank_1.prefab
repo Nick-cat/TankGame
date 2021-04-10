@@ -5139,6 +5139,7 @@ GameObject:
   - component: {fileID: 8271951669445774719}
   - component: {fileID: 495543962862694987}
   - component: {fileID: 9184843479531071484}
+  - component: {fileID: 687507970979688609}
   m_Layer: 0
   m_Name: Tank_1
   m_TagString: Player
@@ -5196,6 +5197,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051f7ae98f097c6478ff54d046c4063b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wheelsLeft:
+  - {fileID: 5147848616978840056}
+  - {fileID: 1172011074663910100}
+  - {fileID: 5467637850570557591}
+  - {fileID: 7614764543471869304}
+  - {fileID: 7043674344958206442}
+  - {fileID: 8459951744605917787}
+  wheelsRight:
+  - {fileID: 8198645306598530497}
+  - {fileID: 6849504037081261780}
+  - {fileID: 999542688134479509}
+  - {fileID: 2164286436249336795}
+  - {fileID: 2881056264582574210}
+  - {fileID: 6326884150729692229}
   wheels:
   - {fileID: 5147848616978840056}
   - {fileID: 1172011074663910100}
@@ -5213,6 +5228,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   numberOfGroundedWheels: 0
   averageColliderSurfaceNormal: {x: 0, y: 0, z: 0}
+  isGroundedLeft: 0
+  numberOfGroundedWheelsLeft: 0
+  isGroundedRight: 0
+  numberOfGroundedWheelsRight: 0
 --- !u!114 &7952173011122793669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5257,14 +5276,35 @@ MonoBehaviour:
   tankSpeed: 10
   boostSpeed: 60
   boostCapacity: 100
-  accelerationTime: 1
   rotateSpeed: 3
   brakeForce: 5
   maxVelocity: 110
+  accelerationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.003802281
+      value: 0.29766566
+      inSlope: -0.007896483
+      outSlope: -0.007896483
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.61742425
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.29880178
+      outSlope: -0.29880178
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   driftAngle: 20
   jumpForce: 100
-  distanceToGround: 1
-  rayPoint: {fileID: 0}
   customGravity: 2
   centerOfMass: {x: 0, y: -0.25, z: 0}
   groundDrag: 3
@@ -5493,6 +5533,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cbf8db4aca2a7546896f5fbd3020f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &687507970979688609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877776766204771783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4dcf7b43fdc4e4ab60df68ba7729fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftTread: {fileID: 5714243853450996431}
+  rightTread: {fileID: 5977096997085800905}
 --- !u!1 &3915026765732629661
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,34 +3,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankColliderData : MonoBehaviour
+namespace SBC
 {
-    private TankComponentManager tcm;
-
-    public static event Action<Collision> OnCollision = collisionPosition => { };
-
-    private void Awake()
+    public class TankColliderData : MonoBehaviour
     {
-        tcm = GetComponent<TankComponentManager>();
-    }
+        private TankComponentManager tcm;
 
-    private void OnCollisionEnter(Collision other)
-    {
-        OnCollision(other);
-    }
+        public static event Action<Collision> OnCollision = collisionPosition => { };
 
-    private void OnCollisionStay(Collision collision)
-    {
-        Vector3 surfaceNormalSum = Vector3.zero;
-        for (int i = 0; i < collision.contactCount; i++)
+        private void Awake()
         {
-            surfaceNormalSum += collision.contacts[i].normal;
+            tcm = GetComponent<TankComponentManager>();
         }
-        tcm.averageColliderSurfaceNormal = surfaceNormalSum.normalized;
-    }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        tcm.averageColliderSurfaceNormal = Vector3.zero;
+        private void OnCollisionEnter(Collision other)
+        {
+            OnCollision(other);
+        }
+
+        private void OnCollisionStay(Collision collision)
+        {
+            Vector3 surfaceNormalSum = Vector3.zero;
+            for (int i = 0; i < collision.contactCount; i++)
+            {
+                surfaceNormalSum += collision.contacts[i].normal;
+            }
+            tcm.averageColliderSurfaceNormal = surfaceNormalSum.normalized;
+        }
+
+        private void OnCollisionExit(Collision collision)
+        {
+            tcm.averageColliderSurfaceNormal = Vector3.zero;
+        }
     }
 }

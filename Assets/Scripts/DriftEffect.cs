@@ -18,7 +18,7 @@ namespace SBC
 
         private void Start()
         {
-            tcm = GetComponent<TankComponentManager>();
+            tcm = transform.root.GetComponent<TankComponentManager>();
             tank = transform.root.GetComponent<TankController>();
             driftLoop = GetComponent<AudioSource>();
         }

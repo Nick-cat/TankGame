@@ -13,16 +13,13 @@ namespace SBC
         [Tooltip("MaxCapacity of Boost")]
         [SerializeField] float boostCapacity = 100f;
         public float BoostCapacity { get { return boostCapacity; } }
-        [SerializeField] float accelerationTime = 0.05f;
         public float rotateSpeed;
         public float brakeForce = 2f;
         public float maxVelocity;
+        public AnimationCurve accelerationCurve;
         public float driftAngle;
         public float jumpForce;
         
-        public float distanceToGround = .5f;
-        public Transform rayPoint;
-
         [Header("Gravity and Drag")]
         public float customGravity = 2f;
         public Vector3 centerOfMass;
@@ -52,11 +49,10 @@ namespace SBC
         private bool boost;
 
         //acceleration variables
-        private float oldAcceleration = 0f;
-        private float forwards = 0f;
         [HideInInspector] public float acceleration;
+        private float speedPercent;
+        private float forwards;
         [HideInInspector] public float forwardForce;
-        private float velocityChange = 0f;
 
         [HideInInspector] public float boostRemaining;
         private BoostEffect boostEffect;
@@ -109,7 +105,6 @@ namespace SBC
                 Brake();
                 return;
             }
-
             rb.drag = 0;
             rb.angularDrag = airDrag;
             canJump = false;
@@ -142,10 +137,14 @@ namespace SBC
 
         void Acceleration()
         {
-            oldAcceleration = acceleration;
-            acceleration = Mathf.SmoothDamp(oldAcceleration, forwards, ref velocityChange, accelerationTime);
-            forwardForce = acceleration * tankSpeed * 100f;
+            Debug.Log(gas);
+            speedPercent = rb.velocity.magnitude / maxVelocity;
+            Debug.Log("speedPercent =" + speedPercent);
+            acceleration = accelerationCurve.Evaluate(speedPercent);
+            Debug.Log("acceleration =" + acceleration);
+            forwardForce = acceleration * tankSpeed * gas;
         }
+
         private void Boost()
         {
             if (boostRemaining > boostCapacity) boostRemaining = boostCapacity;
@@ -153,7 +152,7 @@ namespace SBC
             {
                 boostRemaining -= 1f;
                 boostEffect.Boost();
-                rb.AddForce(transform.forward * boostSpeed * 100f * Time.deltaTime, ForceMode.Acceleration);
+                rb.AddForce(transform.forward * boostSpeed * Time.fixedDeltaTime * 50f, ForceMode.Acceleration);
                 return;
             }
             boostEffect.NoBoost();
