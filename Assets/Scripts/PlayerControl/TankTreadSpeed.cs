@@ -37,9 +37,15 @@ namespace SBC
 
             //adds forward force to the tank at the treads
             if (tcm.isGroundedLeft)
-                tcm.rb.AddForceAtPosition(moveDirection * tank.forwardForce / 2, leftTread.position, ForceMode.VelocityChange);
+            {
+                tcm.rb.AddForceAtPosition(moveDirection * (tank.forwardForce / 2), leftTread.position, ForceMode.VelocityChange);
+                Debug.DrawRay(leftTread.position, moveDirection * 10);
+            }
             if (tcm.isGroundedRight)
-                tcm.rb.AddForceAtPosition(moveDirection * tank.forwardForce / 2, rightTread.position, ForceMode.VelocityChange);
+            {
+                tcm.rb.AddForceAtPosition(moveDirection * (tank.forwardForce / 2), rightTread.position, ForceMode.VelocityChange);
+                Debug.DrawRay(rightTread.position, moveDirection * 10);
+            }
         }
     }
 }
