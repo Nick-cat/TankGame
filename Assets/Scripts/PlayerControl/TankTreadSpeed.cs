@@ -13,7 +13,7 @@ namespace SBC
         private float driftDirection;
         private TankController tank;
         private TankComponentManager tcm;
-        // Start is called before the first frame update
+
         void Start()
         {
             tcm = GetComponent<TankComponentManager>();
@@ -26,7 +26,6 @@ namespace SBC
             rotate = Input.GetAxis("Horizontal");
         }
 
-        // Update is called once per frame
         void FixedUpdate()
         {
             //calulates vector to apply force along for drift
