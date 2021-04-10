@@ -36,27 +36,27 @@ namespace SBC
             ApplySuspension(tcm.wheelsLeft, tcm.wheelsRight, ground, tcm.rb);
         }
 
-        float CalculateSuspension(float springLength, RaycastHit Hit)
-        {
-            lastLength = springLength;
-            springLength = Hit.distance - tank.wheelRadius;
-            springLength = Mathf.Clamp(springLength, minlength, maxLength);
-            springVelocity = (lastLength - springLength) / Time.fixedDeltaTime;
-            springForce = tank.springStiffness * (tank.suspensionHeight - springLength);
-            damperForce = tank.damperStiffness * springVelocity;
-            return springForce + damperForce;
-        }
-
         private void ApplySuspension(Transform[] wheelsLeft, Transform[] wheelsRight,LayerMask ground, Rigidbody rb)
         {
             tcm.numberOfGroundedWheelsLeft = 0;
+            tcm.numberOfGroundedWheelsRight = 0;
             foreach (var wheel in wheelsLeft)
             {
                 WheelInfo wheelInfo = wheel.GetComponent<WheelInfo>();
                 if (Physics.Raycast(wheel.position, -transform.up, out RaycastHit Hit, maxLength + tank.wheelRadius, ground))
                 {
-                    suspensionForce = CalculateSuspension(wheelInfo.springLength, Hit) * wheel.up;
+                    lastLength = wheelInfo.springLength;
+                    wheelInfo.springLength = Hit.distance - tank.wheelRadius;
+                    wheelInfo.springLength = Mathf.Clamp(wheelInfo.springLength, minlength, maxLength);
+                    springVelocity = (lastLength - wheelInfo.springLength) / Time.fixedDeltaTime;
+                    springForce = tank.springStiffness * (tank.suspensionHeight - wheelInfo.springLength);
+                    damperForce = tank.damperStiffness * springVelocity;
+
+                    suspensionForce = (springForce + damperForce) * wheel.up;
                     rb.AddForceAtPosition(suspensionForce, Hit.point);
+
+                    //until I can figure out how to properly export rigs from blender to unity, this wont work
+                    //wheel.transform.position = new Vector3(Hit.point.x, Hit.point.y, Hit.point.z + Hit.distance);
 
                     Debug.DrawRay(wheel.position, -wheel.up * Hit.distance, Color.green);
 
@@ -64,14 +64,19 @@ namespace SBC
                     tcm.numberOfGroundedWheelsLeft += 1;
                 } 
             }
-
-            tcm.numberOfGroundedWheelsRight = 0;
             foreach (var wheel in wheelsRight)
             {
                 WheelInfo wheelInfo = wheel.GetComponent<WheelInfo>();
                 if (Physics.Raycast(wheel.position, -transform.up, out RaycastHit Hit, maxLength + tank.wheelRadius, ground))
                 {
-                    suspensionForce = CalculateSuspension(wheelInfo.springLength, Hit) * wheel.up;
+                    lastLength = wheelInfo.springLength;
+                    wheelInfo.springLength = Hit.distance - tank.wheelRadius;
+                    wheelInfo.springLength = Mathf.Clamp(wheelInfo.springLength, minlength, maxLength);
+                    springVelocity = (lastLength - wheelInfo.springLength) / Time.fixedDeltaTime;
+                    springForce = tank.springStiffness * (tank.suspensionHeight - wheelInfo.springLength);
+                    damperForce = tank.damperStiffness * springVelocity;
+
+                    suspensionForce = (springForce + damperForce) * wheel.up;
                     rb.AddForceAtPosition(suspensionForce, Hit.point);
 
                     Debug.DrawRay(wheel.position, -wheel.up * Hit.distance, Color.green);
