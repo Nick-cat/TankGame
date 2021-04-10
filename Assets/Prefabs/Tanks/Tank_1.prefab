@@ -5306,7 +5306,8 @@ MonoBehaviour:
   jumpForce: 100
   customGravity: 2
   centerOfMass: {x: 0, y: -0.25, z: 0}
-  groundDrag: 0
+  accelDrag: 1
+  deccelDrag: 2
   angularDrag: 1.5
   airDrag: 0
   treadSpeed: 20
@@ -5547,7 +5548,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftTread: {fileID: 5910432033443529800}
   rightTread: {fileID: 4624523926734282247}
-  drag: 0
 --- !u!1 &3915026765732629661
 GameObject:
   m_ObjectHideFlags: 0
