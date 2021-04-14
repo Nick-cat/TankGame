@@ -7,8 +7,10 @@ namespace SBC
     public class TankStability : MonoBehaviour
     {
         [Header("Stability Forces")]
-        public float linearStabilityForce = 100;
-        public float angularStabilityForce = 100;
+        [Tooltip("Applies a downforce when some of the tread is on the ground but not all")]
+        public float treadDownForce = 100;
+        [Tooltip("Applies a torque when the tank is colliding with the ground but not on the treads")]
+        public float antiRollForce = 100;
 
         private TankComponentManager tcm;
 
@@ -19,15 +21,15 @@ namespace SBC
 
         private void FixedUpdate()
         {
-            ApplyWheelDownForce(tcm.rb, tcm.wheels, tcm.isGrounded, tcm.numberOfGroundedWheels);
+            ApplyTreadDownForce(tcm.rb, tcm.wheels, tcm.isGrounded, tcm.numberOfGroundedWheels);
             ApplyAntiRollForces(tcm.rb, tcm.averageColliderSurfaceNormal, tcm.isGrounded);
         }
 
-        private void ApplyWheelDownForce(Rigidbody rigidbody, List<Transform> wheels, bool grounded, int numberOfGroundedWheels)
+        private void ApplyTreadDownForce(Rigidbody rigidbody, List<Transform> wheels, bool grounded, int numberOfGroundedWheels)
         {
             if (grounded && numberOfGroundedWheels < wheels.Count - 1)
             {
-                Vector3 downwardForce = linearStabilityForce * Vector3.down * Time.fixedDeltaTime;
+                Vector3 downwardForce = treadDownForce * Vector3.down * Time.fixedDeltaTime;
                 foreach (var wheel in wheels)
                 {
                     rigidbody.AddForceAtPosition(downwardForce, wheel.position, ForceMode.Acceleration);
@@ -44,7 +46,7 @@ namespace SBC
                 Debug.Log(angle);
 
                 //Angular stability only uses roll - Using multiple axis becomes unpredictable 
-                Vector3 torqueAmount = Mathf.Sign(angle) * rigidbody.transform.forward * angularStabilityForce * Time.fixedDeltaTime;
+                Vector3 torqueAmount = Mathf.Sign(angle) * rigidbody.transform.forward * antiRollForce * Time.fixedDeltaTime;
 
                 rigidbody.AddTorque(torqueAmount, ForceMode.Acceleration);
             }

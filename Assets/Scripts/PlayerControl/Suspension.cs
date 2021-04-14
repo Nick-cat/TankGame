@@ -15,7 +15,7 @@ namespace SBC
         private Vector3 suspensionForce;
 
         //get suspension values from tank controller
-        public TankController tank;
+        private TankController tank;
         private TankComponentManager tcm;
 
         private void Awake()
