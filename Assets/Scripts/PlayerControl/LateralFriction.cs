@@ -25,7 +25,7 @@ namespace SBC
         private void FixedUpdate()
         {
             tcm.forwardSpeed = Vector3.Dot(tcm.rb.transform.forward, tcm.rb.velocity);
-            tcm.sideSpeed = (Vector3.Dot(tcm.rb.transform.right, tcm.rb.velocity));
+            tcm.sideSpeed = Vector3.Dot(tcm.rb.transform.right, tcm.rb.velocity);
             CalculateLateralFriction();
             ApplyLateralFriction();
         }
@@ -39,15 +39,15 @@ namespace SBC
 
             slidingFrictionRatio = slideFrictionCurve.Evaluate(slideFrictionRatio);
 
+            currentTireStickiness = tcm.isDrifting ? driftTireStickiness : baseTireStickiness;
+
             slidingFrictionForceAmount = slidingFrictionRatio * -tcm.sideSpeed * currentTireStickiness;
         }
 
         private void ApplyLateralFriction()
         {
             if (!tcm.isGrounded) return;
-
             tcm.rb.AddForce(slidingFrictionForceAmount * tcm.rb.transform.right, ForceMode.Impulse);
-            currentTireStickiness = tcm.isDrifting ? driftTireStickiness : baseTireStickiness;
         }
     }
 }

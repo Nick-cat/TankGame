@@ -126,7 +126,7 @@ namespace SBC
             //adjust rotatation depending on speed
             float rotateSpeedMod = Mathf.Clamp(1f - rb.velocity.magnitude / (maxVelocity * 2), 0.8f, 1f);
 
-            float rotationTorque = rotate * rotateSpeedMod * rotateSpeed * Time.fixedDeltaTime;
+            float rotationTorque = rotate * rotateSpeedMod * rotateSpeed * Time.fixedDeltaTime * (tcm.isDrifting ? 2f : 1f);
             rb.AddRelativeTorque(0f, rotationTorque, 0f, ForceMode.VelocityChange);
         }
 

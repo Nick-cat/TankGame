@@ -5223,7 +5223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tankSpeed: 1
-  boostSpeed: 60
+  boostSpeed: 100
   boostCapacity: 100
   rotateSpeed: 3
   brakeForce: 5
@@ -5306,7 +5306,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  driftAngle: 20
+  driftAngle: 50
   jumpForce: 100
   customGravity: 2
   centerOfMass: {x: 0, y: -0.25, z: 0}
@@ -5383,7 +5383,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   baseTireStickiness: 1
-  driftTireStickiness: 0
+  driftTireStickiness: 0.2
 --- !u!114 &687507970979688609
 MonoBehaviour:
   m_ObjectHideFlags: 0
