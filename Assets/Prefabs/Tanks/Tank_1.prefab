@@ -5085,6 +5085,7 @@ GameObject:
   - component: {fileID: 495543962862694987}
   - component: {fileID: 9184843479531071484}
   - component: {fileID: 687507970979688609}
+  - component: {fileID: 970872674076409429}
   m_Layer: 0
   m_Name: Tank_1
   m_TagString: Player
@@ -5173,6 +5174,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   numberOfGroundedWheels: 0
   averageColliderSurfaceNormal: {x: 0, y: 0, z: 0}
+  forwardSpeed: 0
+  sideSpeed: 0
   isGroundedLeft: 0
   numberOfGroundedWheelsLeft: 0
   isGroundedRight: 0
@@ -5218,7 +5221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f079f0e6a88a6408bef850fa57b48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankSpeed: 10
+  tankSpeed: 1
   boostSpeed: 60
   boostCapacity: 100
   rotateSpeed: 3
@@ -5306,8 +5309,8 @@ MonoBehaviour:
   jumpForce: 100
   customGravity: 2
   centerOfMass: {x: 0, y: -0.25, z: 0}
-  accelDrag: 1
-  deccelDrag: 2
+  accelDrag: 0.1
+  deccelDrag: 1
   angularDrag: 1.5
   airDrag: 0
   treadSpeed: 20
@@ -5548,6 +5551,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftTread: {fileID: 5910432033443529800}
   rightTread: {fileID: 4624523926734282247}
+--- !u!114 &970872674076409429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877776766204771783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8955b063d5c83ab46b94f6269c5926e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slideFrictionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4373
+      value: 0.5458
+      inSlope: -1.6314036
+      outSlope: -1.6314036
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.04989153
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  baseTireStickiness: 1
+  currentTireStickiness: 1
+  slidingFrictionRatio: 0
+  slidingFrictionForceAmount: 0
+  slidingFrictionToForwardSpeedAmount: 0
 --- !u!1 &3915026765732629661
 GameObject:
   m_ObjectHideFlags: 0
@@ -12746,14 +12799,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bc0f8e8ca84b2748bfc53f1ab92dbd7, type: 3}
---- !u!4 &8422001497936657635 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1202196179462973324, guid: 0bc0f8e8ca84b2748bfc53f1ab92dbd7, type: 3}
-  m_PrefabInstance: {fileID: 7228271577373776751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &4273965866005909176 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 6854434636622714327, guid: 0bc0f8e8ca84b2748bfc53f1ab92dbd7, type: 3}
+  m_PrefabInstance: {fileID: 7228271577373776751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8422001497936657635 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1202196179462973324, guid: 0bc0f8e8ca84b2748bfc53f1ab92dbd7, type: 3}
   m_PrefabInstance: {fileID: 7228271577373776751}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8781020244768319658

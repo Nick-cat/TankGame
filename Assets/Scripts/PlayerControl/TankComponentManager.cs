@@ -14,6 +14,9 @@ namespace SBC
         public int numberOfGroundedWheels;
         public Vector3 averageColliderSurfaceNormal;
 
+        public float forwardSpeed;
+        public float sideSpeed;
+
         public bool isGroundedLeft;
         public int numberOfGroundedWheelsLeft;
         public bool isGroundedRight;
