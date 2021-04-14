@@ -14,7 +14,6 @@ namespace SBC
         private TankComponentManager tcm;
         private bool drift;
         private float turn;
-        private bool isDrifting = false;
 
         private void Start()
         {
@@ -38,10 +37,10 @@ namespace SBC
         {
             if (turn != 0)
             {
-                if (isDrifting == false && !driftLoop.isPlaying)
+                if (tcm.isDrifting == false && !driftLoop.isPlaying)
                 {
                     driftStartSource.Play();
-                    isDrifting = true;
+                    tcm.isDrifting = true;
                 }
                 foreach (ParticleSystem d in dirt) d.Play();
                 driftLoop.pitch = 1 + Mathf.Sin(tank.driftAngle * Time.deltaTime);
@@ -52,7 +51,7 @@ namespace SBC
         {
             foreach (ParticleSystem d in dirt) d.Stop();
             driftLoop.Stop();
-            isDrifting = false;
+            tcm.isDrifting = false;
         }
     }
 }

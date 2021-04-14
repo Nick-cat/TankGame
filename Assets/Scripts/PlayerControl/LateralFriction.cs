@@ -6,14 +6,14 @@ namespace SBC
 {
     public class LateralFriction : MonoBehaviour
     {
-        public AnimationCurve slideFrictionCurve;
-        public float baseTireStickiness;
-        [Space]
-        public float currentTireStickiness;
-        [Space]
-        public float slidingFrictionRatio;
-        public float slidingFrictionForceAmount;
-        public float slidingFrictionToForwardSpeedAmount;
+        [SerializeField] AnimationCurve slideFrictionCurve;
+        //determines how much lateral friction is applied when drifiting and not drifting
+        [SerializeField] [Range(0, 1)] float baseTireStickiness; 
+        [SerializeField] [Range(0, 1)] float driftTireStickiness; 
+
+        private float currentTireStickiness;
+        private float slidingFrictionRatio;
+        private float slidingFrictionForceAmount;
 
         private TankComponentManager tcm;
 
@@ -47,7 +47,7 @@ namespace SBC
             if (!tcm.isGrounded) return;
 
             tcm.rb.AddForce(slidingFrictionForceAmount * tcm.rb.transform.right, ForceMode.Impulse);
-            currentTireStickiness = baseTireStickiness;
+            currentTireStickiness = tcm.isDrifting ? driftTireStickiness : baseTireStickiness;
         }
     }
 }

@@ -17,6 +17,7 @@ namespace SBC
         public float forwardSpeed;
         public float sideSpeed;
 
+        public bool isDrifting = false;
         public bool isGroundedLeft;
         public int numberOfGroundedWheelsLeft;
         public bool isGroundedRight;
