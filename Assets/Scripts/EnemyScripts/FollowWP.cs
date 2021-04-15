@@ -12,7 +12,6 @@ public class FollowWP : MonoBehaviour
         if(waypoints.Length == 0) waypoints = GameObject.FindGameObjectsWithTag("WayPoint");
     }
 
-    // Update is called once per frame
     public Vector3 GetNextTarget()
     {
         currentWP++;

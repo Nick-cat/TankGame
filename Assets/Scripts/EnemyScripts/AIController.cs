@@ -50,7 +50,6 @@ public class AIController : MonoBehaviour
         agent.SetDestination(target);
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
         LookAtTarget();

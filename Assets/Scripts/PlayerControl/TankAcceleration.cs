@@ -27,7 +27,6 @@ namespace SBC {
             gas = Input.GetAxisRaw("Vertical");
         }
 
-        // Update is called once per frame
         void FixedUpdate()
         {
             tcm.forwardSpeed = Vector3.Dot(tcm.rb.transform.forward, tcm.rb.velocity);

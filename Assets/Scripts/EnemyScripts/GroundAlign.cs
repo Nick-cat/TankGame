@@ -10,7 +10,6 @@ public class GroundAlign : MonoBehaviour
         ground = LayerMask.GetMask("Ground");
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 20, ground))

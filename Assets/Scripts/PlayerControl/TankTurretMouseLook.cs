@@ -48,7 +48,6 @@ namespace SBC {
         private Vector3 crosshairScaleVelocity = Vector3.zero;
         private Vector3 crosshairPosVelocity = Vector3.zero;
 
-        // Start is called before the first frame update
         void Start () {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -58,7 +57,6 @@ namespace SBC {
 
         }
 
-        // Update is called once per frame
         void Update () {
             if ( Input.GetKeyDown( KeyCode.Backspace ) ) mouseOn = !mouseOn;
             if ( !mouseOn ) return;

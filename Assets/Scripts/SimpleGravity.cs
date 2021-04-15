@@ -7,13 +7,11 @@ public class SimpleGravity : MonoBehaviour
     private Rigidbody rb;
     public float customGravity = 2f;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         rb.AddForce(Vector3.up * -customGravity * 100f);

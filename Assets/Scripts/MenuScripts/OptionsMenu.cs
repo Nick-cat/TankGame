@@ -22,7 +22,6 @@ namespace SBC
         [SerializeField] Slider fov;
         [SerializeField] TMPro.TMP_Text fovValue;
 
-
         private void Start()
         {
 
