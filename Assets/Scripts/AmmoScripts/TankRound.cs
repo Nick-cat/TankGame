@@ -11,6 +11,7 @@ namespace SBC {
         }
         public float projectileSpeed = 250f;
         public float projectileForce = 3000f;
+        public float damage = 100;
 
         protected AmmoType ammoType;
 

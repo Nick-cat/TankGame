@@ -22,7 +22,7 @@ namespace SBC {
                 //deal damage
                 if (c.gameObject.CompareTag("Enemy"))
                 {
-                    c.gameObject.GetComponent<HealthManager>().Hurt(explosionForce);
+                    c.gameObject.GetComponent<HealthManager>().Hurt(damage);
                 }
             }
 

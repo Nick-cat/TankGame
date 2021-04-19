@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2337121503354937430}
   - component: {fileID: 4498092390579926017}
   m_Layer: 11
-  m_Name: DefaultTankRound
+  m_Name: KnockBackRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,9 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 250
   projectileForce: 3000
+  damage: 10
   explosionEffectObject: {fileID: 7523955134364803383, guid: 02ba475a84dbec54a82c30b691b5b3d5, type: 3}
-  explosionRadius: 2
-  explosionForce: 50
+  explosionRadius: 10
+  explosionForce: 1000
 --- !u!135 &1381607381715729657
 SphereCollider:
   m_ObjectHideFlags: 0
