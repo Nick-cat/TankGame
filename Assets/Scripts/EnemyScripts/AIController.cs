@@ -21,6 +21,7 @@ public class AIController : MonoBehaviour
     private Vector3 target;
     private GameObject player;
     private NavMeshAgent agent;
+    private Rigidbody rb;
     private float moveSpeed;
     private float turnSpeed;
     private float roamingDistance;
@@ -41,6 +42,8 @@ public class AIController : MonoBehaviour
         else rotateDirection = -1;
 
         if (player == null) player = GameObject.FindGameObjectWithTag("Player");
+
+        rb = GetComponent<Rigidbody>();
 
         agent = GetComponent<NavMeshAgent>();
         agent.speed = maxSpeed;
@@ -66,7 +69,7 @@ public class AIController : MonoBehaviour
         }
 
         //gets a new random point on the navmesh to move towards if it is close enough to the previous target location
-        Roam();
+        Roam(); 
     }
 
     private bool CanHuntPlayer()

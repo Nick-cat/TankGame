@@ -2114,6 +2114,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4879173134513062185, guid: 2c2a2410c3bda0c40a58d2b44fe5d0c4, type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 447058705396782291, guid: 2c2a2410c3bda0c40a58d2b44fe5d0c4, type: 3}
       propertyPath: m_Name
       value: WheelEnemy
