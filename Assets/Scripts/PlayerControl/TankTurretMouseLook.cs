@@ -101,10 +101,10 @@ namespace SBC {
             //ADS
             if (zoom) 
             { 
-                Camera.main.fieldOfView = PlayerPrefs.GetFloat("fov", 60f) + fovMod - zoomFOV; 
+                cam.fieldOfView = PlayerPrefs.GetFloat("fov", 60f) + fovMod - zoomFOV; 
                 return; 
             }
-            Camera.main.fieldOfView = PlayerPrefs.GetFloat("fov", 60f) + fovMod;
+            cam.fieldOfView = PlayerPrefs.GetFloat("fov", 60f) + fovMod;
         }
 
         // Get mouse delta values for this frame.

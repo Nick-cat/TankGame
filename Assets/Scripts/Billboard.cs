@@ -8,28 +8,32 @@ public class Billboard : MonoBehaviour
     [SerializeField] bool lookAtPlayer;
 
     private GameObject player;
+    private Camera cam;
+    private Transform billboard;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        cam = Camera.main;
+        billboard = transform;
     }
 
     void LateUpdate()
     {
         if (lookAtPlayer)
         {
-            transform.LookAt(player.transform, Vector3.up);
-            Vector3 eulerAngles = transform.eulerAngles;
+            billboard.LookAt(player.transform, Vector3.up);
+            Vector3 eulerAngles = billboard.eulerAngles;
             eulerAngles.x = 0;
-            transform.eulerAngles = eulerAngles;
+            billboard.eulerAngles = eulerAngles;
 
         }
         else
         {
-            transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
-            Vector3 eulerAngles = transform.eulerAngles;
+            billboard.LookAt(billboard.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
+            Vector3 eulerAngles = billboard.eulerAngles;
             eulerAngles.x = 0;
-            transform.eulerAngles = eulerAngles;
+            billboard.eulerAngles = eulerAngles;
         }
     }
 }

@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
 {
+    private Camera cam;
+
+    private void Start()
+    {
+        cam = Camera.main;
+    }
     private void FixedUpdate()
     {
-        transform.position = Camera.main.transform.position;
+        transform.position = cam.transform.position;
     }
 
 }
