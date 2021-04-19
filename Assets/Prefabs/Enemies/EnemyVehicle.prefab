@@ -188,8 +188,8 @@ GameObject:
   - component: {fileID: 9199146686727970875}
   - component: {fileID: 6448810733202839363}
   - component: {fileID: 1872113120177535791}
-  - component: {fileID: 124853385505728410}
   - component: {fileID: 6067193467560578337}
+  - component: {fileID: -8659362734783573680}
   m_Layer: 0
   m_Name: EnemyVehicle
   m_TagString: Enemy
@@ -269,7 +269,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!54 &124853385505728410
+--- !u!135 &6067193467560578337
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971362102305717365}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.79
+  m_Center: {x: 0, y: 2.5, z: 0}
+--- !u!54 &-8659362734783573680
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,19 +298,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!135 &6067193467560578337
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971362102305717365}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.79
-  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1 &1682367847396304239
 GameObject:
   m_ObjectHideFlags: 0

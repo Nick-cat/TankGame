@@ -5,9 +5,9 @@ using UnityEngine.AI;
 
 public class AIController : MonoBehaviour
 {
-    [SerializeField] Vector2 moveSpeedRange = new Vector2(40f, 60f);
+    [SerializeField] Vector2 moveSpeedRange = new Vector2(10f, 20f);
     [SerializeField] float maxSpeed = 30f;
-    [SerializeField] Vector2 turnSpeedRange = new Vector2(110f, 130f);
+    [SerializeField] Vector2 turnSpeedRange = new Vector2(0.01f, 0.05f);
     [SerializeField] Vector2 roamingRange = new Vector2(50f, 100f);
     [SerializeField] Vector2 strafeRange = new Vector2(20f, 40f);
     [SerializeField] Transform turret;
@@ -19,8 +19,9 @@ public class AIController : MonoBehaviour
     [SerializeField] Material chaseGlow;
 
     private Vector3 target;
-    private GameObject player;
+    private Transform player;
     private NavMeshAgent agent;
+    private NavMeshPath path;
     private Rigidbody rb;
     private float moveSpeed;
     private float turnSpeed;
@@ -41,22 +42,48 @@ public class AIController : MonoBehaviour
         if (dir == true) rotateDirection = 1;
         else rotateDirection = -1;
 
-        if (player == null) player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
 
         rb = GetComponent<Rigidbody>();
 
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = maxSpeed;
-        agent.acceleration = moveSpeed;
-        agent.angularSpeed = turnSpeed;
+        path = new NavMeshPath();
+
+        //agent = GetComponent<NavMeshAgent>();
+        //agent.speed = maxSpeed;
+        //agent.acceleration = moveSpeed;
+        //agent.angularSpeed = turnSpeed;
+        //agent.autoBraking = false;
         GetRandomNavPoint();
-        agent.SetDestination(target);
+        GetPathToTarget(target);
+        //agent.SetDestination(target);
+    }
+
+    private void GetPathToTarget(Vector3 destination)
+    {
+        NavMesh.CalculatePath(rb.position, destination, NavMesh.AllAreas, path);
+        print(path.corners);
     }
 
     private void FixedUpdate()
     {
+        //rb.velocity = agent.velocity;
+        agent.nextPosition = rb.position;
+
+        GetAITarget();
         LookAtTarget();
-        if(CanDetectPlayer())
+        transform.Rotate(0, CalculateAngle() * turnSpeed, 0);
+
+        if (rb.velocity.magnitude < maxSpeed)
+        {
+            Vector3 forwards = transform.forward * moveSpeed * Time.deltaTime * 100f;
+            rb.AddForce(forwards, ForceMode.Acceleration);
+        }
+
+    }
+
+    private void GetAITarget()
+    {
+        if (CanDetectPlayer())
         {
             if (CanHuntPlayer())
             {
@@ -69,19 +96,19 @@ public class AIController : MonoBehaviour
         }
 
         //gets a new random point on the navmesh to move towards if it is close enough to the previous target location
-        Roam(); 
+        Roam();
     }
 
     private bool CanHuntPlayer()
     {
-        return CalculateDistance(player.transform.position) < strafeDistance * 5f;
+        return CalculateDistance(player.position) < strafeDistance * 5f;
         //if (CalculateDistance(player.transform.position) < strafeDistance * 5f) return true;
         //return false;
     }
 
     private bool CanDetectPlayer()
     {
-        return CalculateDistance(player.transform.position) < strafeDistance * 6f;
+        return CalculateDistance(player.position) < strafeDistance * 6f;
     }
 
     private void Roam()
@@ -90,7 +117,7 @@ public class AIController : MonoBehaviour
         if (agent.remainingDistance < strafeDistance)
         {
             GetRandomNavPoint();
-            agent.SetDestination(target);
+            GetPathToTarget(target);
         }
     }
 
@@ -99,31 +126,31 @@ public class AIController : MonoBehaviour
         gemMat.material = searchingGlow;
         if (!searchingForPlayer)
         {
-            target = player.transform.position;
+            target = player.position;
             searchingForPlayer = true;
         }
-        agent.SetDestination(target);
+        GetPathToTarget(target);
     }
 
     private void Hunt()
     {
         if (searchingForPlayer) searchingForPlayer = false;
         gemMat.material = chaseGlow;
-        if (CalculateDistance(player.transform.position) <= strafeDistance)
+        if (CalculateDistance(player.position) <= strafeDistance)
         {
             //makes the AI strafe around the player
             Strafe();
             return;
         }
-        target = player.transform.position;
-        agent.SetDestination(target);
+        target = player.position;
+        GetPathToTarget(target);
     }
 
     private void Strafe()
     {
         Vector3 pathToTarget = target - transform.position;
         Vector3 dir = Vector3.Cross(pathToTarget, Vector3.up);
-        agent.SetDestination(transform.position + (dir * rotateDirection));
+        GetPathToTarget(transform.position + (dir * rotateDirection));
     }
 
     private void LookAtTarget()
@@ -136,6 +163,12 @@ public class AIController : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, point);
         return distance;
+    }
+
+    private float CalculateAngle()
+    {
+        Vector3 pathToTarget = agent.steeringTarget - rb.position;
+        return Vector3.SignedAngle(transform.forward, pathToTarget, transform.up);
     }
 
     private void GetRandomNavPoint()
