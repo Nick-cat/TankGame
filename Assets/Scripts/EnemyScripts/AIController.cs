@@ -20,7 +20,7 @@ public class AIController : MonoBehaviour
 
     private Vector3 target;
     private Transform player;
-    private NavMeshAgent agent;
+    //private NavMeshAgent agent;
     private NavMeshPath path;
     private Rigidbody rb;
     private float moveSpeed;
@@ -45,14 +45,8 @@ public class AIController : MonoBehaviour
         if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
 
         rb = GetComponent<Rigidbody>();
-
         path = new NavMeshPath();
 
-        //agent = GetComponent<NavMeshAgent>();
-        //agent.speed = maxSpeed;
-        //agent.acceleration = moveSpeed;
-        //agent.angularSpeed = turnSpeed;
-        //agent.autoBraking = false;
         GetRandomNavPoint();
         GetPathToTarget(target);
         //agent.SetDestination(target);
@@ -60,17 +54,24 @@ public class AIController : MonoBehaviour
 
     private void GetPathToTarget(Vector3 destination)
     {
+        //path.ClearCorners();
         NavMesh.CalculatePath(rb.position, destination, NavMesh.AllAreas, path);
-        print(path.corners);
+
+        //string s = "Current path.corners : {";
+        //foreach (Vector3 v in path.corners)
+        //{
+        //    s += " || ";
+        //    s += v.ToString();
+        //}
+        //s += " }";
+        //Debug.Log(s);
     }
 
     private void FixedUpdate()
     {
-        //rb.velocity = agent.velocity;
-        agent.nextPosition = rb.position;
-
         GetAITarget();
         LookAtTarget();
+
         transform.Rotate(0, CalculateAngle() * turnSpeed, 0);
 
         if (rb.velocity.magnitude < maxSpeed)
@@ -87,14 +88,17 @@ public class AIController : MonoBehaviour
         {
             if (CanHuntPlayer())
             {
+                //Debug.Log($"Will Hunt to : {target}");
                 Hunt();
                 return;
             }
 
+            //Debug.Log($"Will Search to : {target}");
             Search();
             return;
         }
 
+        //Debug.Log($"Will Roam to : {target}");
         //gets a new random point on the navmesh to move towards if it is close enough to the previous target location
         Roam();
     }
@@ -114,7 +118,8 @@ public class AIController : MonoBehaviour
     private void Roam()
     {
         gemMat.material = idleGlow;
-        if (agent.remainingDistance < strafeDistance)
+        //if (agent.remainingDistance < strafeDistance)
+        if ((rb.position - target).magnitude < strafeDistance) // Check the distance between self and the target position.
         {
             GetRandomNavPoint();
             GetPathToTarget(target);
@@ -167,7 +172,14 @@ public class AIController : MonoBehaviour
 
     private float CalculateAngle()
     {
-        Vector3 pathToTarget = agent.steeringTarget - rb.position;
+        //Vector3 pathToTarget = agent.steeringTarget - rb.position;
+        // steeringTarget -> typically the first corner in the path according to unity API
+
+
+        //Vector3 t = (path.corners.Length > 0 ? path.corners[0] : target);
+        Vector3 t = path.corners[1];
+        //Debug.Log(t.ToString());
+        Vector3 pathToTarget = t - rb.position;
         return Vector3.SignedAngle(transform.forward, pathToTarget, transform.up);
     }
 
@@ -187,5 +199,16 @@ public class AIController : MonoBehaviour
     private float RandomWithinRange(float r)
     {
         return Random.Range(-r, r);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (!Application.isPlaying) return;
+
+        foreach (Vector3 v in path.corners)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(v, 2f);
+        }
     }
 }

@@ -338,6 +338,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8659362734783573680, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 446181831881336527, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -390,6 +394,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1872113120177535791, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6067193467560578337, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6448810733202839363, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
       propertyPath: maxSpeed
       value: 30
@@ -402,7 +414,16 @@ PrefabInstance:
       propertyPath: moveSpeedRange.y
       value: 30
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6448810733202839363, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
+      propertyPath: turnSpeedRange.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448810733202839363, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
+      propertyPath: turnSpeedRange.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1872113120177535791, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
 --- !u!1 &328350501
 GameObject:
@@ -779,6 +800,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8659362734783573680, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 446181831881336527, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -831,6 +856,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1872113120177535791, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6067193467560578337, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6448810733202839363, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
       propertyPath: maxSpeed
       value: 30
@@ -845,13 +878,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6448810733202839363, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
       propertyPath: turnSpeedRange.x
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6448810733202839363, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
       propertyPath: turnSpeedRange.y
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1872113120177535791, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
 --- !u!1 &552488899
 GameObject:
@@ -1734,6 +1768,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8659362734783573680, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 446181831881336527, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1788,7 +1826,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1872113120177535791, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6067193467560578337, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6448810733202839363, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
       propertyPath: maxSpeed
@@ -1802,7 +1844,16 @@ PrefabInstance:
       propertyPath: moveSpeedRange.y
       value: 30
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6448810733202839363, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
+      propertyPath: turnSpeedRange.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448810733202839363, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
+      propertyPath: turnSpeedRange.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1872113120177535791, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 964cc4a39516f2a4a913d624d52f50c0, type: 3}
 --- !u!1 &1220285794
 GameObject:
@@ -2166,6 +2217,14 @@ PrefabInstance:
       propertyPath: m_Drag
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: -4879173134513062185, guid: 2c2a2410c3bda0c40a58d2b44fe5d0c4, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 435462266905275542, guid: 2c2a2410c3bda0c40a58d2b44fe5d0c4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 447058705396782291, guid: 2c2a2410c3bda0c40a58d2b44fe5d0c4, type: 3}
       propertyPath: m_Name
       value: WheelEnemy
@@ -2214,7 +2273,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7532244162383127955, guid: 2c2a2410c3bda0c40a58d2b44fe5d0c4, type: 3}
+      propertyPath: maxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532244162383127955, guid: 2c2a2410c3bda0c40a58d2b44fe5d0c4, type: 3}
+      propertyPath: moveSpeedRange.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532244162383127955, guid: 2c2a2410c3bda0c40a58d2b44fe5d0c4, type: 3}
+      propertyPath: moveSpeedRange.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532244162383127955, guid: 2c2a2410c3bda0c40a58d2b44fe5d0c4, type: 3}
+      propertyPath: turnSpeedRange.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532244162383127955, guid: 2c2a2410c3bda0c40a58d2b44fe5d0c4, type: 3}
+      propertyPath: turnSpeedRange.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 435462266905275542, guid: 2c2a2410c3bda0c40a58d2b44fe5d0c4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c2a2410c3bda0c40a58d2b44fe5d0c4, type: 3}
 --- !u!1001 &1750418926
 PrefabInstance:
