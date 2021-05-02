@@ -14,7 +14,7 @@ namespace SBC {
         [SerializeField] bool InvertMouseX = false;
         [SerializeField] bool InvertMouseY = false;
         [Space]
-        [SerializeField] float MAX_CANNON_ANGLE = 8.5f;
+        [SerializeField] float maxCameraAngle = 8.5f;
         [SerializeField] float zoomFOV = 45;
         [SerializeField] float crosshairScaleTime = 0.01f;
         [SerializeField] float crosshairMoveTime = 0.5f;
@@ -69,7 +69,7 @@ namespace SBC {
             turretTransform.Rotate( new Vector3( 0 , mXd , 0 ) , Space.Self );
            
             // Rotate the cannon and camera with the mouse Y delta.
-            cannon_angle = Mathf.Clamp( cannon_angle + mYd , -MAX_CANNON_ANGLE , MAX_CANNON_ANGLE );
+            cannon_angle = Mathf.Clamp( cannon_angle + mYd , -maxCameraAngle , maxCameraAngle );
             UpdateCannonAngle();
 
             // Player has fired this frame. Instantiate ammo and call shoot.

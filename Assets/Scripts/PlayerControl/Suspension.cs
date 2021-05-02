@@ -13,6 +13,7 @@ namespace SBC
         private float damperForce;
         private float springVelocity;
         private Vector3 suspensionForce;
+        private LayerMask ground;
 
         //get suspension values from tank controller
         private TankController tank;
@@ -28,11 +29,11 @@ namespace SBC
         {
             minlength = tank.suspensionHeight - tank.springTravel;
             maxLength = tank.suspensionHeight + tank.springTravel;
+            ground = LayerMask.GetMask("Ground");
         }
 
         void FixedUpdate()
         {
-            LayerMask ground = LayerMask.GetMask("Ground");
             ApplySuspension(tcm.wheelsLeft, tcm.wheelsRight, ground, tcm.rb);
         }
 
