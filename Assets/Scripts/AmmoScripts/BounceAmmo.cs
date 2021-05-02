@@ -21,6 +21,7 @@ namespace SBC
             foreach (Collider c in cols)
             {
                 Rigidbody rb = c.attachedRigidbody;
+                rb.isKinematic = false;
                 if (rb != null) rb.AddExplosionForce(explosionForce, pos, explosionRadius, 1.0f);
 
                 //deal damage

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5116119374245261827}
   - component: {fileID: 8618807585446768572}
   - component: {fileID: 2232318871280437269}
-  - component: {fileID: 8969750989391528208}
+  - component: {fileID: 8693411011801427557}
   m_Layer: 0
   m_Name: WheelBL
   m_TagString: Untagged
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8969750989391528208
+--- !u!135 &8693411011801427557
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,12 +186,12 @@ GameObject:
   m_Component:
   - component: {fileID: 446181831881336527}
   - component: {fileID: 9199146686727970875}
-  - component: {fileID: 6448810733202839363}
+  - component: {fileID: 8690051270183320560}
+  - component: {fileID: 1616165633251254430}
   - component: {fileID: 1872113120177535791}
-  - component: {fileID: 6067193467560578337}
   - component: {fileID: -8659362734783573680}
   m_Layer: 0
-  m_Name: EnemyVehicle
+  m_Name: NavmeshwithRBEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
---- !u!114 &6448810733202839363
+--- !u!114 &8690051270183320560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,19 +234,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 971362102305717365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd0be3ee86e04f54188ec8460239cbc5, type: 3}
+  m_Script: {fileID: 11500000, guid: da66e130a00ac50418f8860588242d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeedRange: {x: 40, y: 60}
-  maxSpeed: 40
+  maxSpeed: 30
   turnSpeedRange: {x: 110, y: 130}
   roamingRange: {x: 50, y: 100}
   strafeRange: {x: 20, y: 40}
+  respawnTime: 0
   turret: {fileID: 6579222203727059872}
+  wheels: {fileID: 0}
   gemMat: {fileID: 2674379972185303679}
   idleGlow: {fileID: 2100000, guid: 2a4003dce0a20f345b43671797e92b06, type: 2}
   searchingGlow: {fileID: 2100000, guid: ea75d31a34f2b2f42abe71b19931339a, type: 2}
   chaseGlow: {fileID: 2100000, guid: 35d14cdf9448deb46b0e63de4b067171, type: 2}
+--- !u!114 &1616165633251254430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971362102305717365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497b451599262a143a4753c2527b1e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheels:
+  - {fileID: 5116119374245261827}
+  - {fileID: 7622059198197790456}
+  - {fileID: 8408272685531034597}
+  - {fileID: 2962637095596446674}
+  numberOfGroundedWheels: 0
+  grounded: 0
+  groundedDistance: 0.1
 --- !u!195 &1872113120177535791
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -269,19 +291,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!135 &6067193467560578337
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971362102305717365}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.79
-  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!54 &-8659362734783573680
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -294,7 +303,7 @@ Rigidbody:
   m_Drag: 3
   m_AngularDrag: 1.5
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 3
@@ -424,7 +433,7 @@ GameObject:
   - component: {fileID: 8408272685531034597}
   - component: {fileID: 6753113930351464553}
   - component: {fileID: 8314885648011161251}
-  - component: {fileID: 6541542843482295366}
+  - component: {fileID: 2311519267684233063}
   m_Layer: 0
   m_Name: WheelFL
   m_TagString: Untagged
@@ -495,7 +504,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6541542843482295366
+--- !u!135 &2311519267684233063
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -681,6 +690,7 @@ GameObject:
   - component: {fileID: 5041325132473861650}
   - component: {fileID: 3698164204846985038}
   - component: {fileID: 9053983304188141594}
+  - component: {fileID: 1537067054713939771}
   m_Layer: 0
   m_Name: EnemyVehicle
   m_TagString: Untagged
@@ -742,6 +752,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b88deac3c910a4385c07c1322d897a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &1537067054713939771
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673887728839351464}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.79
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1 &5716865444173780541
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +776,7 @@ GameObject:
   - component: {fileID: 2962637095596446674}
   - component: {fileID: 9194644281460076211}
   - component: {fileID: 7570871958158728775}
-  - component: {fileID: 2789534705062821736}
+  - component: {fileID: 465943395365001529}
   m_Layer: 0
   m_Name: WheelFR
   m_TagString: Untagged
@@ -824,7 +847,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &2789534705062821736
+--- !u!135 &465943395365001529
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -848,7 +871,7 @@ GameObject:
   - component: {fileID: 7622059198197790456}
   - component: {fileID: 7524305664923646523}
   - component: {fileID: 1946898357602144748}
-  - component: {fileID: 7970982151735804765}
+  - component: {fileID: 2700265796541227203}
   m_Layer: 0
   m_Name: WheelBR
   m_TagString: Untagged
@@ -919,7 +942,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7970982151735804765
+--- !u!135 &2700265796541227203
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

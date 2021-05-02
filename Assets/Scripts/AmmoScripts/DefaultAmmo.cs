@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace SBC {
     public class DefaultAmmo : TankRound {
@@ -17,7 +18,11 @@ namespace SBC {
             Collider[] cols = Physics.OverlapSphere(pos, explosionRadius);
             foreach ( Collider c in cols ) {
                 Rigidbody rb = c.attachedRigidbody;
-                if ( rb != null ) rb.AddExplosionForce( explosionForce , pos , explosionRadius , 1.0f );
+                if (rb != null)
+                {
+                    rb.isKinematic = false;
+                    rb.AddExplosionForce(explosionForce, pos, explosionRadius, 1.0f);
+                }
                 
                 //deal damage
                 if (c.gameObject.CompareTag("Enemy"))
